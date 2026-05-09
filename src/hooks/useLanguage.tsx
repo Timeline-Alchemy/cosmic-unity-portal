@@ -209,7 +209,7 @@ const translations = {
       },
       games: {
         universalSlots: {
-          title: 'Universal Slots',
+          title: 'Cosmic Slots',
           desc: 'Draai de slots om de kosmische rollen uit te lijnen en verzilver het overvloedraamwerk.'
         },
         blackholeBlackjack: {
@@ -261,7 +261,7 @@ const translations = {
       button: 'Abonneer',
       subscribe: 'Abonneren',
       compact: { title: 'Nieuwsbrief' },
-      email: { 
+      email: {
         label: 'E-mailadres',
         placeholder: 'Jouw emailadres'
       },
@@ -651,7 +651,7 @@ const translations = {
           subtitle: 'Transformeer wekelijkse trends naar ziel-resonante content. Blog + cross-platform posts. Volledig gepland. Jij blijft creëren—wij verspreiden.',
           bullets: {
             0: 'Wekelijkse blogpost',
-            1: 'Platform-specifieke posts', 
+            1: 'Platform-specifieke posts',
             2: 'Planning & publicatie',
             3: 'Tone of voice on-brand'
           },
@@ -848,7 +848,7 @@ const translations = {
       },
       games: {
         universalSlots: {
-          title: 'Universal Slots',
+          title: 'Cosmic Slots',
           desc: 'Spin the slots to align the cosmic reels and tap into the abundance framework.'
         },
         blackholeBlackjack: {
@@ -900,7 +900,7 @@ const translations = {
       button: 'Subscribe',
       subscribe: 'Subscribe',
       compact: { title: 'Newsletter' },
-      email: { 
+      email: {
         label: 'Email address',
         placeholder: 'Your email address'
       },
@@ -1487,7 +1487,7 @@ const translations = {
       },
       games: {
         universalSlots: {
-          title: 'Universal Slots',
+          title: 'Cosmic Slots',
           desc: 'Drehen Sie die Slots, um die kosmischen Rollen und Reichtümer auszurichten.'
         },
         blackholeBlackjack: {
@@ -1539,7 +1539,7 @@ const translations = {
       button: 'Abonnieren',
       subscribe: 'Abonnieren',
       compact: { title: 'Newsletter' },
-      email: { 
+      email: {
         label: 'E-Mail-Adresse',
         placeholder: 'Deine E-Mail-Adresse'
       },

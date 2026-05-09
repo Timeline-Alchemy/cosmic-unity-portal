@@ -19,7 +19,7 @@ const CasinoCollection = () => {
           apkLink: 'https://slots.cosmic-casino.one/',
           isPlaceholder: false,
           isExternal: true,
-          icon: <img src="/images/universal-slots.png" alt="Cosmic Casino" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
+          icon: <img src="/images/universal-slots.png" alt="Cosmic Slots" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
         },
         {
           title: t('casino.games.blackholeBlackjack.title'),
