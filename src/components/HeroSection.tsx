@@ -49,12 +49,12 @@ const HeroSection = () => {
 
         {/* Call to Action */}
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center mb-12">
-          <a href="https://www.timeline-alchemy.nl" target="_blank" rel="noopener noreferrer">
+          <Link to="/timeline-alchemy">
             <Button variant="cosmic" size="lg" className="group">
               Timeline Alchemy
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-          </a>
+          </Link>
           <Link to="/casino-collection">
             <Button variant="outline" size="lg" className="group border-cosmic hover:bg-cosmic/20 transition-all duration-300">
               <Gamepad2 className="mr-2 h-5 w-5 text-cosmic" />

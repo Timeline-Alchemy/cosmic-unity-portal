@@ -643,6 +643,13 @@ const translations = {
       errorLoadingMessage: 'Er ging iets mis bij het laden van de berichten',
     },
     timelineAlchemy: {
+      underConstruction: {
+        title: 'Timeline Alchemy is in de maak',
+        subtitle: 'We bouwen aan een revolutionair platform voor content alchemie.',
+        description: 'Momenteel ondergaan we een krachtige transformatie om Timeline Alchemy nog dieper en naadlozer te maken. De Content Forge wordt klaargemaakt voor een nieuwe golf van creativiteit.',
+        backToPortal: 'Terug naar het Portaal',
+        stayTuned: 'Blijf verbonden. De transformatie is nabij.',
+      },
       title: 'Timeline Alchemy',
       subtitle: 'Transformeer wekelijkse trends naar ziel-resonante content. Blog + cross-platform posts. Volledig gepland. Jij blijft creëren—wij verspreiden.',
       styles: {
@@ -1282,6 +1289,13 @@ const translations = {
       errorLoadingMessage: 'Something went wrong while loading the posts',
     },
     timelineAlchemy: {
+      underConstruction: {
+        title: 'Timeline Alchemy is in the Making',
+        subtitle: 'We are building a revolutionary platform for content alchemy.',
+        description: 'Currently undergoing a powerful transformation to make Timeline Alchemy even deeper and more seamless. The Content Forge is being prepared for a new wave of creativity.',
+        backToPortal: 'Back to the Portal',
+        stayTuned: 'Stay connected. The transformation is near.',
+      },
       title: 'Timeline Alchemy',
       subtitle: 'Transform weekly trends into soul-resonant content. Blog + cross-platform posts. Fully planned. You keep creating—we distribute.',
       styles: {
@@ -1921,6 +1935,13 @@ const translations = {
       errorLoadingMessage: 'Etwas ging beim Laden der Beiträge schief',
     },
     timelineAlchemy: {
+      underConstruction: {
+        title: 'Timeline Alchemy ist in Arbeit',
+        subtitle: 'Wir bauen eine revolutionäre Plattform für Content-Alchemie.',
+        description: 'Wir durchlaufen derzeit eine kraftvolle Transformation, um Timeline Alchemy noch tiefer und nahtloser zu machen. Die Content Forge wird auf eine neue Welle der Kreativität vorbereitet.',
+        backToPortal: 'Zurück zum Portal',
+        stayTuned: 'Bleib verbunden. Die Transformation ist nah.',
+      },
       title: 'Timeline Alchemy',
       subtitle: 'Verwandle wöchentliche Trends in seelenresonante Inhalte. Blog + plattformübergreifende Posts. Vollständig geplant. Du erstellst—wir verteilen.',
       styles: {

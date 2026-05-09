@@ -26,6 +26,8 @@ import RefundPolicy from "./pages/RefundPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
 import CasinoCollection from "./pages/CasinoCollection";
+import TimelineAlchemyStatus from "./pages/TimelineAlchemyStatus";
+
 
 
 // Analytics
@@ -70,6 +72,8 @@ const App: React.FC = () => {
               <Route path="/nutzungsbedingungen" element={<TermsOfService />} />
 
               <Route path="/casino-collection" element={<CasinoCollection />} />
+              <Route path="/timeline-alchemy" element={<TimelineAlchemyStatus />} />
+
 
 
               {/* Catch-all */}

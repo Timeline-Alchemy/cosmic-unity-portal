@@ -6,12 +6,12 @@ import { useLanguage } from '@/hooks/useLanguage';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { t, language } = useLanguage();
-  const timelineAlchemyEntryHref = 'https://www.timeline-alchemy.com';
+  const timelineAlchemyEntryHref = '/timeline-alchemy';
   const timelessAwarenessHref = 'https://www.timeless-awareness.nl';
 
   const footerLinks = [
     { name: 'Timeless Awareness', href: timelessAwarenessHref, external: true },
-    { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, external: true },
+    { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, external: false },
     { name: t('nav.casinoCollection'), href: '/casino-collection', external: false },
     { name: t('footer.about'), href: '/about', external: false },
     { name: t('footer.contact'), href: '/contact', external: false },

@@ -50,10 +50,10 @@ const Blog = () => {
                   className="w-full group"
                   asChild
                 >
-                  <a href="https://timeline-alchemy.nl" target="_blank" rel="noopener noreferrer">
+                  <Link to="/timeline-alchemy">
                     Bezoek Timeline Alchemy Blog
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                  </a>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
