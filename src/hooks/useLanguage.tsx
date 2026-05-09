@@ -834,8 +834,7 @@ const translations = {
     casino: {
       title: 'Cosmic Casino Collection',
       welcome: 'Welcome to the cosmic gaming realm. Download our exclusive casino applications directly to your device. All payments are securely processed through Stripe.',
-      secureApk: 'Secure APK',
-      stripeOnly: 'Stripe Payments Only',
+      stripeOnly: 'In web-app - Stripe Payments Only',
       firstTrinity: 'First Trinity',
       firstTrinityDesc: 'The inaugural trio of cosmic gaming experiences.',
       secondTrinity: 'Second Trinity',

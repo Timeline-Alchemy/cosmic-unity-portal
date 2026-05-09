@@ -61,7 +61,6 @@ const CasinoCollection = () => {
               {t('casino.welcome')}
             </p>
             <div className="flex justify-center items-center gap-4 mt-6 text-sm text-muted-foreground font-mystical">
-              <span className="flex items-center gap-1"><ShieldCheck className="w-4 h-4 text-green-500" /> {t('casino.secureApk')}</span>
               <span className="flex items-center gap-1"><CreditCard className="w-4 h-4 text-blue-500" /> {t('casino.stripeOnly')}</span>
             </div>
           </div>
