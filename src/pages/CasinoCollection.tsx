@@ -16,7 +16,7 @@ const CasinoCollection = () => {
         {
           title: t('casino.games.universalSlots.title'),
           description: t('casino.games.universalSlots.desc'),
-          apkLink: 'https://slots.cosmic-casino.one/',
+          apkLink: 'https://slots.cosmic-casino.one/play',
           isPlaceholder: false,
           isExternal: true,
           icon: <img src="/images/universal-slots.png" alt="Cosmic Slots" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
@@ -24,7 +24,7 @@ const CasinoCollection = () => {
         {
           title: t('casino.games.blackholeBlackjack.title'),
           description: t('casino.games.blackholeBlackjack.desc'),
-          apkLink: 'https://blackjack.cosmic-casino.one/',
+          apkLink: 'https://blackjack.cosmic-casino.one/play',
           isPlaceholder: false,
           isExternal: true,
           icon: <img src="/images/blackhole-blackjack.png" alt="BlackHole Blackjack" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
@@ -32,42 +32,13 @@ const CasinoCollection = () => {
         {
           title: t('casino.games.galacticPoker.title'),
           description: t('casino.games.galacticPoker.desc'),
-          apkLink: 'https://poker.cosmic-casino.one/',
+          apkLink: 'https://poker.cosmic-casino.one/play',
           isPlaceholder: false,
           isExternal: true,
           icon: <img src="/images/galactic-poker.png" alt="Galactic Poker" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
         }
       ]
     },
-    {
-      title: t('casino.secondTrinity'),
-      description: t('casino.secondTrinityDesc'),
-      games: [
-        {
-          title: t('casino.games.innerSpace.title'),
-          description: t('casino.games.innerSpace.desc'),
-          apkLink: 'https://inner-space-flutter-app.vercel.app/',
-          isPlaceholder: false,
-          isExternal: true,
-          icon: <img src="/images/inner-space.png" alt="Inner Space: Coherence" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
-        },
-        {
-          title: t('casino.games.cosmicCommunityCreator.title'),
-          description: t('casino.games.cosmicCommunityCreator.desc'),
-          apkLink: 'https://cosmic-community-creator.vercel.app/',
-          isPlaceholder: false,
-          isExternal: true,
-          icon: <img src="/images/cosmic-community-creator.png" alt="Cosmic Community Creator" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
-        },
-        {
-          title: t('casino.games.placeholder3.title'),
-          description: t('casino.games.placeholder3.desc'),
-          apkLink: '#',
-          isPlaceholder: true,
-          icon: <Gamepad2 className="w-16 h-16 text-muted-foreground opacity-50" />
-        }
-      ]
-    }
   ];
 
   return (
@@ -127,49 +98,9 @@ const CasinoCollection = () => {
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Ecosystem Section */}
-          <div className="mt-32 max-w-5xl mx-auto text-center">
-            <h2 className="font-cosmic text-3xl md:text-4xl font-bold text-cosmic-gradient mb-6">
-              {t('casino.ecosystemTitle')}
-            </h2>
-            <p className="font-mystical text-lg text-muted-foreground mb-16 leading-relaxed max-w-3xl mx-auto">
-              {t('casino.ecosystemDesc')}
-            </p>
-
-            <h3 className="font-cosmic text-2xl font-bold text-mystical-gradient mb-8">
-              {t('casino.creditPacks')}
-            </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { id: 'pack3' },
-                { id: 'pack1' },
-                { id: 'pack2' },
-                { id: 'pack6' },
-                { id: 'pack5' },
-                { id: 'pack4' },
-              ].map((pack) => (
-                <div key={pack.id} className="bg-card/50 backdrop-blur-md border border-border p-6 rounded-2xl cosmic-hover group relative">
-                  <div className="relative z-10 w-full">
-                    <div className="rounded-xl overflow-hidden mb-6 shadow-md border border-cosmic/30">
-                      <img src={`/images/${pack.id}.jpg`} alt={t(`casino.packs.${pack.id}.title` as any)} className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <h4 className="font-cosmic text-xl font-bold text-cosmic-gradient mb-2">{t(`casino.packs.${pack.id}.title` as any)}</h4>
-                    <p className="font-mystical text-lg text-secondary mb-4">{t(`casino.packs.${pack.id}.desc` as any)}</p>
-                    <div className="w-full text-center py-2.5 rounded-lg border border-border/40 bg-background/40 backdrop-blur-sm text-sm font-medium tracking-wide text-muted-foreground">
-                      {t(`casino.packs.${pack.id}.price` as any)}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+            ),)}</div>
         </div>
       </main>
-
       <Footer />
     </div>
   );
