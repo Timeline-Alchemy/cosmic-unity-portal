@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Star, Zap, Gamepad2 } from 'lucide-react';
-import cosmicHero from '@/assets/cosmic-hero.jpg';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const HeroSection = () => {
@@ -12,7 +11,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img src={cosmicHero} alt="Cosmic Background" className="w-full h-full object-cover" />
+        <img src="/images/Cosmic_Dealer.png" alt="Timeline Alchemy Studio Background" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
       </div>
 
@@ -37,9 +36,9 @@ const HeroSection = () => {
 
         {/* Main Heading */}
         <h1 className="font-cosmic text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          <span className="text-cosmic-gradient animate-cosmic-pulse">SH4M4NI4K</span>
+          <span className="text-cosmic-gradient animate-cosmic-pulse">Timeline Alchemy</span>
           <br />
-          <span className="text-mystical-gradient">The Chosen Ones</span>
+          <span className="text-mystical-gradient">Studio</span>
         </h1>
 
         {/* Subtitle */}

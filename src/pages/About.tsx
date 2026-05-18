@@ -19,7 +19,7 @@ const About = () => {
           <div className="text-center mb-16">
             <div className="flex justify-center mb-6">
               <img 
-                src="/logo.png" 
+                src="/images/timeline-alchemy.png" 
                 alt="Timeline Alchemy Studio Logo" 
                 className="w-32 h-32 object-contain animate-cosmic-pulse drop-shadow-2xl" 
               />

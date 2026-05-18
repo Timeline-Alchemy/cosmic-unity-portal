@@ -59,7 +59,7 @@ const Footer = () => {
             <div className="w-full md:w-auto flex justify-center">
               <div className="text-center">
                 <h3 className="font-cosmic text-lg font-semibold text-cosmic-gradient mb-4">
-                  SH4M4NI4K
+                  Timeline Alchemy Studio
                 </h3>
                 <div className="flex space-x-4 justify-center">
                   <a href="https://www.instagram.com/timeline_alchemy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-cosmic cosmic-hover" title="Instagram">
@@ -134,7 +134,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
             <p className="font-mystical text-sm text-muted-foreground">
-              © {currentYear} SH4M4NI4K - Timeline Alchemy™
+              © {currentYear} Timeline Alchemy Studio™
             </p>
           </div>
           <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 text-sm">

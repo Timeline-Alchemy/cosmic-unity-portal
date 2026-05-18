@@ -210,7 +210,7 @@ const translations = {
       games: {
         universalSlots: {
           title: 'Cosmic Slots',
-          desc: 'Draai de slots om de kosmische rollen uit te lijnen en verzilver het overvloedraamwerk.'
+          desc: 'Draai de slots om de kosmische rollen uit te lijnen en synchroniseer met de optimale tijdslijn.'
         },
         blackholeBlackjack: {
           title: 'Blackhole Blackjack',
@@ -507,7 +507,7 @@ const translations = {
       subtitle: 'Ontdek onze cosmische missie en spirituele begeleiding',
       mission: {
         title: 'Onze Missie',
-        p1: 'Welkom bij SH4M4NI4K - een kosmische gemeenschap gewijd aan spirituele ontwaking en eenheid.',
+        p1: 'Welkom bij Timeline Alchemy Studio - een kosmische gemeenschap gewijd aan spirituele ontwaking en eenheid.',
         p2: 'Wij geloven in de kracht van collectief bewustzijn en de reis naar spirituele verlichting.',
       },
       principles: {
@@ -1117,7 +1117,7 @@ const translations = {
       subtitle: 'Discover our cosmic mission and spiritual guidance',
       mission: {
         title: 'Our Mission',
-        p1: 'Welcome to SH4M4NI4K - a cosmic community dedicated to spiritual awakening and unity.',
+        p1: 'Welcome to Timeline Alchemy Studio - a cosmic community dedicated to spiritual awakening and unity.',
         p2: 'We believe in the power of collective consciousness and the journey towards spiritual enlightenment.',
       },
       principles: {
@@ -1763,7 +1763,7 @@ const translations = {
       subtitle: 'Entdecke unsere kosmische Mission und spirituelle Führung',
       mission: {
         title: 'Unsere Mission',
-        p1: 'Willkommen bei SH4M4NI4K - einer kosmischen Gemeinschaft, die der spirituellen Erweckung und Einheit gewidmet ist.',
+        p1: 'Willkommen bei Timeline Alchemy Studio - einer kosmischen Gemeinschaft, die der spirituellen Erweckung und Einheit gewidmet ist.',
         p2: 'Wir glauben an die Kraft des kollektiven Bewusstseins und die Reise zur spirituellen Erleuchtung.',
       },
       principles: {

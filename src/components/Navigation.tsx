@@ -31,9 +31,9 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 cosmic-hover">
-            <div className="w-8 h-8 bg-cosmic-gradient rounded-full shadow-cosmic animate-cosmic-pulse"></div>
+            <img src="/images/timeline-alchemy.png" alt="Timeline Alchemy Studio Logo" className="w-8 h-8 rounded-full shadow-cosmic animate-cosmic-pulse" />
             <span className="font-cosmic text-xl text-cosmic-gradient">
-              SH4M4NI4K
+              Timeline Alchemy Studio
             </span>
           </Link>
 
