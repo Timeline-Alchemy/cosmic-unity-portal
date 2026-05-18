@@ -16,6 +16,7 @@ const Navigation = () => {
   const navigation = [
     { name: t('nav.home'), href: '/', icon: Home },
     { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, icon: Star, external: false },
+    { name: 'E-Books', href: '/e-books', icon: BookOpen, external: false },
     { name: t('nav.casinoCollection'), href: '/casino-collection', icon: Gamepad2, external: false },
     { name: 'Timeless Awareness', href: timelessAwarenessHref, icon: BookOpen, external: true },
     { name: t('nav.about'), href: '/about', icon: Star },

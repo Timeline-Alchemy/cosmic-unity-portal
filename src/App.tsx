@@ -27,6 +27,7 @@ import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
 import CasinoCollection from "./pages/CasinoCollection";
 import TimelineAlchemyStatus from "./pages/TimelineAlchemyStatus";
+import EBooks from "./pages/EBooks";
 
 
 
@@ -73,6 +74,7 @@ const App: React.FC = () => {
 
               <Route path="/casino-collection" element={<CasinoCollection />} />
               <Route path="/timeline-alchemy" element={<TimelineAlchemyStatus />} />
+              <Route path="/e-books" element={<EBooks />} />
 
 
 

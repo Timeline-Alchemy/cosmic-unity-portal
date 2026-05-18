@@ -155,13 +155,13 @@ const BooksSection = () => {
               <BookOpen className="w-6 h-6 text-white" />
             </div>
           </div>
-          
+
           <h2 className="font-cosmic text-3xl md:text-5xl font-bold mb-6">
             <span className="text-cosmic-gradient">Trinity of Transformation</span>
           </h2>
-          
+
           <p className="font-mystical text-lg text-muted-foreground max-w-2xl mx-auto">
-            {currentLang === 'nl' 
+            {currentLang === 'nl'
               ? 'Een heilige trilogie die je begeleidt van illusie naar waarheid, van ego naar bevrijding, van scheiding naar eenheid. Geschreven vanuit directe kennis, niet vanuit geloof.'
               : 'A sacred trilogy guiding you from illusion to truth, from ego to liberation, from separation to unity. Written from direct knowing, not belief.'
             }
@@ -170,9 +170,9 @@ const BooksSection = () => {
           <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-cosmic/10 rounded-full border border-cosmic/30">
             <Star className="w-4 h-4 text-cosmic" />
             <span className="font-mystical text-sm text-cosmic">
-              {currentLang === 'nl' 
-                ? 'Door Dennis Erens • The Chosen Ones Merchandise'
-                : 'By Dennis Erens • The Chosen Ones Merchandise'
+              {currentLang === 'nl'
+                ? 'Door Dennis Erens • Timeline Alchemy'
+                : 'By Dennis Erens • Timeline Alchemy'
               }
             </span>
           </div>
@@ -188,9 +188,9 @@ const BooksSection = () => {
                     {currentLang === 'nl' ? 'Boek' : 'Book'} {book.bookNumber}
                   </Badge>
                 </div>
-                
+
                 <div className="aspect-[2/3] bg-gradient-to-br from-cosmic/20 to-mystical/20 rounded-lg overflow-hidden relative mb-4">
-                  <img 
+                  <img
                     src={book.coverImage[currentLang]}
                     alt={book.title[currentLang]}
                     className="w-full h-full object-contain"
@@ -200,12 +200,12 @@ const BooksSection = () => {
                 <CardTitle className="font-cosmic text-xl text-cosmic-gradient line-clamp-2">
                   {book.title[currentLang]}
                 </CardTitle>
-                
+
                 <CardDescription className="font-mystical text-sm line-clamp-2">
                   {book.subtitle[currentLang]}
                 </CardDescription>
               </CardHeader>
-              
+
               <CardContent className="flex-1">
                 <p className="font-mystical text-sm text-muted-foreground line-clamp-4 mb-4">
                   {book.description[currentLang]}
@@ -226,7 +226,7 @@ const BooksSection = () => {
                   </p>
                 )}
               </CardContent>
-              
+
               <CardFooter>
                 <Button
                   variant="cosmic"
@@ -234,9 +234,9 @@ const BooksSection = () => {
                   className="w-full group shadow-cosmic"
                   asChild
                 >
-                  <a 
-                    href={book.link[currentLang]} 
-                    target="_blank" 
+                  <a
+                    href={book.link[currentLang]}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center"
                   >
