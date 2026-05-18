@@ -62,10 +62,10 @@ const Footer = () => {
                   Timeline Alchemy Studio
                 </h3>
                 <div className="flex space-x-4 justify-center">
-                  <a href="https://www.instagram.com/timeline_alchemy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-cosmic cosmic-hover" title="Instagram">
+                  <a href="https://www.instagram.com/timeline_alchemy_" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-cosmic cosmic-hover" title="Instagram">
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a href="https://www.facebook.com/timelinealchemy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-cosmic cosmic-hover" title="Facebook">
+                  <a href="https://www.facebook.com/timelin3alchemy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-cosmic cosmic-hover" title="Facebook">
                     <Facebook className="w-5 h-5" />
                   </a>
                   <a href="https://www.youtube.com/@Timeline_Alchemy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-cosmic cosmic-hover" title="YouTube">
