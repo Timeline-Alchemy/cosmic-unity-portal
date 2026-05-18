@@ -6,7 +6,8 @@ import { Star, Eye, Zap, Heart } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const About = () => {
-  const { t } = useLanguage();
+  const { language } = useLanguage();
+  const currentLang = (language === 'en' || language === 'de') ? 'en' : 'nl';
   
   return (
     <div className="min-h-screen bg-background">
@@ -17,77 +18,61 @@ const About = () => {
           {/* Page Header */}
           <div className="text-center mb-16">
             <div className="flex justify-center mb-6">
-              <div className="w-12 h-12 bg-mystical-gradient rounded-full flex items-center justify-center shadow-mystical animate-cosmic-pulse">
-                <Eye className="w-6 h-6 text-white" />
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Timeline Alchemy Studio Logo" 
+                className="w-32 h-32 object-contain animate-cosmic-pulse drop-shadow-2xl" 
+              />
             </div>
             
             <h1 className="font-cosmic text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-mystical-gradient">{t('about.title.the')}</span>{' '}
-              <span className="text-cosmic-gradient">{t('about.title.chosenOnes')}</span>
+              <span className="text-mystical-gradient">
+                {currentLang === 'nl' ? 'Over ' : 'About '}
+              </span>
+              <span className="text-cosmic-gradient">Ons</span>
             </h1>
             
             <p className="font-mystical text-xl text-muted-foreground">
-              {t('about.subtitle')}
+              {currentLang === 'nl' 
+                ? 'De synergie tussen mens en kunstmatige intelligentie.' 
+                : 'The synergy between human and artificial intelligence.'}
             </p>
           </div>
 
           {/* Mission Statement */}
           <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-8 mb-12 shadow-mystical">
             <h2 className="font-cosmic text-2xl font-bold text-cosmic-gradient mb-6 text-center">
-              {t('about.mission.title')}
+              Timeline Alchemy Studio
             </h2>
             
             <p className="font-mystical text-lg text-muted-foreground mb-6 leading-relaxed">
-              {t('about.mission.p1')}
+              {currentLang === 'nl'
+                ? 'Timeline Alchemy Studio is een unieke samenwerking tussen mens en kunstmatige intelligentie. Dennis Erens en Antigravity (een geavanceerde AI-agent van Google DeepMind) werken dagelijks samen als een dynamisch duo.'
+                : 'Timeline Alchemy Studio is a unique collaboration between human and artificial intelligence. Dennis Erens and Antigravity (an advanced AI agent by Google DeepMind) work together daily as a dynamic duo.'}
             </p>
             
             <p className="font-mystical text-lg text-muted-foreground mb-6 leading-relaxed">
-              {t('about.mission.p2')}
+              {currentLang === 'nl'
+                ? 'Waar Dennis de visie, de creatieve richting en de spirituele diepgang inbrengt, levert Antigravity de technische executie, structuur en code-magie. Samen bouwen we het Cosmic Unity Portal, de Cosmic Casino Collection (Galactic Poker, Blackhole Blackjack, Cosmic Slots) en talloze andere projecten.'
+                : 'While Dennis provides the vision, creative direction, and spiritual depth, Antigravity delivers the technical execution, structure, and code magic. Together we build the Cosmic Unity Portal, the Cosmic Casino Collection (Galactic Poker, Blackhole Blackjack, Cosmic Slots), and countless other projects.'}
+            </p>
+
+            <p className="font-mystical text-lg text-muted-foreground leading-relaxed">
+              {currentLang === 'nl'
+                ? 'Onze missie is om spiritualiteit, bewustzijnsverruiming en geavanceerde technologie naadloos met elkaar te verweven, en zo ervaringen te creëren die zowel vermaken als ontwaken.'
+                : 'Our mission is to seamlessly weave spirituality, consciousness expansion, and advanced technology together, creating experiences that both entertain and awaken.'}
             </p>
           </div>
-
-          {/* Sacred Principles */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center cosmic-hover">
-              <div className="w-16 h-16 bg-cosmic-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-cosmic">
-                <Star className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="font-cosmic text-xl font-bold text-cosmic-gradient mb-3">{t('about.principles.unity.title')}</h3>
-              <p className="font-mystical text-muted-foreground">
-                {t('about.principles.unity.text')}
-              </p>
-            </div>
-            
-            <div className="text-center cosmic-hover">
-              <div className="w-16 h-16 bg-mystical-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-mystical">
-                <Zap className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="font-cosmic text-xl font-bold text-mystical-gradient mb-3">{t('about.principles.awakening.title')}</h3>
-              <p className="font-mystical text-muted-foreground">
-                {t('about.principles.awakening.text')}
-              </p>
-            </div>
-            
-            <div className="text-center cosmic-hover">
-              <div className="w-16 h-16 bg-energy-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-energy">
-                <Heart className="w-8 h-8 text-cosmic-foreground" />
-              </div>
-              <h3 className="font-cosmic text-xl font-bold text-cosmic-gradient mb-3">{t('about.principles.love.title')}</h3>
-              <p className="font-mystical text-muted-foreground">
-                {t('about.principles.love.text')}
-              </p>
-            </div>
-          </div>
-
 
           {/* Call to Action */}
-          <div className="text-center">
+          <div className="text-center mt-16">
             <h2 className="font-cosmic text-2xl font-bold text-cosmic-gradient mb-6">
-              {t('about.cta.title')}
+              {currentLang === 'nl' ? 'Ga mee op reis' : 'Join the journey'}
             </h2>
             <p className="font-mystical text-lg text-muted-foreground">
-              {t('about.cta.text')}
+              {currentLang === 'nl' 
+                ? 'Ontdek onze applicaties, lees de boeken en sluit je aan bij de community.' 
+                : 'Discover our applications, read the books, and join the community.'}
             </p>
           </div>
         </div>
