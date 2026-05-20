@@ -38,10 +38,10 @@ const CosmicSlots = () => {
       purposeTitle: 'Application Purpose & Details',
       purposeDesc: 'Cosmic Slots is a single-player, space-themed mobile slot machine game. It reimagines classic slot mechanics with a cosmic and mystical aesthetic. Players spin reels featuring planets, stars, and celestial symbols. Our goal is to offer a relaxed, highly visual entertainment experience combined with casual slot strategy.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
-      googleAuthDesc: 'To provide a unified experience across the Cosmic Casino Collection, Cosmic Slots uses Google Sign-In and Google Play Games Services. This integration serves to:',
+      googleAuthDesc: 'To provide a smooth gaming experience, Cosmic Slots uses Google Sign-In and Google Play Games Services. This integration serves to:',
       authPoints: [
         'Securely authenticate your player profile without requiring manual account registration.',
-        'Keep your Stellar Credits wallet balance synchronized with other games in the collection.',
+        'Securely save your game progress, level achievements, and stats to the cloud.',
         'Track your daily mission completions, user level, and reward history.',
         'Submit your slot achievements and jackpot wins to the global leaderboards.'
       ],
@@ -49,7 +49,7 @@ const CosmicSlots = () => {
       gdprDesc: 'Your privacy is paramount. We do not sell or share player personal data. Your Google credentials are used solely to store your unique in-game progress. Cosmic Slots does not support real-money gambling. No real money can be wagered or won. All currency (Stellar Credits) is virtual and intended for entertainment purposes only.',
       featuresTitle: 'Key Game Features',
       features: [
-        { title: 'Unified Credit Balance', desc: 'Use credits won in Cosmic Slots directly in Poker or Blackjack, and vice versa.' },
+        { title: 'Offline & Online Play', desc: 'Enjoy full gameplay whether connected to the network or spinning offline.' },
         { title: 'Interactive Reels & Paylines', desc: 'Spin reels with unique cosmic symbols and choose from multiple paylines.' },
         { title: 'Daily Spiritual Goals', desc: 'Complete daily meditation or gameplay milestones to receive free credits.' },
         { title: 'Nebula Animations', desc: 'Enjoy gorgeous fluid backgrounds and galaxy animations with every winning spin.' }
@@ -59,9 +59,8 @@ const CosmicSlots = () => {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Web Browser',
-        ageRating: 'PEGI 3 / Google Play Content Rating 3+',
-        currentVersion: 'v1.0.8',
-        license: 'Free-to-play with optional virtual purchases'
+        ageRating: 'PEGI 18 (Simulated Gambling)',
+        license: 'Free (Contains Ads & In-App Purchases)'
       },
       linksTitle: 'Legal & Documentation',
       privacyBtn: 'View Privacy Policy',
@@ -76,10 +75,10 @@ const CosmicSlots = () => {
       purposeTitle: 'Doel van de Applicatie & Details',
       purposeDesc: 'Cosmic Slots is een single-player mobiel gokkastspel met een ruimtethema. Het combineert klassieke gokkastmechanieken met een kosmische en mystieke esthetiek. Spelers draaien rollen met planeten, sterren en hemellichamen. Ons doel is om een ontspannende en visueel verbluffende entertainmentervaring te bieden.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
-      googleAuthDesc: 'Om een eenduidige ervaring te garanderen binnen de Cosmic Casino Collectie, maakt Cosmic Slots gebruik van Google Sign-In en Google Play Games-services. Dit wordt gebruikt om:',
+      googleAuthDesc: 'Om een soepele game-ervaring te garanderen, maakt Cosmic Slots gebruik van Google Sign-In en Google Play Games-services. Dit wordt gebruikt om:',
       authPoints: [
         'Je spelersprofiel veilig te verifiëren zonder dat handmatige registratie nodig is.',
-        'Je Stellar Credits saldo synchroon te houden met de andere games in de collectie.',
+        'Je spelvoortgang, behaalde niveaus en statistieken veilig op te slaan in de cloud.',
         'Je dagelijkse missies, spelersniveau en beloningsgeschiedenis bij te houden.',
         'Je behaalde jackpots en prestaties door te geven aan de wereldwijde leaderboards.'
       ],
@@ -87,7 +86,7 @@ const CosmicSlots = () => {
       gdprDesc: 'Je privacy staat voorop. We verkopen of delen geen spelersgegevens. Je Google-accountgegevens worden alleen gebruikt om je unieke spelvoortgang op te slaan. Cosmic Slots biedt geen gokken met echt geld aan. Er kan geen echt geld worden ingezet of gewonnen. Alle Stellar Credits zijn puur virtueel.',
       featuresTitle: 'Belangrijkste Spelfuncties',
       features: [
-        { title: 'Gedeeld Kredietsaldo', desc: 'Gebruik gewonnen credits direct in Blackjack of Poker, en andersom.' },
+        { title: 'Offline & Online Spelen', desc: 'Geniet van de volledige gameplay, of je nu verbonden bent met het netwerk of offline speelt.' },
         { title: 'Interactieve Rollen & Lijnen', desc: 'Draai rollen met unieke kosmische symbolen en kies uit meerdere winlijnen.' },
         { title: 'Dagelijkse Spirituele Doelen', desc: 'Behaal dagelijkse doelen om gratis Stellar Credits te claimen.' },
         { title: 'Nebula Animaties', desc: 'Geniet van prachtige bewegende achtergronden en galaxy-animaties bij elke winst.' }
@@ -97,9 +96,8 @@ const CosmicSlots = () => {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
-        ageRating: 'PEGI 3 / Google Play Content Rating 3+',
-        currentVersion: 'v1.0.8',
-        license: 'Gratis te spelen met optionele virtuele aankopen'
+        ageRating: 'PEGI 18 (Gesimuleerd gokken)',
+        license: 'Gratis (Bevat advertenties & in-app aankopen)'
       },
       linksTitle: 'Wettelijk & Documentatie',
       privacyBtn: 'Bekijk Privacybeleid',
@@ -114,10 +112,10 @@ const CosmicSlots = () => {
       purposeTitle: 'Zweck der Anwendung & Details',
       purposeDesc: 'Cosmic Slots ist ein kosmisches Spielautomatenspiel für Einzelspieler. Es interpretiert klassische Slot-Mechaniken mit einer kosmischen und mystischen Ästhetik neu. Spieler drehen Walzen mit Planeten, Sternen und himmlischen Symbolen. Unser Ziel ist es, ein entspannendes, visuell ansprechendes Unterhaltungserlebnis zu bieten.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
-      googleAuthDesc: 'Um ein einheitliches Erlebnis in der gesamten Cosmic Casino-Sammlung zu gewährleisten, verwendet Cosmic Slots Google Sign-In und Google Play Spieledienste. Diese Integration dient dazu:',
+      googleAuthDesc: 'Um ein reibungsloses Spielerlebnis zu gewährleisten, verwendet Cosmic Slots Google Sign-In und Google Play Spieledienste. Diese Integration dient dazu:',
       authPoints: [
         'Ihr Spielerprofil sicher zu authentifizieren, ohne dass eine manuelle Registrierung erforderlich ist.',
-        'Ihr Stellar Credits-Guthaben synchron mit den anderen Spielen der Sammlung zu halten.',
+        'Ihren Spielstand, Ihr Spielerlevel und Ihre Statistiken sicher in der Cloud zu speichern.',
         'Ihre täglichen Missionserfolge, Ihr Spielerlevel und Ihren Belohnungsverlauf zu speichern.',
         'Ihre Jackpot-Gewinne und Erfolge in die globalen Bestenlisten einzutragen.'
       ],
@@ -125,7 +123,7 @@ const CosmicSlots = () => {
       gdprDesc: 'Ihre Privatsphäre ist uns wichtig. Wir verkaufen oder teilen keine Spielerdaten. Ihre Google-Anmeldedaten werden ausschließlich zur Speicherung Ihres Spielstands verwendet. Cosmic Slots unterstützt kein Echtgeld-Glücksspiel. Es kann kein echtes Geld gesetzt oder gewonnen werden. Alle Credits sind rein virtuell.',
       featuresTitle: 'Wichtigste Spielfunktionen',
       features: [
-        { title: 'Einheitliches Credit-Guthaben', desc: 'Verwenden Sie Ihre in Cosmic Slots gewonnenen Credits direkt in Poker oder Blackjack.' },
+        { title: 'Offline- & Online-Modus', desc: 'Genießen Sie das volle Gameplay, egal ob Sie online oder offline spielen.' },
         { title: 'Interaktive Walzen & Gewinnlinien', desc: 'Drehen Sie Walzen mit einzigartigen kosmischen Symbolen und wählen Sie aus mehreren Gewinnlinien.' },
         { title: 'Tägliche spirituelle Ziele', desc: 'Erreichen Sie tägliche Meilensteine, um kostenlose Credits zu erhalten.' },
         { title: 'Nebula-Animationen', desc: 'Genießen Sie bei jedem Gewinn wunderschöne, flüssige Hintergründe und Galaxie-Animationen.' }
@@ -135,9 +133,8 @@ const CosmicSlots = () => {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
-        ageRating: 'PEGI 3 / Google Play Content Rating 3+',
-        currentVersion: 'v1.0.8',
-        license: 'Kostenlos spielbar mit optionalen virtuellen Käufen'
+        ageRating: 'PEGI 18 (Simuliertes Glücksspiel)',
+        license: 'Kostenlos (Enthält Werbung & In-App-Käufe)'
       },
       linksTitle: 'Rechtliches & Dokumentation',
       privacyBtn: 'Datenschutzerklärung anzeigen',
@@ -347,13 +344,9 @@ const CosmicSlots = () => {
                     <span className="text-muted-foreground">Age Rating</span>
                     <span className="text-white font-medium">{t.specs.ageRating}</span>
                   </div>
-                  <div className="flex justify-between py-2 border-b border-border/20">
-                    <span className="text-muted-foreground">Version</span>
-                    <span className="text-white font-medium">{t.specs.currentVersion}</span>
-                  </div>
                   <div className="flex justify-between py-2">
-                    <span className="text-muted-foreground">License</span>
-                    <span className="text-white font-medium text-right max-w-[150px]">{t.specs.license}</span>
+                    <span className="text-muted-foreground">Pricing & Ads</span>
+                    <span className="text-white font-medium text-right max-w-[200px]">{t.specs.license}</span>
                   </div>
                 </div>
               </div>

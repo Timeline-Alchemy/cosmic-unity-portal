@@ -35,10 +35,10 @@ const GalacticPoker = () => {
       purposeTitle: 'Application Purpose & Details',
       purposeDesc: 'Galactic Poker is a single-player, space-themed mobile card game. It adapts the traditional rules of Texas Hold\'em into a gorgeous futuristic setting. Players can test their card skills against computer opponents in cosmic environments. Our goal is to provide a rich, strategic offline and online poker experience featuring premium visuals.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
-      googleAuthDesc: 'To ensure a seamless experience across the Cosmic Casino Collection, Galactic Poker uses Google Sign-In and Google Play Games Services. This integration is used strictly to:',
+      googleAuthDesc: 'To provide a smooth gaming experience, Galactic Poker uses Google Sign-In and Google Play Games Services. This integration is used strictly to:',
       authPoints: [
         'Securely authenticate your profile without requiring manual passwords.',
-        'Synchronize your in-game wallet (Stellar Credits) across all Cosmic Unity platforms.',
+        'Securely save your game progress, level achievements, and stats to the cloud.',
         'Save your daily missions progress, player level, and gameplay statistics.',
         'Publish your poker high scores and wins to the global leaderboards so you can compete with other players.'
       ],
@@ -46,7 +46,7 @@ const GalacticPoker = () => {
       gdprDesc: 'We value your privacy. We do not sell or share your personal data. The Google Sign-In profile is only used to manage your personal in-game save state. This game does not feature real-money gambling. No real money can be wagered, won, or paid out. All currency used in the game (Stellar Credits) is purely virtual.',
       featuresTitle: 'Key Game Features',
       features: [
-        { title: 'Cosmic Wallet Integration', desc: 'Share your credits and stats seamlessly across the entire Casino Collection.' },
+        { title: 'Cloud Progress Sync', desc: 'Keep your game progress, stats, and achievements safe and synced across your devices via your Google account.' },
         { title: 'Daily Missions', desc: 'Complete unique space-themed poker challenges to earn bonus credits.' },
         { title: 'Dynamic Betting', desc: 'Bet, raise, or fold against high-AI cosmic opponents.' },
         { title: 'Premium Space Themes', desc: 'Gorgeous space backgrounds, cosmic table designs, and smooth card dealing.' }
@@ -56,9 +56,8 @@ const GalacticPoker = () => {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Web Browser',
-        ageRating: 'PEGI 3 / Google Play Content Rating 3+',
-        currentVersion: 'v1.0.8',
-        license: 'Free-to-play with optional virtual purchases'
+        ageRating: 'PEGI 18 (Simulated Gambling)',
+        license: 'Free (Contains Ads & In-App Purchases)'
       },
       linksTitle: 'Legal & Documentation',
       privacyBtn: 'View Privacy Policy',
@@ -73,10 +72,10 @@ const GalacticPoker = () => {
       purposeTitle: 'Doel van de Applicatie & Details',
       purposeDesc: 'Galactic Poker is een single-player mobiel kaartspel met een ruimtethema. Het vertaalt de traditionele regels van Texas Hold\'em naar een prachtige futuristische setting. Spelers kunnen hun kaartvaardigheden testen tegen computergestuurde tegenstanders in kosmische omgevingen. Ons doel is om een strategische pokerervaring te bieden.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
-      googleAuthDesc: 'Om een naadloze ervaring te garanderen in de Cosmic Casino Collection, gebruikt Galactic Poker Google Sign-In en Google Play Games-services. Deze integratie wordt uitsluitend gebruikt om:',
+      googleAuthDesc: 'Om een soepele game-ervaring te garanderen, maakt Galactic Poker gebruik van Google Sign-In en Google Play Games-services. Deze integratie wordt uitsluitend gebruikt om:',
       authPoints: [
         'Je profiel veilig te verifiëren zonder dat handmatige wachtwoorden nodig zijn.',
-        'Je in-game portemonnee (Stellar Credits) te synchroniseren over alle Cosmic Unity platforms.',
+        'Je spelvoortgang, behaalde niveaus en statistieken veilig op te slaan in de cloud.',
         'Je dagelijkse missievoortgang, spelersniveau en statistieken op te slaan.',
         'Je poker-klassementen en prestaties door te geven aan de wereldwijde klassementen.'
       ],
@@ -84,7 +83,7 @@ const GalacticPoker = () => {
       gdprDesc: 'We waarderen je privacy. We verkopen of delen je persoonlijke gegevens niet. Het Google Sign-In profiel wordt alleen gebruikt om je persoonlijke in-game opslagstatus te beheren. Dit spel bevat geen echt geld gokken. Er kan geen echt geld worden ingezet of gewonnen. Alle valuta in het spel (Stellar Credits) is puur virtueel.',
       featuresTitle: 'Belangrijkste Spelfuncties',
       features: [
-        { title: 'Kosmische Wallet Integratie', desc: 'Deel je credits en statistieken naadloos over de hele Casino Collectie.' },
+        { title: 'Cloudvoortgang Synchronisatie', desc: 'Houd je spelvoortgang, statistieken en prestaties veilig en gesynchroniseerd over je apparaten via je Google-account.' },
         { title: 'Dagelijkse Missies', desc: 'Voltooi elke dag uitdagende poker doelen om extra credits te verdienen.' },
         { title: 'Dynamische Inzetten', desc: 'Bet, raise of fold tegen geavanceerde AI-tegenstanders.' },
         { title: 'Premium Ruimte-visuals', desc: 'Prachtige kosmische achtergronden, speciale kaarten en vloeiende animaties.' }
@@ -94,9 +93,8 @@ const GalacticPoker = () => {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
-        ageRating: 'PEGI 3 / Google Play Content Rating 3+',
-        currentVersion: 'v1.0.8',
-        license: 'Gratis te spelen met optionele virtuele aankopen'
+        ageRating: 'PEGI 18 (Gesimuleerd gokken)',
+        license: 'Gratis (Bevat advertenties & in-app aankopen)'
       },
       linksTitle: 'Wettelijk & Documentatie',
       privacyBtn: 'Bekijk Privacybeleid',
@@ -109,12 +107,12 @@ const GalacticPoker = () => {
       playOnline: 'Web-Version spielen',
       downloadApk: 'Android APK herunterladen',
       purposeTitle: 'Zweck der Anwendung & Details',
-      purposeDesc: 'Galactic Poker ist ein kosmisches mobiles Pokerspiel für Einzelspieler. Es adaptiert die traditionellen Regeln von Texas Hold\'em in einer wunderschönen futuristischen Weltraumumgebung. Spieler können ihre Kartenfähigkeiten gegen Computergegner in kosmischen Umgebungen testen. Unser Ziel ist es, eine strategische Poker-Erfahrung zu bieten.',
+      purposeDesc: 'Galactic Poker is ein kosmisches mobiles Pokerspiel für Einzelspieler. Es adaptiert die traditionellen Regeln von Texas Hold\'em in einer wunderschönen futuristischen Weltraumumgebung. Spieler können ihre Kartenfähigkeiten gegen Computergegner in kosmischen Umgebungen testen. Unser Ziel ist es, eine strategische Poker-Erfahrung zu bieten.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
-      googleAuthDesc: 'Um ein nahtloses Erlebnis in der Cosmic Casino Collection zu gewährleisten, verwendet Galactic Poker Google Sign-In und die Google Play Spieledienste. Diese Integration dient ausschließlich dazu:',
+      googleAuthDesc: 'Um ein reibungsloses Spielerlebnis zu gewährleisten, verwendet Galactic Poker Google Sign-In und die Google Play Spieledienste. Diese Integration dient ausschließlich dazu:',
       authPoints: [
         'Ihr Profil sicher zu authentifizieren, ohne dass manuelle Passwörter erforderlich sind.',
-        'Ihre In-Game-Geldbörse (Stellar Credits) über alle Cosmic Unity-Plattformen hinweg zu synchronisieren.',
+        'Ihren Spielstand, Ihr Spielerlevel und Ihre Statistiken sicher in der Cloud zu speichern.',
         'Ihren täglichen Missionsfortschritt, Ihr Spielerlevel und Ihre Spielstatistiken zu speichern.',
         'Ihre Poker-Highscores und Gewinne in den globalen Bestenlisten zu veröffentlichen.'
       ],
@@ -122,7 +120,7 @@ const GalacticPoker = () => {
       gdprDesc: 'Wir schätzen Ihre Privatsphäre. Wir verkaufen oder teilen Ihre persönlichen Daten nicht. Das Google Sign-In-Profil wird nur zur Verwaltung Ihres persönlichen Spielstands verwendet. Dieses Spiel bietet kein Echtgeld-Glücksspiel. Es kann kein echtes Geld gesetzt oder gewonnen werden. Alle im Spiel verwendeten Währungen (Stellar Credits) sind rein virtuell.',
       featuresTitle: 'Wichtigste Spielfunktionen',
       features: [
-        { title: 'Kosmische Wallet-Integration', desc: 'Teilen Sie Ihre Credits und Statistiken nahtlos in der gesamten Casino-Sammlung.' },
+        { title: 'Cloud-Fortschrittssynchronisierung', desc: 'Halten Sie Ihren Spielstand, Ihre Statistiken und Erfolge über Ihr Google-Konto auf all Ihren Geräten synchron.' },
         { title: 'Tägliche Missionen', desc: 'Schließen Sie täglich Pokermissionen ab, um Ihr Guthaben aufzubessern.' },
         { title: 'Taktisches Setzen', desc: 'Setzen, erhöhen oder passen Sie gegen anspruchsvolle KI-Gegner.' },
         { title: 'Faszinierende Weltraumgrafik', desc: 'Mit wunderschönen kosmischen Hintergründen, Sci-Fi-Designs und flüssigen Animationen.' }
@@ -132,9 +130,8 @@ const GalacticPoker = () => {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
-        ageRating: 'PEGI 3 / Google Play Content Rating 3+',
-        currentVersion: 'v1.0.8',
-        license: 'Kostenlos spielbar mit optionalen virtuellen Käufen'
+        ageRating: 'PEGI 18 (Simuliertes Glücksspiel)',
+        license: 'Kostenlos (Enthält Werbung & In-App-Käufe)'
       },
       linksTitle: 'Rechtliches & Dokumentation',
       privacyBtn: 'Datenschutzerklärung anzeigen',
@@ -343,10 +340,6 @@ const GalacticPoker = () => {
                   <div className="flex justify-between py-2 border-b border-border/20">
                     <span className="text-muted-foreground">Age Rating</span>
                     <span className="text-white font-medium">{t.specs.ageRating}</span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-border/20">
-                    <span className="text-muted-foreground">Version</span>
-                    <span className="text-white font-medium">{t.specs.currentVersion}</span>
                   </div>
                   <div className="flex justify-between py-2">
                     <span className="text-muted-foreground">License</span>

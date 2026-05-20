@@ -38,10 +38,10 @@ const BlackholeBlackjack = () => {
       purposeTitle: 'Application Purpose & Details',
       purposeDesc: 'Blackhole Blackjack is a single-player, cosmic-themed mobile card game. It brings the timeless gameplay of Blackjack into a sci-fi, space-themed setting. Our goal is to provide a premium, engaging gaming experience for players who enjoy card strategy and cosmic art.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
-      googleAuthDesc: 'To ensure a seamless experience across the Cosmic Casino Collection, Blackhole Blackjack uses Google Sign-In and Google Play Games Services. This integration is used strictly to:',
+      googleAuthDesc: 'To ensure a smooth gaming experience, Blackhole Blackjack uses Google Sign-In and Google Play Games Services. This integration is used strictly to:',
       authPoints: [
         'Securely authenticate your profile without requiring manual passwords.',
-        'Synchronize your in-game wallet (Stellar Credits) across all Cosmic Unity platforms.',
+        'Securely save your game progress, level achievements, and stats to the cloud.',
         'Save your daily missions progress, player level, and gameplay statistics.',
         'Publish your high scores to the global leaderboards so you can compete with other players.'
       ],
@@ -49,7 +49,7 @@ const BlackholeBlackjack = () => {
       gdprDesc: 'We value your privacy. We do not sell or share your personal data. The Google Sign-In profile is only used to manage your personal in-game save state. This game does not feature real-money gambling. No real money can be wagered, won, or paid out. All currency used in the game (Stellar Credits) is purely virtual.',
       featuresTitle: 'Key Game Features',
       features: [
-        { title: 'Cosmic Wallet Integration', desc: 'Share your credits and stats seamlessly across the entire Casino Collection.' },
+        { title: 'Offline & Online Play', desc: 'Enjoy full gameplay whether connected to the network or playing offline.' },
         { title: 'Daily Missions', desc: 'Complete localized space-themed challenges daily to boost your wallet balance.' },
         { title: 'High-Risk Custom Betting', desc: 'Choose your own stakes. Place custom bet sizes to test your blackjack strategy.' },
         { title: 'Immersive Space Visuals', desc: 'Features beautiful hand-crafted cosmic backgrounds, sci-fi cards, and smooth animations.' }
@@ -59,9 +59,8 @@ const BlackholeBlackjack = () => {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Web Browser',
-        ageRating: 'PEGI 3 / Google Play Content Rating 3+',
-        currentVersion: 'v1.0.8',
-        license: 'Free-to-play with optional virtual purchases'
+        ageRating: 'PEGI 18 (Simulated Gambling)',
+        license: 'Free (Contains Ads & In-App Purchases)'
       },
       linksTitle: 'Legal & Documentation',
       privacyBtn: 'View Privacy Policy',
@@ -76,10 +75,10 @@ const BlackholeBlackjack = () => {
       purposeTitle: 'Doel van de Applicatie & Details',
       purposeDesc: 'Blackhole Blackjack is een single-player, mobiel kaartspel met een kosmisch thema. Het brengt de tijdloze gameplay van Blackjack naar een sci-fi, ruimtevaartomgeving. Ons doel is om een premium en boeiende game-ervaring te bieden aan spelers die houden van kaartstrategie en kosmische kunst.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
-      googleAuthDesc: 'Om een naadloze ervaring te garanderen in de Cosmic Casino Collection, gebruikt Blackhole Blackjack Google Sign-In en Google Play Games-services. Deze integratie wordt uitsluitend gebruikt om:',
+      googleAuthDesc: 'Om een soepele game-ervaring te garanderen, gebruikt Blackhole Blackjack Google Sign-In en Google Play Games-services. Deze integratie wordt uitsluitend gebruikt om:',
       authPoints: [
         'Je profiel veilig te verifiëren zonder dat handmatige wachtwoorden nodig zijn.',
-        'Je in-game portemonnee (Stellar Credits) te synchroniseren over alle Cosmic Unity platforms.',
+        'Je spelvoortgang, behaalde niveaus en statistieken veilig op te slaan in de cloud.',
         'Je dagelijkse missievoortgang, spelersniveau en statistieken op te slaan.',
         'Je topscores te publiceren op de wereldwijde klassementen om te concurreren met andere spelers.'
       ],
@@ -87,7 +86,7 @@ const BlackholeBlackjack = () => {
       gdprDesc: 'We waarderen je privacy. We verkopen of delen je persoonlijke gegevens niet. Het Google Sign-In profiel wordt alleen gebruikt om je persoonlijke in-game opslagstatus te beheren. Dit spel bevat geen echt geld gokken. Er kan geen echt geld worden ingezet of gewonnen. Alle valuta in het spel (Stellar Credits) is puur virtueel.',
       featuresTitle: 'Belangrijkste Spelfuncties',
       features: [
-        { title: 'Kosmische Wallet Integratie', desc: 'Deel je credits en statistieken naadloos over de hele Casino Collectie.' },
+        { title: 'Offline & Online Spelen', desc: 'Geniet van de volledige gameplay, of je nu verbonden bent met het netwerk of offline speelt.' },
         { title: 'Dagelijkse Missies', desc: 'Voltooi elke dag uitdagende missies om extra credits te verdienen.' },
         { title: 'Aangepaste Inzetten', desc: 'Bepaal je eigen risico. Zet elk gewenst aantal credits in om je strategie te testen.' },
         { title: 'Indrukwekkende Ruimte-visuals', desc: 'Voorzien van prachtige, handgemaakte kosmische achtergronden en vloeiende animaties.' }
@@ -97,9 +96,8 @@ const BlackholeBlackjack = () => {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
-        ageRating: 'PEGI 3 / Google Play Content Rating 3+',
-        currentVersion: 'v1.0.8',
-        license: 'Gratis te spelen met optionele virtuele aankopen'
+        ageRating: 'PEGI 18 (Gesimuleerd gokken)',
+        license: 'Gratis (Bevat advertenties & in-app aankopen)'
       },
       linksTitle: 'Wettelijk & Documentatie',
       privacyBtn: 'Bekijk Privacybeleid',
@@ -114,10 +112,10 @@ const BlackholeBlackjack = () => {
       purposeTitle: 'Zweck der Anwendung & Details',
       purposeDesc: 'Blackhole Blackjack ist ein kosmisches mobiles Kartenspiel für Einzelspieler. Es bringt das zeitlose Gameplay von Blackjack in eine Sci-Fi-Weltraumumgebung. Unser Ziel ist es, Spielern, die Kartenstrategie und kosmische Kunst lieben, ein erstklassiges Spielerlebnis zu bieten.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
-      googleAuthDesc: 'Um ein nahtloses Erlebnis in der Cosmic Casino Collection zu gewährleisten, verwendet Blackhole Blackjack Google Sign-In und die Google Play Spieledienste. Diese Integration dient ausschließlich dazu:',
+      googleAuthDesc: 'Um ein reibungsloses Spielerlebnis zu gewährleisten, verwendet Blackhole Blackjack Google Sign-In und die Google Play Spieledienste. Diese Integration dient ausschließlich dazu:',
       authPoints: [
         'Ihr Profil sicher zu authentifizieren, ohne dass manuelle Passwörter erforderlich sind.',
-        'Ihre In-Game-Geldbörse (Stellar Credits) über alle Cosmic Unity-Plattformen hinweg zu synchronisieren.',
+        'Ihren Spielstand, Ihr Spielerlevel und Ihre Statistiken sicher in der Cloud zu speichern.',
         'Ihren täglichen Missionsfortschritt, Ihr Spielerlevel und Ihre Spielstatistiken zu speichern.',
         'Ihre Highscores in den globalen Bestenlisten zu veröffentlichen, um sich mit anderen zu messen.'
       ],
@@ -125,7 +123,7 @@ const BlackholeBlackjack = () => {
       gdprDesc: 'Wir schätzen Ihre Privatsphäre. Wir verkaufen oder teilen Ihre persönlichen Daten nicht. Das Google Sign-In-Profil wird nur zur Verwaltung Ihres persönlichen Spielstands verwendet. Dieses Spiel bietet kein Echtgeld-Glücksspiel. Es kann kein echtes Geld gesetzt oder gewonnen werden. Alle im Spiel verwendeten Währungen (Stellar Credits) sind rein virtuell.',
       featuresTitle: 'Wichtigste Spielfunktionen',
       features: [
-        { title: 'Kosmische Wallet-Integration', desc: 'Teilen Sie Ihre Credits und Statistiken nahtlos in der gesamten Casino-Sammlung.' },
+        { title: 'Offline- & Online-Modus', desc: 'Genießen Sie das volle Gameplay, egal ob Sie online oder offline spielen.' },
         { title: 'Tägliche Missionen', desc: 'Schließen Sie täglich kosmetische Herausforderungen ab, um Ihr Guthaben aufzubessern.' },
         { title: 'Individuelle Einsätze', desc: 'Wählen Sie Ihr eigenes Risiko. Platzieren Sie benutzerdefinierte Wettgrößen, um Ihre Blackjack-Strategie zu testen.' },
         { title: 'Faszinierende Weltraumgrafik', desc: 'Mit wunderschönen handgefertigten kosmischen Hintergründen, Sci-Fi-Karten und flüssigen Animationen.' }
@@ -135,9 +133,8 @@ const BlackholeBlackjack = () => {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
-        ageRating: 'PEGI 3 / Google Play Content Rating 3+',
-        currentVersion: 'v1.0.8',
-        license: 'Kostenlos spielbar mit optionalen virtuellen Käufen'
+        ageRating: 'PEGI 18 (Simuliertes Glücksspiel)',
+        license: 'Kostenlos (Enthält Werbung & In-App-Käufe)'
       },
       linksTitle: 'Rechtliches & Dokumentation',
       privacyBtn: 'Datenschutzerklärung anzeigen',
@@ -347,13 +344,9 @@ const BlackholeBlackjack = () => {
                     <span className="text-muted-foreground">Age Rating</span>
                     <span className="text-white font-medium">{t.specs.ageRating}</span>
                   </div>
-                  <div className="flex justify-between py-2 border-b border-border/20">
-                    <span className="text-muted-foreground">Version</span>
-                    <span className="text-white font-medium">{t.specs.currentVersion}</span>
-                  </div>
                   <div className="flex justify-between py-2">
-                    <span className="text-muted-foreground">License</span>
-                    <span className="text-white font-medium text-right max-w-[150px]">{t.specs.license}</span>
+                    <span className="text-muted-foreground">Pricing & Ads</span>
+                    <span className="text-white font-medium text-right max-w-[200px]">{t.specs.license}</span>
                   </div>
                 </div>
               </div>
