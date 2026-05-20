@@ -79,7 +79,7 @@ const PrivacyPolicy = () => {
 
               <h2 className="text-2xl font-semibold text-white mt-8 mb-4">6. Contact Us</h2>
               <p className="mb-4">
-                If you have questions or comments about this Privacy Policy, please contact us at: support@sh4m4ni4k.nl.
+                If you have questions or comments about this Privacy Policy, please contact us at: dennis@timeline-alchemy.com.
               </p>
             </div>
           </div>

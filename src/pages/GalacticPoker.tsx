@@ -13,12 +13,18 @@ import {
   Info,
   CheckCircle,
   HelpCircle,
-  FileText
+  FileText,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const GalacticPoker = () => {
   const { language } = useLanguage();
+  const [activeImg, setActiveImg] = React.useState(0);
+  const screenshots = [
+    '/images/02-poker.jpg'
+  ];
   
   const content = {
     en: {
@@ -48,7 +54,7 @@ const GalacticPoker = () => {
       specsTitle: 'Application Information',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'support@sh4m4ni4k.nl',
+        supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Web Browser',
         ageRating: 'PEGI 3 / Google Play Content Rating 3+',
         currentVersion: 'v1.0.8',
@@ -86,7 +92,7 @@ const GalacticPoker = () => {
       specsTitle: 'Applicatie Informatie',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'support@sh4m4ni4k.nl',
+        supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
         ageRating: 'PEGI 3 / Google Play Content Rating 3+',
         currentVersion: 'v1.0.8',
@@ -124,7 +130,7 @@ const GalacticPoker = () => {
       specsTitle: 'Anwendungsinformationen',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'support@sh4m4ni4k.nl',
+        supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
         ageRating: 'PEGI 3 / Google Play Content Rating 3+',
         currentVersion: 'v1.0.8',
@@ -204,16 +210,57 @@ const GalacticPoker = () => {
                   <Gamepad2 className="w-5 h-5 text-purple-400" />
                   Gameplay Preview
                 </h3>
-                <div className="rounded-xl overflow-hidden border border-border/40 shadow-mystical relative group">
+                <div className="relative rounded-xl overflow-hidden border border-border/40 shadow-mystical bg-black/40 flex items-center justify-center h-[500px] group">
                   <img 
-                    src="/images/poker-gameplay.png" 
-                    alt="Galactic Poker Gameplay Screenshot" 
-                    className="w-full object-cover aspect-video group-hover:scale-102 transition-transform duration-500"
+                    src={screenshots[activeImg]} 
+                    alt={`Galactic Poker Gameplay Screenshot ${activeImg + 1}`} 
+                    className="max-h-full max-w-full object-contain transition-all duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
-                    <p className="text-sm text-gray-300">Cosmic themed poker tables and futuristic card layouts</p>
-                  </div>
+                  
+                  {screenshots.length > 1 && (
+                    <>
+                      <button 
+                        onClick={() => setActiveImg((prev) => (prev === 0 ? screenshots.length - 1 : prev - 1))}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full border border-border/40 transition-colors"
+                        aria-label="Previous image"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
+                      <button 
+                        onClick={() => setActiveImg((prev) => (prev === screenshots.length - 1 ? 0 : prev + 1))}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full border border-border/40 transition-colors"
+                        aria-label="Next image"
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 px-3 py-1 rounded-full text-xs text-gray-300 border border-border/40">
+                        {activeImg + 1} / {screenshots.length}
+                      </div>
+                    </>
+                  )}
                 </div>
+                
+                {screenshots.length > 1 && (
+                  <div className="flex gap-3 mt-4 justify-center overflow-x-auto py-2">
+                    {screenshots.map((src, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setActiveImg(index)}
+                        className={`relative w-20 h-28 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${
+                          activeImg === index 
+                            ? 'border-purple-500 ring-2 ring-purple-500/30' 
+                            : 'border-border/40 opacity-70 hover:opacity-100'
+                        }`}
+                      >
+                        <img 
+                          src={src} 
+                          alt={`Thumbnail ${index + 1}`} 
+                          className="w-full h-full object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Purpose Section */}
