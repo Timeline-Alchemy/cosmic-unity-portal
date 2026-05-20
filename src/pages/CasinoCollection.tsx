@@ -1,9 +1,10 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Gamepad2, Download, ShieldCheck, CreditCard, Users, ExternalLink } from 'lucide-react';
+import { Gamepad2, CreditCard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
+import { Link } from 'react-router-dom';
 
 const CasinoCollection = () => {
   const { t } = useLanguage();
@@ -16,25 +17,22 @@ const CasinoCollection = () => {
         {
           title: t('casino.games.universalSlots.title'),
           description: t('casino.games.universalSlots.desc'),
-          apkLink: 'https://slots.cosmic-casino.one/play',
+          path: '/casino/cosmic-slots',
           isPlaceholder: false,
-          isExternal: true,
           icon: <img src="/images/universal-slots.png" alt="Cosmic Slots" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
         },
         {
           title: t('casino.games.blackholeBlackjack.title'),
           description: t('casino.games.blackholeBlackjack.desc'),
-          apkLink: 'https://blackjack.cosmic-casino.one/play',
+          path: '/casino/blackhole-blackjack',
           isPlaceholder: false,
-          isExternal: true,
           icon: <img src="/images/blackhole-blackjack.png" alt="BlackHole Blackjack" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
         },
         {
           title: t('casino.games.galacticPoker.title'),
           description: t('casino.games.galacticPoker.desc'),
-          apkLink: 'https://poker.cosmic-casino.one/play',
+          path: '/casino/galactic-poker',
           isPlaceholder: false,
-          isExternal: true,
           icon: <img src="/images/galactic-poker.png" alt="Galactic Poker" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
         }
       ]
@@ -87,17 +85,22 @@ const CasinoCollection = () => {
                           {game.description}
                         </p>
                         <Button asChild className={`w-full ${game.isPlaceholder ? 'bg-muted text-muted-foreground pointer-events-none' : 'cosmic-hover bg-cosmic-gradient text-white border-none cursor-pointer'}`}>
-                          <a href={game.apkLink} download={!game.isPlaceholder && !game.isExternal} target={game.isExternal ? '_blank' : undefined} rel={game.isExternal ? 'noopener noreferrer' : undefined}>
-                            {game.isExternal ? <ExternalLink className="w-4 h-4 mr-2" /> : <Download className="w-4 h-4 mr-2" />}
-                            {game.isPlaceholder ? t('casino.comingSoon') : (game.isExternal ? 'Open App' : t('casino.downloadApk'))}
-                          </a>
+                          {game.isPlaceholder ? (
+                            <span>{t('casino.comingSoon')}</span>
+                          ) : (
+                            <Link to={game.path}>
+                              <Gamepad2 className="w-4 h-4 mr-2" />
+                              {t('casino.viewGame')}
+                            </Link>
+                          )}
                         </Button>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-            ),)}</div>
+            ))}
+          </div>
         </div>
       </main>
       <Footer />

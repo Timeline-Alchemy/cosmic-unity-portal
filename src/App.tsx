@@ -28,6 +28,9 @@ import NotFound from "./pages/NotFound";
 import CasinoCollection from "./pages/CasinoCollection";
 import TimelineAlchemyStatus from "./pages/TimelineAlchemyStatus";
 import EBooks from "./pages/EBooks";
+import CosmicSlots from "./pages/CosmicSlots";
+import BlackholeBlackjack from "./pages/BlackholeBlackjack";
+import GalacticPoker from "./pages/GalacticPoker";
 
 
 
@@ -73,6 +76,9 @@ const App: React.FC = () => {
               <Route path="/nutzungsbedingungen" element={<TermsOfService />} />
 
               <Route path="/casino-collection" element={<CasinoCollection />} />
+              <Route path="/casino/cosmic-slots" element={<CosmicSlots />} />
+              <Route path="/casino/blackhole-blackjack" element={<BlackholeBlackjack />} />
+              <Route path="/casino/galactic-poker" element={<GalacticPoker />} />
               <Route path="/timeline-alchemy" element={<TimelineAlchemyStatus />} />
               <Route path="/e-books" element={<EBooks />} />
 
