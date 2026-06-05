@@ -23,7 +23,6 @@ const CosmicRoulette = () => {
   
   const screenshots = [
     '/images/roulette-01.jpeg',
-    '/images/roulette-02.jpeg',
     '/images/roulette-03.jpeg',
     '/images/roulette-04.jpeg',
     '/images/roulette-05.jpeg'
@@ -199,7 +198,7 @@ const CosmicRoulette = () => {
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="border-purple-500/30 text-white hover:bg-purple-950/20 px-6 py-5">
-                    <a href="https://roulette.cosmic-casino.one/play" target="_blank" rel="noopener noreferrer">
+                    <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.cosmic_roulette" target="_blank" rel="noopener noreferrer">
                       <Download className="w-4 h-4 mr-2" />
                       {t.downloadApk}
                     </a>

@@ -137,7 +137,7 @@ const Contact = () => {
                         href="tel:+15056488575"
                         className="font-mystical text-muted-foreground hover:text-cosmic transition-colors"
                       >
-                        +1 (505) 648-8575
+                        +1(505)6488575
                       </a>
                     </div>
                   </div>

@@ -44,7 +44,14 @@ import { Analytics } from "@vercel/analytics/react";
 const queryClient = new QueryClient();
 
 const App: React.FC = () => {
-
+  useEffect(() => {
+    const isShifted = localStorage.getItem('cosmic-frequency-shifted') === 'true';
+    if (isShifted) {
+      document.documentElement.classList.add('shifted-frequency-active');
+    } else {
+      document.documentElement.classList.remove('shifted-frequency-active');
+    }
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

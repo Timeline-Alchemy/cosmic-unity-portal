@@ -34,7 +34,7 @@ const CosmicSlots = () => {
       title: 'Cosmic Slots',
       subtitle: 'Spin the slots to align the cosmic reels and synchronize with the optimal timeline.',
       playOnline: 'Play Web Version',
-      downloadApk: 'Download Android APK',
+      downloadApk: 'Get it on Google Play',
       purposeTitle: 'Application Purpose & Details',
       purposeDesc: 'Cosmic Slots is a single-player, space-themed mobile slot machine game. It reimagines classic slot mechanics with a cosmic and mystical aesthetic. Players spin reels featuring planets, stars, and celestial symbols. Our goal is to offer a relaxed, highly visual entertainment experience combined with casual slot strategy.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
@@ -71,7 +71,7 @@ const CosmicSlots = () => {
       title: 'Cosmic Slots',
       subtitle: 'Draai de slots om de kosmische rollen uit te lijnen en te synchroniseren met de optimale tijdlijn.',
       playOnline: 'Speel Webversie',
-      downloadApk: 'Download Android APK',
+      downloadApk: 'Download via Google Play',
       purposeTitle: 'Doel van de Applicatie & Details',
       purposeDesc: 'Cosmic Slots is een single-player mobiel gokkastspel met een ruimtethema. Het combineert klassieke gokkastmechanieken met een kosmische en mystieke esthetiek. Spelers draaien rollen met planeten, sterren en hemellichamen. Ons doel is om een ontspannende en visueel verbluffende entertainmentervaring te bieden.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
@@ -108,7 +108,7 @@ const CosmicSlots = () => {
       title: 'Cosmic Slots',
       subtitle: 'Drehen Sie die Walzen, um die kosmischen Rollen auszurichten und sich mit der optimalen Zeitlinie zu synchronisieren.',
       playOnline: 'Web-Version spielen',
-      downloadApk: 'Android APK herunterladen',
+      downloadApk: 'Bei Google Play laden',
       purposeTitle: 'Zweck der Anwendung & Details',
       purposeDesc: 'Cosmic Slots ist ein kosmisches Spielautomatenspiel für Einzelspieler. Es interpretiert klassische Slot-Mechaniken mit einer kosmischen und mystischen Ästhetik neu. Spieler drehen Walzen mit Planeten, Sternen und himmlischen Symbolen. Unser Ziel ist es, ein entspannendes, visuell ansprechendes Unterhaltungserlebnis zu bieten.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
@@ -189,7 +189,7 @@ const CosmicSlots = () => {
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="border-purple-500/30 text-white hover:bg-purple-950/20 px-6 py-5">
-                    <a href="https://slots.cosmic-casino.one/play" target="_blank" rel="noopener noreferrer">
+                    <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.cosmic_slots" target="_blank" rel="noopener noreferrer">
                       <Download className="w-4 h-4 mr-2" />
                       {t.downloadApk}
                     </a>

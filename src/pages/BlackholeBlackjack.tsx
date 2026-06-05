@@ -34,7 +34,7 @@ const BlackholeBlackjack = () => {
       title: 'Blackhole Blackjack',
       subtitle: 'Defy the cosmic void in this thrilling spin on classic blackjack.',
       playOnline: 'Play Web Version',
-      downloadApk: 'Download Android APK',
+      downloadApk: 'Get it on Google Play',
       purposeTitle: 'Application Purpose & Details',
       purposeDesc: 'Blackhole Blackjack is a single-player, cosmic-themed mobile card game. It brings the timeless gameplay of Blackjack into a sci-fi, space-themed setting. Our goal is to provide a premium, engaging gaming experience for players who enjoy card strategy and cosmic art.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
@@ -71,7 +71,7 @@ const BlackholeBlackjack = () => {
       title: 'Blackhole Blackjack',
       subtitle: 'Trotseer de kosmische leegte in deze spannende draai aan klassiek blackjack.',
       playOnline: 'Speel Webversie',
-      downloadApk: 'Download Android APK',
+      downloadApk: 'Download via Google Play',
       purposeTitle: 'Doel van de Applicatie & Details',
       purposeDesc: 'Blackhole Blackjack is een single-player, mobiel kaartspel met een kosmisch thema. Het brengt de tijdloze gameplay van Blackjack naar een sci-fi, ruimtevaartomgeving. Ons doel is om een premium en boeiende game-ervaring te bieden aan spelers die houden van kaartstrategie en kosmische kunst.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
@@ -108,7 +108,7 @@ const BlackholeBlackjack = () => {
       title: 'Blackhole Blackjack',
       subtitle: 'Trotzen Sie der kosmischen Leere in dieser aufregenden Variante des klassischen Blackjack.',
       playOnline: 'Web-Version spielen',
-      downloadApk: 'Android APK herunterladen',
+      downloadApk: 'Bei Google Play laden',
       purposeTitle: 'Zweck der Anwendung & Details',
       purposeDesc: 'Blackhole Blackjack ist ein kosmisches mobiles Kartenspiel für Einzelspieler. Es bringt das zeitlose Gameplay von Blackjack in eine Sci-Fi-Weltraumumgebung. Unser Ziel ist es, Spielern, die Kartenstrategie und kosmische Kunst lieben, ein erstklassiges Spielerlebnis zu bieten.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
@@ -189,7 +189,7 @@ const BlackholeBlackjack = () => {
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="border-purple-500/30 text-white hover:bg-purple-950/20 px-6 py-5">
-                    <a href="https://blackjack.cosmic-casino.one/play" target="_blank" rel="noopener noreferrer">
+                    <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.blackhole_blackjack" target="_blank" rel="noopener noreferrer">
                       <Download className="w-4 h-4 mr-2" />
                       {t.downloadApk}
                     </a>

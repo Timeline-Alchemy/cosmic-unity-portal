@@ -103,14 +103,14 @@ const Footer = () => {
                     href="tel:+15056488575"
                     className="font-mystical text-muted-foreground hover:text-cosmic cosmic-hover"
                   >
-                    +1 (505) 648-8575
+                    +1(505)6488575
                   </a>
                   <Phone className="w-4 h-4 text-cosmic" />
                 </div>
                 <div className="flex items-start justify-end space-x-2 text-sm">
                   <span className="font-mystical text-muted-foreground text-right">
                     1209 Mountain Road Pl Ne Ste N<br />
-                    Albuquerque, NM 87110, USA
+                    Albuquerque, New Mexico 87110, United States
                   </span>
                   <MapPin className="w-4 h-4 text-cosmic mt-0.5" />
                 </div>

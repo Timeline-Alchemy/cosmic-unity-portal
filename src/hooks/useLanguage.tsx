@@ -225,13 +225,13 @@ const translations = {
           title: 'Cosmic Roulette',
           desc: 'Draai aan het kosmische wiel der overvloed en manifesteer je uitlijning met de sterren.'
         },
-        innerSpace: {
-          title: 'Inner-Space',
-          desc: 'Reis door de mystieke rijken en verken je innerlijke universum.'
+        cosmicPinball: {
+          title: 'Cosmic Pinball',
+          desc: 'Lanceer de bal door kosmische portalen en activeer de flippers van overvloed.'
         },
-        cosmicCommunityCreator: {
-          title: 'Cosmic Community Creator',
-          desc: 'Breng je eigen community tot leven met dit krachtige platform voor kosmische verbinding.'
+        merkaba: {
+          title: 'Merkaba',
+          desc: 'Activeer je kosmische voertuig van licht en reis door multidimensionale werelden.'
         },
         placeholder3: {
           title: 'Placeholder 3',
@@ -875,13 +875,13 @@ const translations = {
           title: 'Cosmic Roulette',
           desc: 'Spin the cosmic wheel of abundance and manifest your alignment with the stars.'
         },
-        innerSpace: {
-          title: 'Inner-Space',
-          desc: 'Journey through the mystic realms and explore your inner universe.'
+        cosmicPinball: {
+          title: 'Cosmic Pinball',
+          desc: 'Launch the ball through cosmic portals and activate the flippers of abundance.'
         },
-        cosmicCommunityCreator: {
-          title: 'Cosmic Community Creator',
-          desc: 'Bring your own community to life with this powerful platform for cosmic connection.'
+        merkaba: {
+          title: 'Merkaba',
+          desc: 'Activate your cosmic light vehicle and journey through multidimensional realms.'
         },
         placeholder3: {
           title: 'Placeholder 3',
@@ -1526,13 +1526,13 @@ const translations = {
           title: 'Cosmic Roulette',
           desc: 'Drehen Sie das kosmische Rad des Überflusses und manifestieren Sie Ihre Ausrichtung mit den Sternen.'
         },
-        innerSpace: {
-          title: 'Inner-Space',
-          desc: 'Reisen Sie durch mystische Welten und erkunden Sie Ihr inneres Universum.'
+        cosmicPinball: {
+          title: 'Cosmic Pinball',
+          desc: 'Starten Sie die Kugel durch kosmische Portale und aktivieren Sie die Flipper des Überflusses.'
         },
-        cosmicCommunityCreator: {
-          title: 'Cosmic Community Creator',
-          desc: 'Erwecken Sie Ihre eigene Community zum Leben mit dieser leistungsstarken Plattform für kosmische Verbindung.'
+        merkaba: {
+          title: 'Merkaba',
+          desc: 'Aktivieren Sie Ihr kosmische Lichtfahrzeug und reisen Sie durch multidimensionale Welten.'
         },
         placeholder3: {
           title: 'Platzhalter 3',
