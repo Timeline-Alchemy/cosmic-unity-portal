@@ -1,30 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/hooks/useLanguage';
+import { useFrequency } from '@/hooks/useFrequency';
 import { Gamepad2, BookOpen, Star, Sparkles } from 'lucide-react';
 
 const Index = () => {
   const { language } = useLanguage();
   const currentLang = (language === 'en' || language === 'de') ? 'en' : 'nl';
-
-  // Load Shift Frequency state from localStorage
-  const [isShifted, setIsShifted] = useState<boolean>(() => {
-    return localStorage.getItem('cosmic-frequency-shifted') === 'true';
-  });
-
-  // Sync isShifted to HTML element class list and localStorage
-  useEffect(() => {
-    if (isShifted) {
-      document.documentElement.classList.add('shifted-frequency-active');
-      localStorage.setItem('cosmic-frequency-shifted', 'true');
-    } else {
-      document.documentElement.classList.remove('shifted-frequency-active');
-      localStorage.setItem('cosmic-frequency-shifted', 'false');
-    }
-  }, [isShifted]);
+  const { mode } = useFrequency();
 
   const services = [
     {
@@ -63,48 +49,6 @@ const Index = () => {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-cosmic-gradient opacity-5"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-          {/* Premium Frequency Shift Selector */}
-          <div id="frequency-alignment" className="flex flex-col items-center justify-center mb-16 scroll-mt-24">
-            <div className="bg-card/45 border border-border/80 p-5 rounded-2xl backdrop-blur-md shadow-mystical flex flex-col sm:flex-row items-center gap-6 max-w-md w-full relative z-30 transition-all duration-300">
-              <div className="flex-grow text-center sm:text-left">
-                <div className="text-xs font-cosmic text-accent tracking-widest uppercase mb-1">
-                  Timeline Alignment
-                </div>
-                <h3 className="font-cosmic text-lg font-bold text-white mb-1">
-                  {isShifted ? 'Ascended Frequency' : 'Standard Frequency'}
-                </h3>
-                <p className="font-mystical text-xs text-muted-foreground">
-                  {isShifted 
-                    ? 'Active: 888Hz (Solar Abundance & Emerald Flow)' 
-                    : 'Active: 432Hz (Cosmic Order & Violet Balance)'}
-                </p>
-              </div>
-              <div className="flex-shrink-0">
-                <button
-                  onClick={() => setIsShifted(!isShifted)}
-                  className={`relative w-20 h-10 rounded-full transition-all duration-500 ease-in-out p-1 flex items-center ${
-                    isShifted 
-                      ? 'bg-cosmic-gradient shadow-energy border border-accent/40' 
-                      : 'bg-muted border border-border/80'
-                  }`}
-                  aria-label="Shift Frequency"
-                >
-                  <div 
-                    className={`w-8 h-8 rounded-full bg-white shadow-md transform transition-transform duration-500 ease-in-out flex items-center justify-center ${
-                      isShifted ? 'translate-x-10' : 'translate-x-0'
-                    }`}
-                  >
-                    {isShifted ? (
-                      <span className="text-amber-500 text-[10px] font-bold">888</span>
-                    ) : (
-                      <span className="text-violet-600 text-[10px] font-bold">432</span>
-                    )}
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
 
           <div className="flex flex-col md:flex-row items-center gap-12 mb-20">
             <div className="w-full md:w-1/2 flex justify-center">

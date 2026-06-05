@@ -343,25 +343,92 @@
   }
 }
 
-/* Shifted Frequency Mode (Ascended Golden/Emerald/Amber Vibe) */
+/* ─── 888Hz · Ascended Mode (Solar Gold / Emerald) ─── */
 .shifted-frequency-active {
-  --primary: 38 100% 55% !important; /* Solar Gold */
-  --secondary: 142 75% 45% !important; /* Emerald Green */
-  --accent: 48 100% 50% !important; /* Pure Gold */
-  --cosmic: 24 100% 58% !important; /* Copper Gold */
+  --background:       48 40% 96% !important;
+  --foreground:       30 25% 12% !important;
 
-  /* Redefining shadows to match the gold/emerald theme */
-  --shadow-cosmic: 0 10px 40px -10px hsl(38 100% 55% / 0.45) !important;
-  --shadow-mystical: 0 0 30px hsl(142 75% 45% / 0.35) !important;
-  --shadow-energy: 0 0 20px hsl(48 100% 50% / 0.55) !important;
-  --shadow-divine: 0 0 50px hsl(24 100% 58% / 0.45) !important;
+  --card:             45 50% 92% !important;
+  --card-foreground:  30 25% 15% !important;
+
+  --popover:          45 45% 90% !important;
+  --popover-foreground: 30 25% 12% !important;
+
+  --primary:          38 100% 45% !important;   /* Solar Gold */
+  --primary-foreground: 45 100% 97% !important;
+
+  --secondary:        142 60% 35% !important;   /* Emerald Green */
+  --secondary-foreground: 142 20% 95% !important;
+
+  --accent:           48 100% 50% !important;   /* Pure Gold */
+  --accent-foreground: 30 25% 10% !important;
+
+  --cosmic:           24 100% 52% !important;   /* Copper/Amber */
+  --cosmic-foreground: 45 100% 97% !important;
+
+  --muted:            45 30% 85% !important;
+  --muted-foreground: 30 15% 45% !important;
+
+  --border:           40 40% 75% !important;
+  --input:            45 35% 88% !important;
+  --ring:             38 100% 45% !important;
+
+  --shadow-cosmic:  0 10px 40px -10px hsl(38 100% 45% / 0.40) !important;
+  --shadow-mystical: 0 0 30px hsl(142 60% 35% / 0.30) !important;
+  --shadow-energy:  0 0 20px hsl(48 100% 50% / 0.50) !important;
+  --shadow-divine:  0 0 50px hsl(24 100% 52% / 0.40) !important;
+}
+
+/* ─── 963Hz · Celestial Mode (Starlight / Luminous Parchment) ─── */
+.celestial-frequency-active {
+  --background:       230 60% 97% !important;
+  --foreground:       230 30% 12% !important;
+
+  --card:             220 55% 94% !important;
+  --card-foreground:  230 25% 15% !important;
+
+  --popover:          220 50% 92% !important;
+  --popover-foreground: 230 25% 12% !important;
+
+  --primary:          250 80% 58% !important;   /* Soft Indigo */
+  --primary-foreground: 220 60% 97% !important;
+
+  --secondary:        300 60% 60% !important;   /* Soft Violet */
+  --secondary-foreground: 300 20% 96% !important;
+
+  --accent:           190 80% 50% !important;   /* Sky Cyan */
+  --accent-foreground: 220 30% 10% !important;
+
+  --cosmic:           335 80% 62% !important;   /* Rose Pink */
+  --cosmic-foreground: 220 60% 97% !important;
+
+  --muted:            220 40% 88% !important;
+  --muted-foreground: 230 20% 45% !important;
+
+  --border:           220 40% 80% !important;
+  --input:            220 45% 90% !important;
+  --ring:             250 80% 58% !important;
+
+  --shadow-cosmic:  0 10px 40px -10px hsl(250 80% 58% / 0.30) !important;
+  --shadow-mystical: 0 0 30px hsl(300 60% 60% / 0.25) !important;
+  --shadow-energy:  0 0 20px hsl(190 80% 50% / 0.40) !important;
+  --shadow-divine:  0 0 50px hsl(335 80% 62% / 0.30) !important;
+}
+
+/* Celestial body: light parchment radial glows */
+.celestial-frequency-active body {
+  background-image:
+    radial-gradient(circle at 20% 80%, hsl(250 80% 58% / 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsl(300 60% 60% / 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, hsl(190 80% 50% / 0.05) 0%, transparent 50%) !important;
 }
 
 /* Apply smooth transitions when toggling the frequency theme */
-html, 
+html,
 html * {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow, filter, backdrop-filter, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
 }
+
 

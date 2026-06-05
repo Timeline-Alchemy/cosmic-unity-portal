@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -28,15 +28,8 @@ const CosmicRoulette = () => {
     '/images/roulette-05.jpeg'
   ];
 
-  // Respect the Shift Frequency setting globally
-  useEffect(() => {
-    const isShifted = localStorage.getItem('cosmic-frequency-shifted') === 'true';
-    if (isShifted) {
-      document.documentElement.classList.add('shifted-frequency-active');
-    } else {
-      document.documentElement.classList.remove('shifted-frequency-active');
-    }
-  }, []);
+  // Frequency mode is managed globally via FrequencyProvider in App.tsx
+
   
   const content = {
     en: {

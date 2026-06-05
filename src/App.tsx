@@ -1,5 +1,6 @@
 // src/App.tsx
-import React, { useEffect } from "react";
+import React from "react";
+import { FrequencyProvider } from "@/hooks/useFrequency";
 
 
 
@@ -44,17 +45,10 @@ import { Analytics } from "@vercel/analytics/react";
 const queryClient = new QueryClient();
 
 const App: React.FC = () => {
-  useEffect(() => {
-    const isShifted = localStorage.getItem('cosmic-frequency-shifted') === 'true';
-    if (isShifted) {
-      document.documentElement.classList.add('shifted-frequency-active');
-    } else {
-      document.documentElement.classList.remove('shifted-frequency-active');
-    }
-  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
+      <FrequencyProvider>
       <LanguageProvider>
         <TooltipProvider>
           <Toaster />
@@ -102,6 +96,7 @@ const App: React.FC = () => {
           <Analytics />
         </TooltipProvider>
       </LanguageProvider>
+      </FrequencyProvider>
     </QueryClientProvider>
   );
 };

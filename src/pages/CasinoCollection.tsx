@@ -1,29 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Gamepad2, CreditCard, Lock, Sparkles } from 'lucide-react';
+import { Gamepad2, CreditCard, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
+import { useFrequency } from '@/hooks/useFrequency';
 import { Link } from 'react-router-dom';
 
 const CasinoCollection = () => {
   const { t } = useLanguage();
-
-  // Load Shift Frequency state from localStorage
-  const [isShifted, setIsShifted] = useState<boolean>(() => {
-    return localStorage.getItem('cosmic-frequency-shifted') === 'true';
-  });
-
-  // Sync isShifted to HTML element class list and localStorage
-  useEffect(() => {
-    if (isShifted) {
-      document.documentElement.classList.add('shifted-frequency-active');
-      localStorage.setItem('cosmic-frequency-shifted', 'true');
-    } else {
-      document.documentElement.classList.remove('shifted-frequency-active');
-      localStorage.setItem('cosmic-frequency-shifted', 'false');
-    }
-  }, [isShifted]);
+  const { mode } = useFrequency();
 
   const trinities = [
     {
@@ -109,7 +95,7 @@ const CasinoCollection = () => {
           <div className="space-y-24">
             {trinities.map((trinity, tIdx) => {
               const isSecondTrinity = tIdx === 1;
-              const isLocked = isSecondTrinity && !isShifted;
+              const isLocked = isSecondTrinity && mode === 'void';
 
               return (
                 <div key={tIdx} className="relative">
@@ -136,15 +122,11 @@ const CasinoCollection = () => {
                               <span className="font-cosmic text-sm font-semibold tracking-wider text-white uppercase">
                                 Unaligned Timeline
                               </span>
-                              <span className="font-mystical text-xs text-muted-foreground mt-2 mb-4 max-w-[220px]">
-                                Shift Frequency to 888Hz on the homepage to access the Second Trinity.
+                              <span className="font-mystical text-xs text-muted-foreground mt-2 max-w-[220px]">
+                                Select ☀️ or 🌕 in the frequency selector in the navbar to access the Second Trinity.
                               </span>
-                              <Button asChild size="sm" className="bg-cosmic-gradient text-white border-none cursor-pointer">
-                                <Link to="/#frequency-alignment" className="flex items-center gap-1.5 font-cosmic text-xs">
-                                  Go Align <Sparkles className="w-3.5 h-3.5" />
-                                </Link>
-                              </Button>
                             </div>
+
                           )}
 
                           <div className={`flex flex-col items-center text-center h-full transition-all duration-500 ${isLocked ? 'opacity-20 blur-[1px] saturate-50 pointer-events-none' : ''}`}>

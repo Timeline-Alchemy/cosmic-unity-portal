@@ -4,6 +4,8 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Star, Home, BookOpen, Mail, Users, Gamepad2 } from 'lucide-react';
 import LanguageSelector from '@/components/LanguageSelector';
+import FrequencySelector from '@/components/FrequencySelector';
+
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,11 +69,13 @@ const Navigation = () => {
 
           {/* Desktop Action Buttons */}
           <div className="hidden lg:flex items-center gap-2">
+            <FrequencySelector />
             <LanguageSelector />
           </div>
 
           {/* Mobile actions */}
           <div className="lg:hidden flex items-center gap-2">
+            <FrequencySelector />
             <LanguageSelector />
             <Button
               variant="ghost"
