@@ -134,10 +134,10 @@ const Contact = () => {
                     <div>
                       <p className="font-mystical font-semibold text-foreground">{t('contact.info.phone')}</p>
                       <a
-                        href="tel:+31613163277"
+                        href="tel:+15056488575"
                         className="font-mystical text-muted-foreground hover:text-cosmic transition-colors"
                       >
-                        06 13163277
+                        +1 (505) 648-8575
                       </a>
                     </div>
                   </div>
@@ -149,8 +149,9 @@ const Contact = () => {
                     <div>
                       <p className="font-mystical font-semibold text-foreground">{t('contact.info.location')}</p>
                       <div className="font-mystical text-muted-foreground">
-                        <p>Landgraaf</p>
-                        <p>Nederland</p>
+                        <p>1209 Mountain Road Pl Ne Ste N</p>
+                        <p>Albuquerque, New Mexico 87110</p>
+                        <p>United States</p>
                       </div>
                     </div>
                   </div>
