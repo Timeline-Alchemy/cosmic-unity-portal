@@ -226,11 +226,11 @@ const translations = {
           desc: 'Draai aan het kosmische wiel der overvloed en manifesteer je uitlijning met de sterren.'
         },
         cosmicPinball: {
-          title: 'Cosmic Pinball',
+          title: 'Galactic Pinball',
           desc: 'Lanceer de bal door kosmische portalen en activeer de flippers van overvloed.'
         },
         merkaba: {
-          title: 'Merkaba',
+          title: 'Merkaba Madness',
           desc: 'Activeer je kosmische voertuig van licht en reis door multidimensionale werelden.'
         },
         placeholder3: {
@@ -876,11 +876,11 @@ const translations = {
           desc: 'Spin the cosmic wheel of abundance and manifest your alignment with the stars.'
         },
         cosmicPinball: {
-          title: 'Cosmic Pinball',
+          title: 'Galactic Pinball',
           desc: 'Launch the ball through cosmic portals and activate the flippers of abundance.'
         },
         merkaba: {
-          title: 'Merkaba',
+          title: 'Merkaba Madness',
           desc: 'Activate your cosmic light vehicle and journey through multidimensional realms.'
         },
         placeholder3: {
@@ -1527,11 +1527,11 @@ const translations = {
           desc: 'Drehen Sie das kosmische Rad des Überflusses und manifestieren Sie Ihre Ausrichtung mit den Sternen.'
         },
         cosmicPinball: {
-          title: 'Cosmic Pinball',
+          title: 'Galactic Pinball',
           desc: 'Starten Sie die Kugel durch kosmische Portale und aktivieren Sie die Flipper des Überflusses.'
         },
         merkaba: {
-          title: 'Merkaba',
+          title: 'Merkaba Madness',
           desc: 'Aktivieren Sie Ihr kosmische Lichtfahrzeug und reisen Sie durch multidimensionale Welten.'
         },
         placeholder3: {

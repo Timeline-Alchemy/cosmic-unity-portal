@@ -69,14 +69,14 @@ const CasinoCollection = () => {
           description: t('casino.games.cosmicPinball.desc'),
           path: '#',
           isPlaceholder: true,
-          icon: <img src="/images/pinball-app-icon.png" alt="Cosmic Pinball" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
+          icon: <img src="/images/pinball-app-icon.png" alt="Galactic Pinball" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
         },
         {
           title: t('casino.games.merkaba.title'),
           description: t('casino.games.merkaba.desc'),
           path: '#',
           isPlaceholder: true,
-          icon: <img src="/images/merkaba-app-icon.png" alt="Merkaba" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
+          icon: <img src="/images/merkaba-app-icon.png" alt="Merkaba Madness" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
         }
       ]
     }
