@@ -343,40 +343,18 @@
   }
 }
 
-/* ─── 888Hz · Ascended Mode (Solar Gold / Emerald) ─── */
+/* ─── 888Hz · Ascended Mode (Solar Gold / Emerald — dark base) ─── */
 .shifted-frequency-active {
-  --background:       48 40% 96% !important;
-  --foreground:       30 25% 12% !important;
+  /* Keep dark background — only shift the accent palette */
+  --primary:    38 100% 55% !important;   /* Solar Gold */
+  --secondary:  142 75% 45% !important;  /* Emerald Green */
+  --accent:     48 100% 50% !important;   /* Pure Gold */
+  --cosmic:     24 100% 58% !important;   /* Copper/Amber */
 
-  --card:             45 50% 92% !important;
-  --card-foreground:  30 25% 15% !important;
-
-  --popover:          45 45% 90% !important;
-  --popover-foreground: 30 25% 12% !important;
-
-  --primary:          38 100% 45% !important;   /* Solar Gold */
-  --primary-foreground: 45 100% 97% !important;
-
-  --secondary:        142 60% 35% !important;   /* Emerald Green */
-  --secondary-foreground: 142 20% 95% !important;
-
-  --accent:           48 100% 50% !important;   /* Pure Gold */
-  --accent-foreground: 30 25% 10% !important;
-
-  --cosmic:           24 100% 52% !important;   /* Copper/Amber */
-  --cosmic-foreground: 45 100% 97% !important;
-
-  --muted:            45 30% 85% !important;
-  --muted-foreground: 30 15% 45% !important;
-
-  --border:           40 40% 75% !important;
-  --input:            45 35% 88% !important;
-  --ring:             38 100% 45% !important;
-
-  --shadow-cosmic:  0 10px 40px -10px hsl(38 100% 45% / 0.40) !important;
-  --shadow-mystical: 0 0 30px hsl(142 60% 35% / 0.30) !important;
-  --shadow-energy:  0 0 20px hsl(48 100% 50% / 0.50) !important;
-  --shadow-divine:  0 0 50px hsl(24 100% 52% / 0.40) !important;
+  --shadow-cosmic:  0 10px 40px -10px hsl(38 100% 55% / 0.45) !important;
+  --shadow-mystical: 0 0 30px hsl(142 75% 45% / 0.35) !important;
+  --shadow-energy:  0 0 20px hsl(48 100% 50% / 0.55) !important;
+  --shadow-divine:  0 0 50px hsl(24 100% 58% / 0.45) !important;
 }
 
 /* ─── 963Hz · Celestial Mode (Starlight / Luminous Parchment) ─── */
