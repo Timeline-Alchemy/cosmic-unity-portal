@@ -221,6 +221,10 @@ const translations = {
           title: 'Galactic Poker',
           desc: 'Roep de sterren aan en verhoog de inzet bij intergalactisch poker.'
         },
+        cosmicRoulette: {
+          title: 'Cosmic Roulette',
+          desc: 'Draai aan het kosmische wiel der overvloed en manifesteer je uitlijning met de sterren.'
+        },
         innerSpace: {
           title: 'Inner-Space',
           desc: 'Reis door de mystieke rijken en verken je innerlijke universum.'
@@ -866,6 +870,10 @@ const translations = {
         galacticPoker: {
           title: 'Galactic Poker',
           desc: 'Call the stars and raise the stakes in intergalactic poker.'
+        },
+        cosmicRoulette: {
+          title: 'Cosmic Roulette',
+          desc: 'Spin the cosmic wheel of abundance and manifest your alignment with the stars.'
         },
         innerSpace: {
           title: 'Inner-Space',
@@ -1513,6 +1521,10 @@ const translations = {
         galacticPoker: {
           title: 'Galactic Poker',
           desc: 'Rufen Sie die Sterne an und erhöhen Sie die Einsätze beim intergalaktischen Poker.'
+        },
+        cosmicRoulette: {
+          title: 'Cosmic Roulette',
+          desc: 'Drehen Sie das kosmische Rad des Überflusses und manifestieren Sie Ihre Ausrichtung mit den Sternen.'
         },
         innerSpace: {
           title: 'Inner-Space',

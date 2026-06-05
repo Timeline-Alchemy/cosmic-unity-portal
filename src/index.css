@@ -342,3 +342,26 @@
     background-clip: text;
   }
 }
+
+/* Shifted Frequency Mode (Ascended Golden/Emerald/Amber Vibe) */
+.shifted-frequency-active {
+  --primary: 38 100% 55% !important; /* Solar Gold */
+  --secondary: 142 75% 45% !important; /* Emerald Green */
+  --accent: 48 100% 50% !important; /* Pure Gold */
+  --cosmic: 24 100% 58% !important; /* Copper Gold */
+
+  /* Redefining shadows to match the gold/emerald theme */
+  --shadow-cosmic: 0 10px 40px -10px hsl(38 100% 55% / 0.45) !important;
+  --shadow-mystical: 0 0 30px hsl(142 75% 45% / 0.35) !important;
+  --shadow-energy: 0 0 20px hsl(48 100% 50% / 0.55) !important;
+  --shadow-divine: 0 0 50px hsl(24 100% 58% / 0.45) !important;
+}
+
+/* Apply smooth transitions when toggling the frequency theme */
+html, 
+html * {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow, filter, backdrop-filter, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
