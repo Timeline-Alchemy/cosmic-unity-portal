@@ -7,10 +7,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { t, language } = useLanguage();
   const timelineAlchemyEntryHref = '/timeline-alchemy';
-  const timelessAwarenessHref = 'https://www.timeless-awareness.nl';
+
 
   const footerLinks = [
-    { name: 'Timeless Awareness', href: timelessAwarenessHref, external: true },
+
     { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, external: false },
     { name: 'E-Books', href: '/e-books', external: false },
     { name: t('nav.casinoCollection'), href: '/casino-collection', external: false },

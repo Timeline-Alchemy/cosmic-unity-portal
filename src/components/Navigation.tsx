@@ -13,14 +13,14 @@ const Navigation = () => {
   const navigate = useNavigate();
   const { t, language } = useLanguage();
   const timelineAlchemyEntryHref = '/timeline-alchemy';
-  const timelessAwarenessHref = 'https://www.timeless-awareness.nl';
+
 
   const navigation = [
     { name: t('nav.home'), href: '/', icon: Home },
     { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, icon: Star, external: false },
     { name: 'E-Books', href: '/e-books', icon: BookOpen, external: false },
     { name: t('nav.casinoCollection'), href: '/casino-collection', icon: Gamepad2, external: false },
-    { name: 'Timeless Awareness', href: timelessAwarenessHref, icon: BookOpen, external: true },
+
     { name: t('nav.about'), href: '/about', icon: Star },
     { name: t('nav.contact'), href: '/contact', icon: Mail },
   ];
