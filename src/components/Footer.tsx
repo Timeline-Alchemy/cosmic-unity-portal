@@ -110,7 +110,8 @@ const Footer = () => {
                 <div className="flex items-start justify-end space-x-2 text-sm">
                   <span className="font-mystical text-muted-foreground text-right">
                     1209 Mountain Road Pl Ne Ste N<br />
-                    Albuquerque, New Mexico 87110, United States
+                    Albuquerque, New Mexico 87110,<br />
+                    United States
                   </span>
                   <MapPin className="w-4 h-4 text-cosmic mt-0.5" />
                 </div>
