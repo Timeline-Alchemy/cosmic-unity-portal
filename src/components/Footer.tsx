@@ -136,7 +136,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
             <p className="font-mystical text-sm text-muted-foreground">
-              © {currentYear} Timeline Alchemy Studio™
+              © {currentYear} Timeline Alchemy Studio LLC
             </p>
           </div>
           <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 text-sm">

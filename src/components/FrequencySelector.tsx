@@ -4,7 +4,6 @@ import { useFrequency, FrequencyMode } from '@/hooks/useFrequency';
 const MODES: { mode: FrequencyMode; label: string; title: string }[] = [
   { mode: 'void',      label: '🌑', title: '432Hz · Void (Dark Cosmic)' },
   { mode: 'ascended',  label: '☀️', title: '888Hz · Ascended (Solar Gold)' },
-  { mode: 'celestial', label: '🌕', title: '963Hz · Celestial (Light Realm)' },
 ];
 
 const FrequencySelector = () => {

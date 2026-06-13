@@ -1,15 +1,13 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Gamepad2, CreditCard, Lock } from 'lucide-react';
+import { Gamepad2, CreditCard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
-import { useFrequency } from '@/hooks/useFrequency';
 import { Link } from 'react-router-dom';
 
 const CasinoCollection = () => {
   const { t } = useLanguage();
-  const { mode } = useFrequency();
 
   const trinities = [
     {
@@ -94,9 +92,6 @@ const CasinoCollection = () => {
 
           <div className="space-y-24">
             {trinities.map((trinity, tIdx) => {
-              const isSecondTrinity = tIdx === 1;
-              const isLocked = isSecondTrinity && mode === 'void';
-
               return (
                 <div key={tIdx} className="relative">
                   <div className="text-center mb-12">
@@ -115,21 +110,7 @@ const CasinoCollection = () => {
                           key={idx} 
                           className="bg-card/50 backdrop-blur-md border border-border p-8 rounded-2xl cosmic-hover group flex flex-col relative overflow-hidden transition-all duration-500"
                         >
-                          {/* Locked Overlay for Second Trinity */}
-                          {isLocked && (
-                            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/75 backdrop-blur-[3px] p-6 text-center transition-all duration-500">
-                              <Lock className="w-10 h-10 text-accent animate-pulse mb-3" />
-                              <span className="font-cosmic text-sm font-semibold tracking-wider text-white uppercase">
-                                Unaligned Timeline
-                              </span>
-                              <span className="font-mystical text-xs text-muted-foreground mt-2 max-w-[220px]">
-                                Select ☀️ or 🌕 in the frequency selector in the navbar to access the Second Trinity.
-                              </span>
-                            </div>
-
-                          )}
-
-                          <div className={`flex flex-col items-center text-center h-full transition-all duration-500 ${isLocked ? 'opacity-20 blur-[1px] saturate-50 pointer-events-none' : ''}`}>
+                          <div className="flex flex-col items-center text-center h-full transition-all duration-500">
                             <div className="p-4 bg-background/50 rounded-[2rem] mb-6 group-hover:scale-110 transition-transform duration-300 shadow-cosmic flex items-center justify-center overflow-hidden">
                               {game.icon}
                             </div>

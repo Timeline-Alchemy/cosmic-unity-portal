@@ -15,7 +15,8 @@ import {
   HelpCircle,
   FileText,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Youtube
 } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -34,7 +35,11 @@ const CosmicSlots = () => {
       title: 'Cosmic Slots',
       subtitle: 'Spin the slots to align the cosmic reels and synchronize with the optimal timeline.',
       playOnline: 'Play Web Version',
-      downloadApk: 'Get it on Google Play',
+      downloadApk: 'View Google Play Listing',
+      videoTitle: 'Gameplay Trailer',
+      videoDesc: 'Watch the gameplay overview and explore the cosmic alignment features in action.',
+      videoVertical: 'Vertical Version (Mobile)',
+      videoLandscape: 'Landscape Version (Desktop)',
       purposeTitle: 'Application Purpose & Details',
       purposeDesc: 'Cosmic Slots is a single-player, space-themed mobile slot machine game. It reimagines classic slot mechanics with a cosmic and mystical aesthetic. Players spin reels featuring planets, stars, and celestial symbols. Our goal is to offer a relaxed, highly visual entertainment experience combined with casual slot strategy.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
@@ -71,7 +76,11 @@ const CosmicSlots = () => {
       title: 'Cosmic Slots',
       subtitle: 'Draai de slots om de kosmische rollen uit te lijnen en te synchroniseren met de optimale tijdlijn.',
       playOnline: 'Speel Webversie',
-      downloadApk: 'Download via Google Play',
+      downloadApk: 'Bekijk Google Play-vermelding',
+      videoTitle: 'Gameplay Trailer',
+      videoDesc: 'Bekijk de gameplay-impressie en zie de kosmische uitlijning in actie.',
+      videoVertical: 'Verticale versie (Mobiel)',
+      videoLandscape: 'Horizontale versie (Landscape)',
       purposeTitle: 'Doel van de Applicatie & Details',
       purposeDesc: 'Cosmic Slots is een single-player mobiel gokkastspel met een ruimtethema. Het combineert klassieke gokkastmechanieken met een kosmische en mystieke esthetiek. Spelers draaien rollen met planeten, sterren en hemellichamen. Ons doel is om een ontspannende en visueel verbluffende entertainmentervaring te bieden.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
@@ -83,7 +92,7 @@ const CosmicSlots = () => {
         'Je behaalde jackpots en prestaties door te geven aan de wereldwijde leaderboards.'
       ],
       gdprTitle: 'Privacy, Gegevensbescherming & Veiligheid',
-      gdprDesc: 'Je privacy staat voorop. We verkopen of delen geen spelersgegevens. Je Google-accountgegevens worden alleen gebruikt om je unieke spelvoortgang op te slaan. Cosmic Slots biedt geen gokken met echt geld aan. Er kan geen echt geld worden ingezet of gewonnen. Alle Stellar Credits zijn puur virtueel.',
+      gdprDesc: 'Je privacy staat voorop. We verkopen of delen geen spelersgegevens. Je Google-accountgegevens worden alleen gebruikt om je unieke spelvoortgang op te slaan. Cosmic Slots biedt geen gokken met echt geld aan. Er kan geen echt geld worden inezet of gewonnen. Alle Stellar Credits zijn puur virtueel.',
       featuresTitle: 'Belangrijkste Spelfuncties',
       features: [
         { title: 'Offline & Online Spelen', desc: 'Geniet van de volledige gameplay, of je nu verbonden bent met het netwerk of offline speelt.' },
@@ -108,7 +117,11 @@ const CosmicSlots = () => {
       title: 'Cosmic Slots',
       subtitle: 'Drehen Sie die Walzen, um die kosmischen Rollen auszurichten und sich mit der optimalen Zeitlinie zu synchronisieren.',
       playOnline: 'Web-Version spielen',
-      downloadApk: 'Bei Google Play laden',
+      downloadApk: 'Google Play-Eintrag anzeigen',
+      videoTitle: 'Gameplay-Trailer',
+      videoDesc: 'Sehen Sie sich die Gameplay-Übersicht an und erleben Sie die kosmische Ausrichtung in Aktion.',
+      videoVertical: 'Vertikale Version (Mobil)',
+      videoLandscape: 'Querformat-Version (Desktop)',
       purposeTitle: 'Zweck der Anwendung & Details',
       purposeDesc: 'Cosmic Slots ist ein kosmisches Spielautomatenspiel für Einzelspieler. Es interpretiert klassische Slot-Mechaniken mit einer kosmischen und mystischen Ästhetik neu. Spieler drehen Walzen mit Planeten, Sternen und himmlischen Symbolen. Unser Ziel ist es, ein entspannendes, visuell ansprechendes Unterhaltungserlebnis zu bieten.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
@@ -144,6 +157,7 @@ const CosmicSlots = () => {
   };
 
   const t = content[language as keyof typeof content] || content.en;
+  const [videoFormat, setVideoFormat] = React.useState<'landscape' | 'vertical'>('landscape');
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -259,6 +273,80 @@ const CosmicSlots = () => {
                         />
                       </button>
                     ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Gameplay Video Showcase */}
+              <div className="bg-card/30 border border-border/30 rounded-2xl p-6 md:p-8 backdrop-blur-md">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                  <div>
+                    <h2 className="font-cosmic text-2xl font-bold text-cosmic-gradient flex items-center gap-2">
+                      <Youtube className="w-6 h-6 text-red-500" />
+                      {t.videoTitle}
+                    </h2>
+                    <p className="font-mystical text-muted-foreground text-sm mt-1">
+                      {t.videoDesc}
+                    </p>
+                  </div>
+                  
+                  {language === 'nl' && (
+                    <div className="flex bg-background/50 p-1 rounded-xl border border-border/40 self-start sm:self-center">
+                      <button
+                        onClick={() => setVideoFormat('landscape')}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-cosmic transition-all duration-300 ${
+                          videoFormat === 'landscape'
+                            ? 'bg-purple-600 text-white shadow-mystical'
+                            : 'text-muted-foreground hover:text-white'
+                        }`}
+                      >
+                        {t.videoLandscape}
+                      </button>
+                      <button
+                        onClick={() => setVideoFormat('vertical')}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-cosmic transition-all duration-300 ${
+                          videoFormat === 'vertical'
+                            ? 'bg-purple-600 text-white shadow-mystical'
+                            : 'text-muted-foreground hover:text-white'
+                        }`}
+                      >
+                        {t.videoVertical}
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                {language === 'nl' ? (
+                  videoFormat === 'vertical' ? (
+                    <div className="relative w-full max-w-[280px] aspect-[9/16] mx-auto rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                      <iframe
+                        src="https://www.youtube.com/embed/ebL8W88TsCA"
+                        title="Cosmic Slots Trailer (Vertical)"
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  ) : (
+                    <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                      <iframe
+                        src="https://www.youtube.com/embed/VZSUMSJJSFI"
+                        title="Cosmic Slots Trailer (Landscape)"
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  )
+                ) : (
+                  <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                    <iframe
+                      src="https://www.youtube.com/embed/vhy0QYKfXzE"
+                      title="Cosmic Slots Trailer"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
                   </div>
                 )}
               </div>

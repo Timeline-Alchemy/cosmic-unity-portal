@@ -11,10 +11,9 @@ window.addEventListener('error', (e) => {
   }
 });
 
-// Debounce ResizeObserver to prevent loops
-const debounce = (func: Function, wait: number) => {
+const debounce = <Args extends unknown[]>(func: (...args: Args) => void, wait: number) => {
   let timeout: NodeJS.Timeout;
-  return function executedFunction(...args: any[]) {
+  return function executedFunction(...args: Args) {
     const later = () => {
       clearTimeout(timeout);
       func(...args);

@@ -1,6 +1,7 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-export type FrequencyMode = 'void' | 'ascended' | 'celestial';
+export type FrequencyMode = 'void' | 'ascended';
 
 interface FrequencyContextType {
   mode: FrequencyMode;
@@ -18,7 +19,6 @@ const STORAGE_KEY = 'cosmic-frequency-mode';
 const MODE_CLASSES: Record<FrequencyMode, string | null> = {
   void: null,
   ascended: 'shifted-frequency-active',
-  celestial: 'celestial-frequency-active',
 };
 
 export const FrequencyProvider = ({ children }: { children: ReactNode }) => {
@@ -29,7 +29,7 @@ export const FrequencyProvider = ({ children }: { children: ReactNode }) => {
       const oldShifted = localStorage.getItem('cosmic-frequency-shifted');
       return oldShifted === 'true' ? 'ascended' : 'void';
     }
-    if (stored === 'void' || stored === 'ascended' || stored === 'celestial') return stored;
+    if (stored === 'void' || stored === 'ascended') return stored;
     return 'void';
   });
 

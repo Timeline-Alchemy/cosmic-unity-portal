@@ -15,7 +15,8 @@ import {
   HelpCircle,
   FileText,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Youtube
 } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -31,7 +32,9 @@ const GalacticPoker = () => {
       title: 'Galactic Poker',
       subtitle: 'Challenge the galaxy in this tactical celestial Texas Hold\'em.',
       playOnline: 'Play Web Version',
-      downloadApk: 'Download Android APK',
+      downloadApk: 'View Google Play Listing',
+      videoTitle: 'Gameplay Trailer',
+      videoDesc: 'Watch the gameplay overview and explore the cosmic alignment features in action.',
       purposeTitle: 'Application Purpose & Details',
       purposeDesc: 'Galactic Poker is a single-player, space-themed mobile card game. It adapts the traditional rules of Texas Hold\'em into a gorgeous futuristic setting. Players can test their card skills against computer opponents in cosmic environments. Our goal is to provide a rich, strategic offline and online poker experience featuring premium visuals.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
@@ -68,7 +71,9 @@ const GalacticPoker = () => {
       title: 'Galactic Poker',
       subtitle: 'Daag het heelal uit in deze tactische celestiale Texas Hold\'em.',
       playOnline: 'Speel Webversie',
-      downloadApk: 'Download Android APK',
+      downloadApk: 'Bekijk Google Play-vermelding',
+      videoTitle: 'Gameplay Trailer',
+      videoDesc: 'Bekijk de gameplay-impressie en zie de kosmische uitlijning in actie.',
       purposeTitle: 'Doel van de Applicatie & Details',
       purposeDesc: 'Galactic Poker is een single-player mobiel kaartspel met een ruimtethema. Het vertaalt de traditionele regels van Texas Hold\'em naar een prachtige futuristische setting. Spelers kunnen hun kaartvaardigheden testen tegen computergestuurde tegenstanders in kosmische omgevingen. Ons doel is om een strategische pokerervaring te bieden.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
@@ -80,7 +85,7 @@ const GalacticPoker = () => {
         'Je poker-klassementen en prestaties door te geven aan de wereldwijde klassementen.'
       ],
       gdprTitle: 'Privacy, Gegevensbescherming & Veiligheid',
-      gdprDesc: 'We waarderen je privacy. We verkopen of delen je persoonlijke gegevens niet. Het Google Sign-In profiel wordt alleen gebruikt om je persoonlijke in-game opslagstatus te beheren. Dit spel bevat geen echt geld gokken. Er kan geen echt geld worden ingezet of gewonnen. Alle valuta in het spel (Stellar Credits) is puur virtueel.',
+      gdprDesc: 'We verkopen of delen je persoonlijke gegevens niet. Het Google Sign-In profiel wordt alleen gebruikt om je persoonlijke in-game opslagstatus te beheren. Dit spel bevat geen echt geld gokken. Er kan geen echt geld worden ingezet of gewonnen. Alle valuta in het spel (Stellar Credits) is puur virtueel.',
       featuresTitle: 'Belangrijkste Spelfuncties',
       features: [
         { title: 'Cloudvoortgang Synchronisatie', desc: 'Houd je spelvoortgang, statistieken en prestaties veilig en gesynchroniseerd over je apparaten via je Google-account.' },
@@ -105,7 +110,9 @@ const GalacticPoker = () => {
       title: 'Galactic Poker',
       subtitle: 'Fordern Sie die Galaxie in diesem taktischen, himmlischen Texas Hold\'em heraus.',
       playOnline: 'Web-Version spielen',
-      downloadApk: 'Android APK herunterladen',
+      downloadApk: 'Google Play-Eintrag anzeigen',
+      videoTitle: 'Gameplay-Trailer',
+      videoDesc: 'Sehen Sie sich die Gameplay-Übersicht an und erleben Sie die kosmische Ausrichtung in Aktion.',
       purposeTitle: 'Zweck der Anwendung & Details',
       purposeDesc: 'Galactic Poker is ein kosmisches mobiles Pokerspiel für Einzelspieler. Es adaptiert die traditionellen Regeln von Texas Hold\'em in einer wunderschönen futuristischen Weltraumumgebung. Spieler können ihre Kartenfähigkeiten gegen Computergegner in kosmischen Umgebungen testen. Unser Ziel ist es, eine strategische Poker-Erfahrung zu bieten.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
@@ -120,7 +127,7 @@ const GalacticPoker = () => {
       gdprDesc: 'Wir schätzen Ihre Privatsphäre. Wir verkaufen oder teilen Ihre persönlichen Daten nicht. Das Google Sign-In-Profil wird nur zur Verwaltung Ihres persönlichen Spielstands verwendet. Dieses Spiel bietet kein Echtgeld-Glücksspiel. Es kann kein echtes Geld gesetzt oder gewonnen werden. Alle im Spiel verwendeten Währungen (Stellar Credits) sind rein virtuell.',
       featuresTitle: 'Wichtigste Spielfunktionen',
       features: [
-        { title: 'Cloud-Fortschrittssynchronisierung', desc: 'Halten Sie Ihren Spielstand, Ihre Statistiken und Erfolge über Ihr Google-Konto auf all Ihren Geräten synchron.' },
+        { title: 'Cloud-Fortschrittssynchronisierung', desc: 'Halten Sie Ihren Spielstand, Ihre Erfolge und Statistiken über Ihr Google-Konto auf all Ihren Geräten synchron.' },
         { title: 'Tägliche Missionen', desc: 'Schließen Sie täglich Pokermissionen ab, um Ihr Guthaben aufzubessern.' },
         { title: 'Taktisches Setzen', desc: 'Setzen, erhöhen oder passen Sie gegen anspruchsvolle KI-Gegner.' },
         { title: 'Faszinierende Weltraumgrafik', desc: 'Mit wunderschönen kosmischen Hintergründen, Sci-Fi-Designs und flüssigen Animationen.' }
@@ -258,6 +265,31 @@ const GalacticPoker = () => {
                     ))}
                   </div>
                 )}
+              </div>
+
+              {/* Gameplay Video Showcase */}
+              <div className="bg-card/30 border border-border/30 rounded-2xl p-6 md:p-8 backdrop-blur-md">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                  <div>
+                    <h2 className="font-cosmic text-2xl font-bold text-cosmic-gradient flex items-center gap-2">
+                      <Youtube className="w-6 h-6 text-red-500" />
+                      {t.videoTitle}
+                    </h2>
+                    <p className="font-mystical text-muted-foreground text-sm mt-1">
+                      {t.videoDesc}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${language === 'nl' ? 'E7CyPwA_ljE' : 'dcis4aSigI0'}`}
+                    title="Galactic Poker Trailer"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
 
               {/* Purpose Section */}

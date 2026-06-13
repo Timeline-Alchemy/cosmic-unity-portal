@@ -13,7 +13,8 @@ import {
   CheckCircle,
   FileText,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Youtube
 } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -36,7 +37,9 @@ const CosmicRoulette = () => {
       title: 'Cosmic Roulette',
       subtitle: 'Spin the cosmic wheel of abundance and manifest your alignment with the stars.',
       playOnline: 'Play Web Version',
-      downloadApk: 'Download Android APK',
+      downloadApk: 'View Google Play Listing',
+      videoTitle: 'Gameplay Trailer',
+      videoDesc: 'Watch the gameplay overview and explore the cosmic alignment features in action.',
       purposeTitle: 'Application Purpose & Details',
       purposeDesc: 'Cosmic Roulette is a single-player, cosmic-themed mobile and web casino game. It brings the thrilling gameplay of European Roulette into a beautiful space-themed setting. Spin the wheel, place your bets, and align your energy with the intergalactic flow of abundance.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
@@ -73,7 +76,9 @@ const CosmicRoulette = () => {
       title: 'Cosmic Roulette',
       subtitle: 'Draai aan het kosmische wiel der overvloed en manifesteer je uitlijning met de sterren.',
       playOnline: 'Speel Webversie',
-      downloadApk: 'Download Android APK',
+      downloadApk: 'Bekijk Google Play-vermelding',
+      videoTitle: 'Gameplay Trailer',
+      videoDesc: 'Bekijk de gameplay-impressie en zie de kosmische uitlijning in actie.',
       purposeTitle: 'Doel van de Applicatie & Details',
       purposeDesc: 'Cosmic Roulette is een single-player mobiel en web-casinospel met een kosmisch thema. Het brengt de spannende gameplay van Europees Roulette naar een prachtige ruimtevaartomgeving. Draai aan het wiel, plaats je inzetten en lijn je energie uit met de intergalactische stroom van overvloed.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
@@ -110,7 +115,9 @@ const CosmicRoulette = () => {
       title: 'Cosmic Roulette',
       subtitle: 'Drehen Sie das kosmische Rad des Überflusses und manifestieren Sie Ihre Ausrichtung mit den Sternen.',
       playOnline: 'Web-Version spielen',
-      downloadApk: 'Android APK herunterladen',
+      downloadApk: 'Google Play-Eintrag anzeigen',
+      videoTitle: 'Gameplay-Trailer',
+      videoDesc: 'Sehen Sie sich die Gameplay-Übersicht an und erleben Sie die kosmische Ausrichtung in Aktion.',
       purposeTitle: 'Zweck der Anwendung & Details',
       purposeDesc: 'Cosmic Roulette ist ein kosmisches Einzelspieler-Handy- und Web-Casinospiel. Es bringt das aufregende Gameplay des europäischen Roulettes in eine wunderschöne Weltraumumgebung. Drehen Sie das Rad, platzieren Sie Ihre Einsätze und richten Sie Ihre Energie auf den intergalaktischen Fluss des Überflusses aus.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
@@ -263,6 +270,31 @@ const CosmicRoulette = () => {
                     ))}
                   </div>
                 )}
+              </div>
+
+              {/* Gameplay Video Showcase */}
+              <div className="bg-card/30 border border-border/30 rounded-2xl p-6 md:p-8 backdrop-blur-md">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                  <div>
+                    <h2 className="font-cosmic text-2xl font-bold text-cosmic-gradient flex items-center gap-2">
+                      <Youtube className="w-6 h-6 text-red-500" />
+                      {t.videoTitle}
+                    </h2>
+                    <p className="font-mystical text-muted-foreground text-sm mt-1">
+                      {t.videoDesc}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${language === 'nl' ? 'G3JFTqvabqw' : 'R3c9Jjo88Q8'}`}
+                    title="Cosmic Roulette Trailer"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
 
               {/* Purpose Section */}

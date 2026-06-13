@@ -15,7 +15,8 @@ import {
   HelpCircle,
   FileText,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Youtube
 } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
@@ -34,7 +35,9 @@ const BlackholeBlackjack = () => {
       title: 'Blackhole Blackjack',
       subtitle: 'Defy the cosmic void in this thrilling spin on classic blackjack.',
       playOnline: 'Play Web Version',
-      downloadApk: 'Get it on Google Play',
+      downloadApk: 'View Google Play Listing',
+      videoTitle: 'Gameplay Trailer',
+      videoDesc: 'Watch the gameplay overview and explore the cosmic alignment features in action.',
       purposeTitle: 'Application Purpose & Details',
       purposeDesc: 'Blackhole Blackjack is a single-player, cosmic-themed mobile card game. It brings the timeless gameplay of Blackjack into a sci-fi, space-themed setting. Our goal is to provide a premium, engaging gaming experience for players who enjoy card strategy and cosmic art.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
@@ -71,7 +74,9 @@ const BlackholeBlackjack = () => {
       title: 'Blackhole Blackjack',
       subtitle: 'Trotseer de kosmische leegte in deze spannende draai aan klassiek blackjack.',
       playOnline: 'Speel Webversie',
-      downloadApk: 'Download via Google Play',
+      downloadApk: 'Bekijk Google Play-vermelding',
+      videoTitle: 'Gameplay Trailer',
+      videoDesc: 'Bekijk de gameplay-impressie en zie de kosmische uitlijning in actie.',
       purposeTitle: 'Doel van de Applicatie & Details',
       purposeDesc: 'Blackhole Blackjack is een single-player, mobiel kaartspel met een kosmisch thema. Het brengt de tijdloze gameplay van Blackjack naar een sci-fi, ruimtevaartomgeving. Ons doel is om een premium en boeiende game-ervaring te bieden aan spelers die houden van kaartstrategie en kosmische kunst.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
@@ -108,7 +113,9 @@ const BlackholeBlackjack = () => {
       title: 'Blackhole Blackjack',
       subtitle: 'Trotzen Sie der kosmischen Leere in dieser aufregenden Variante des klassischen Blackjack.',
       playOnline: 'Web-Version spielen',
-      downloadApk: 'Bei Google Play laden',
+      downloadApk: 'Google Play-Eintrag anzeigen',
+      videoTitle: 'Gameplay-Trailer',
+      videoDesc: 'Sehen Sie sich die Gameplay-Übersicht an und erleben Sie die kosmische Ausrichtung in Aktion.',
       purposeTitle: 'Zweck der Anwendung & Details',
       purposeDesc: 'Blackhole Blackjack ist ein kosmisches mobiles Kartenspiel für Einzelspieler. Es bringt das zeitlose Gameplay von Blackjack in eine Sci-Fi-Weltraumumgebung. Unser Ziel ist es, Spielern, die Kartenstrategie und kosmische Kunst lieben, ein erstklassiges Spielerlebnis zu bieten.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
@@ -261,6 +268,31 @@ const BlackholeBlackjack = () => {
                     ))}
                   </div>
                 )}
+              </div>
+
+              {/* Gameplay Video Showcase */}
+              <div className="bg-card/30 border border-border/30 rounded-2xl p-6 md:p-8 backdrop-blur-md">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                  <div>
+                    <h2 className="font-cosmic text-2xl font-bold text-cosmic-gradient flex items-center gap-2">
+                      <Youtube className="w-6 h-6 text-red-500" />
+                      {t.videoTitle}
+                    </h2>
+                    <p className="font-mystical text-muted-foreground text-sm mt-1">
+                      {t.videoDesc}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${language === 'nl' ? 'VnHmVdeENFw' : '5-FB4YGOm1s'}`}
+                    title="Blackhole Blackjack Trailer"
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
 
               {/* Purpose Section */}

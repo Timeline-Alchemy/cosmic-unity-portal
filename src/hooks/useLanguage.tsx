@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type Language = 'nl' | 'en' | 'de';
@@ -2117,18 +2118,18 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const t = (key: string): string => {
     try {
       const keys = key.split('.');
-      let result: any = translations[language];
+      let result: unknown = translations[language];
       for (const k of keys) {
-        result = result?.[k];
+        result = (result as Record<string, unknown>)?.[k];
         if (result === undefined) {
-          let fallbackResult: any = translations.en;
+          let fallbackResult: unknown = translations.en;
           for (const fk of keys) {
-            fallbackResult = fallbackResult?.[fk];
+            fallbackResult = (fallbackResult as Record<string, unknown>)?.[fk];
           }
-          return fallbackResult || key;
+          return (fallbackResult as string) || key;
         }
       }
-      return result || key;
+      return (result as string) || key;
     } catch (error) {
       console.warn('Translation error for key:', key, error);
       return key;
@@ -2159,14 +2160,14 @@ export const useLanguage = () => {
       // Try to get Dutch translation as fallback
       try {
         const keys = key.split('.');
-        let result: any = translations.nl;
+        let result: unknown = translations.nl;
         for (const k of keys) {
-          result = result?.[k];
+          result = (result as Record<string, unknown>)?.[k];
           if (result === undefined) {
             return key;
           }
         }
-        return result || key;
+        return (result as string) || key;
       } catch {
         return key;
       }
