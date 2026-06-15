@@ -84,6 +84,14 @@ const App: React.FC = () => {
               <Route path="/casino/galactic-poker" element={<GalacticPoker />} />
               <Route path="/casino/cosmic-roulette" element={<CosmicRoulette />} />
               <Route path="/casino/galactic-pinball" element={<GalacticPinball />} />
+              
+              {/* Short URL Aliases for Android App Links / Fallbacks */}
+              <Route path="/cosmic-slots" element={<CosmicSlots />} />
+              <Route path="/blackhole-blackjack" element={<BlackholeBlackjack />} />
+              <Route path="/galactic-poker" element={<GalacticPoker />} />
+              <Route path="/cosmic-roulette" element={<CosmicRoulette />} />
+              <Route path="/galactic-pinball" element={<GalacticPinball />} />
+
               <Route path="/timeline-alchemy" element={<TimelineAlchemyStatus />} />
               <Route path="/e-books" element={<EBooks />} />
 
