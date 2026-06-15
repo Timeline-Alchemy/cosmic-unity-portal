@@ -51,8 +51,8 @@ const CasinoCollection = () => {
         {
           title: t('casino.games.cosmicPinball.title'),
           description: t('casino.games.cosmicPinball.desc'),
-          path: '#',
-          isPlaceholder: true,
+          path: '/casino/galactic-pinball',
+          isPlaceholder: false,
           icon: <img src="/images/pinball-app-icon.png" alt="Galactic Pinball" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
         },
         {

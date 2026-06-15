@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { 
   Gamepad2, 
   Download, 
+  Smartphone,
   ShieldCheck, 
   CreditCard, 
   Users, 
@@ -35,6 +36,7 @@ const CosmicSlots = () => {
       title: 'Cosmic Slots',
       subtitle: 'Spin the slots to align the cosmic reels and synchronize with the optimal timeline.',
       playOnline: 'Play Web Version',
+      androidApp: 'Open Android App',
       downloadApk: 'View Google Play Listing',
       videoTitle: 'Gameplay Trailer',
       videoDesc: 'Watch the gameplay overview and explore the cosmic alignment features in action.',
@@ -76,6 +78,7 @@ const CosmicSlots = () => {
       title: 'Cosmic Slots',
       subtitle: 'Draai de slots om de kosmische rollen uit te lijnen en te synchroniseren met de optimale tijdlijn.',
       playOnline: 'Speel Webversie',
+      androidApp: 'Open Android App',
       downloadApk: 'Bekijk Google Play-vermelding',
       videoTitle: 'Gameplay Trailer',
       videoDesc: 'Bekijk de gameplay-impressie en zie de kosmische uitlijning in actie.',
@@ -117,6 +120,7 @@ const CosmicSlots = () => {
       title: 'Cosmic Slots',
       subtitle: 'Drehen Sie die Walzen, um die kosmischen Rollen auszurichten und sich mit der optimalen Zeitlinie zu synchronisieren.',
       playOnline: 'Web-Version spielen',
+      androidApp: 'Android App öffnen',
       downloadApk: 'Google Play-Eintrag anzeigen',
       videoTitle: 'Gameplay-Trailer',
       videoDesc: 'Sehen Sie sich die Gameplay-Übersicht an und erleben Sie die kosmische Ausrichtung in Aktion.',
@@ -200,6 +204,12 @@ const CosmicSlots = () => {
                     <a href="https://slots.cosmic-casino.one/play" target="_blank" rel="noopener noreferrer">
                       <Gamepad2 className="w-4 h-4 mr-2 animate-bounce" />
                       {t.playOnline}
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" className="border-purple-500/30 text-white hover:bg-purple-950/20 px-6 py-5">
+                    <a href="https://timeline-alchemy.com/cosmic-slots" target="_blank" rel="noopener noreferrer">
+                      <Smartphone className="w-4 h-4 mr-2 animate-pulse" />
+                      {t.androidApp}
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="border-purple-500/30 text-white hover:bg-purple-950/20 px-6 py-5">

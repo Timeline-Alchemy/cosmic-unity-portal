@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { 
   Gamepad2, 
   Download, 
+  Smartphone,
   ShieldCheck, 
   CreditCard, 
   Users, 
@@ -32,6 +33,7 @@ const GalacticPoker = () => {
       title: 'Galactic Poker',
       subtitle: 'Challenge the galaxy in this tactical celestial Texas Hold\'em.',
       playOnline: 'Play Web Version',
+      androidApp: 'Open Android App',
       downloadApk: 'View Google Play Listing',
       videoTitle: 'Gameplay Trailer',
       videoDesc: 'Watch the gameplay overview and explore the cosmic alignment features in action.',
@@ -71,6 +73,7 @@ const GalacticPoker = () => {
       title: 'Galactic Poker',
       subtitle: 'Daag het heelal uit in deze tactische celestiale Texas Hold\'em.',
       playOnline: 'Speel Webversie',
+      androidApp: 'Open Android App',
       downloadApk: 'Bekijk Google Play-vermelding',
       videoTitle: 'Gameplay Trailer',
       videoDesc: 'Bekijk de gameplay-impressie en zie de kosmische uitlijning in actie.',
@@ -110,6 +113,7 @@ const GalacticPoker = () => {
       title: 'Galactic Poker',
       subtitle: 'Fordern Sie die Galaxie in diesem taktischen, himmlischen Texas Hold\'em heraus.',
       playOnline: 'Web-Version spielen',
+      androidApp: 'Android App öffnen',
       downloadApk: 'Google Play-Eintrag anzeigen',
       videoTitle: 'Gameplay-Trailer',
       videoDesc: 'Sehen Sie sich die Gameplay-Übersicht an und erleben Sie die kosmische Ausrichtung in Aktion.',
@@ -190,6 +194,12 @@ const GalacticPoker = () => {
                     <a href="https://poker.cosmic-casino.one/play" target="_blank" rel="noopener noreferrer">
                       <Gamepad2 className="w-4 h-4 mr-2 animate-bounce" />
                       {t.playOnline}
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" className="border-purple-500/30 text-white hover:bg-purple-950/20 px-6 py-5">
+                    <a href="https://timeline-alchemy.com/galactic-poker" target="_blank" rel="noopener noreferrer">
+                      <Smartphone className="w-4 h-4 mr-2 animate-pulse" />
+                      {t.androidApp}
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="border-purple-500/30 text-white hover:bg-purple-950/20 px-6 py-5">

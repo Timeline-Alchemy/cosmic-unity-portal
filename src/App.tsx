@@ -33,6 +33,7 @@ import CosmicSlots from "./pages/CosmicSlots";
 import BlackholeBlackjack from "./pages/BlackholeBlackjack";
 import GalacticPoker from "./pages/GalacticPoker";
 import CosmicRoulette from "./pages/CosmicRoulette";
+import GalacticPinball from "./pages/GalacticPinball";
 
 
 
@@ -82,6 +83,7 @@ const App: React.FC = () => {
               <Route path="/casino/blackhole-blackjack" element={<BlackholeBlackjack />} />
               <Route path="/casino/galactic-poker" element={<GalacticPoker />} />
               <Route path="/casino/cosmic-roulette" element={<CosmicRoulette />} />
+              <Route path="/casino/galactic-pinball" element={<GalacticPinball />} />
               <Route path="/timeline-alchemy" element={<TimelineAlchemyStatus />} />
               <Route path="/e-books" element={<EBooks />} />
 

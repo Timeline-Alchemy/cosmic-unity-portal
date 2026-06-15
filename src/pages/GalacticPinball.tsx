@@ -13,7 +13,6 @@ import {
   ArrowLeft, 
   Info,
   CheckCircle,
-  HelpCircle,
   FileText,
   ChevronLeft,
   ChevronRight,
@@ -21,50 +20,47 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
-const BlackholeBlackjack = () => {
+const GalacticPinball = () => {
   const { language } = useLanguage();
   const [activeImg, setActiveImg] = React.useState(0);
   const screenshots = [
-    '/images/02-blackjack.jpg',
-    '/images/03-blackjack.jpg',
-    '/images/04-blackjack.jpg',
-    '/images/05-blackjack.jpg'
+    '/images/02-pinball.png'
   ];
   
   const content = {
     en: {
-      title: 'Blackhole Blackjack',
-      subtitle: 'Defy the cosmic void in this thrilling spin on classic blackjack.',
+      title: 'Galactic Pinball',
+      subtitle: 'Launch the ball through cosmic portals and activate the flippers of abundance.',
       playOnline: 'Play Web Version',
       androidApp: 'Open Android App',
-      downloadApk: 'View Google Play Listing',
+      downloadApk: 'Google Play Store',
       videoTitle: 'Gameplay Trailer',
-      videoDesc: 'Watch the gameplay overview and explore the cosmic alignment features in action.',
+      videoDesc: 'Watch the gameplay overview and explore the cosmic pinball physics in action.',
       purposeTitle: 'Application Purpose & Details',
-      purposeDesc: 'Blackhole Blackjack is a single-player, cosmic-themed mobile card game. It brings the timeless gameplay of Blackjack into a sci-fi, space-themed setting. Our goal is to provide a premium, engaging gaming experience for players who enjoy card strategy and cosmic art.',
+      purposeDesc: 'Galactic Pinball is a single-player, space-themed mobile pinball game. It combines realistic pinball physics with cosmic mechanics, gravitational anomalies, and sacred geometry. Players launch their ball into the celestial arena, hitting bumpers, triggers, and navigating through wormholes to rack up high scores and accumulate Stellar Credits.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
-      googleAuthDesc: 'To ensure a smooth gaming experience, Blackhole Blackjack uses Google Sign-In and Google Play Games Services. This integration is used strictly to:',
+      googleAuthDesc: 'To provide a smooth gaming experience, Galactic Pinball uses Google Sign-In and Google Play Games Services. This integration serves to:',
       authPoints: [
-        'Securely authenticate your profile without requiring manual passwords.',
-        'Securely save your game progress, level achievements, and stats to the cloud.',
-        'Save your daily missions progress, player level, and gameplay statistics.',
-        'Publish your high scores to the global leaderboards so you can compete with other players.'
+        'Securely authenticate your player profile without requiring manual account registration.',
+        'Securely save your high scores, mission achievements, and progress to the cloud.',
+        'Track your daily mission completions, player level, and reward history.',
+        'Submit your pinball high scores to the global leaderboards to compete with other players.'
       ],
       gdprTitle: 'Privacy, Data Protection & Safety',
-      gdprDesc: 'We value your privacy. We do not sell or share your personal data. The Google Sign-In profile is only used to manage your personal in-game save state. This game does not feature real-money gambling. No real money can be wagered, won, or paid out. All currency used in the game (Stellar Credits) is purely virtual.',
+      gdprDesc: 'Your privacy is paramount. We do not sell or share player personal data. Your Google credentials are used solely to store your unique in-game progress. Galactic Pinball does not support real-money gambling. No real money can be wagered or won. All currency (Stellar Credits) is virtual and intended for entertainment purposes only.',
       featuresTitle: 'Key Game Features',
       features: [
-        { title: 'Offline & Online Play', desc: 'Enjoy full gameplay whether connected to the network or playing offline.' },
-        { title: 'Daily Missions', desc: 'Complete localized space-themed challenges daily to boost your wallet balance.' },
-        { title: 'High-Risk Custom Betting', desc: 'Choose your own stakes. Place custom bet sizes to test your blackjack strategy.' },
-        { title: 'Immersive Space Visuals', desc: 'Features beautiful hand-crafted cosmic backgrounds, sci-fi cards, and smooth animations.' }
+        { title: 'Offline & Online Play', desc: 'Enjoy full gameplay whether connected to the network or launching balls offline.' },
+        { title: 'Cosmic Mechanics & Portals', desc: 'Navigate dynamic tables with black holes, wormholes, and gravitational fields.' },
+        { title: 'Daily Missions', desc: 'Complete daily pinball objectives to claim free Stellar Credits.' },
+        { title: 'Neon Sacred Geometry', desc: 'Gorgeous visual elements showing rotating geometric grids and nebula effects.' }
       ],
       specsTitle: 'Application Information',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Web Browser',
-        ageRating: 'PEGI 18 (Simulated Gambling)',
+        ageRating: 'PEGI 3',
         license: 'Free (Contains Ads & In-App Purchases)'
       },
       linksTitle: 'Legal & Documentation',
@@ -73,38 +69,38 @@ const BlackholeBlackjack = () => {
       backToCasino: 'Back to Casino Collection'
     },
     nl: {
-      title: 'Blackhole Blackjack',
-      subtitle: 'Trotseer de kosmische leegte in deze spannende draai aan klassiek blackjack.',
+      title: 'Galactic Pinball',
+      subtitle: 'Lanceer de bal door kosmische portalen en activeer de flippers van overvloed.',
       playOnline: 'Speel Webversie',
       androidApp: 'Open Android App',
-      downloadApk: 'Bekijk Google Play-vermelding',
+      downloadApk: 'Google Play Store',
       videoTitle: 'Gameplay Trailer',
-      videoDesc: 'Bekijk de gameplay-impressie en zie de kosmische uitlijning in actie.',
+      videoDesc: 'Bekijk de gameplay-impressie en zie de kosmische pinball-fysica in actie.',
       purposeTitle: 'Doel van de Applicatie & Details',
-      purposeDesc: 'Blackhole Blackjack is een single-player, mobiel kaartspel met een kosmisch thema. Het brengt de tijdloze gameplay van Blackjack naar een sci-fi, ruimtevaartomgeving. Ons doel is om een premium en boeiende game-ervaring te bieden aan spelers die houden van kaartstrategie en kosmische kunst.',
+      purposeDesc: 'Galactic Pinball is een single-player mobiel pinballspel met een ruimtethema. Het combineert realistische fysica met kosmische spelelementen, zwaartekrachtafwijkingen en heilige geometrie. Spelers lanceren hun bal in de galactische arena, activeren bumpers en reizen door wormgaten om hoge scores en Stellar Credits te verdienen.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
-      googleAuthDesc: 'Om een soepele game-ervaring te garanderen, gebruikt Blackhole Blackjack Google Sign-In en Google Play Games-services. Deze integratie wordt uitsluitend gebruikt om:',
+      googleAuthDesc: 'Om een soepele game-ervaring te garanderen, maakt Galactic Pinball gebruik van Google Sign-In en Google Play Games-services. Dit wordt gebruikt om:',
       authPoints: [
-        'Je profiel veilig te verifiëren zonder dat handmatige wachtwoorden nodig zijn.',
-        'Je spelvoortgang, behaalde niveaus en statistieken veilig op te slaan in de cloud.',
-        'Je dagelijkse missievoortgang, spelersniveau en statistieken op te slaan.',
-        'Je topscores te publiceren op de wereldwijde klassementen om te concurreren met andere spelers.'
+        'Je spelersprofiel veilig te verifiëren zonder dat handmatige registratie nodig is.',
+        'Je topscores, behaalde missies en voortgang veilig op te slaan in de cloud.',
+        'Je dagelijkse missies, spelersniveau en beloningsgeschiedenis bij te houden.',
+        'Je topscores door te geven aan de wereldwijde leaderboards om te concurreren met andere spelers.'
       ],
       gdprTitle: 'Privacy, Gegevensbescherming & Veiligheid',
-      gdprDesc: 'We waarderen je privacy. We verkopen of delen je persoonlijke gegevens niet. Het Google Sign-In profiel wordt alleen gebruikt om je persoonlijke in-game opslagstatus te beheren. Dit spel bevat geen echt geld gokken. Er kan geen echt geld worden ingezet of gewonnen. Alle valuta in het spel (Stellar Credits) is puur virtueel.',
+      gdprDesc: 'Je privacy staat voorop. We verkopen of delen geen spelersgegevens. Je Google-accountgegevens worden alleen gebruikt om je unieke spelvoortgang op te slaan. Galactic Pinball biedt geen gokken met echt geld aan. Er kan geen echt geld worden ingezet of gewonnen. Alle Stellar Credits zijn puur virtueel.',
       featuresTitle: 'Belangrijkste Spelfuncties',
       features: [
         { title: 'Offline & Online Spelen', desc: 'Geniet van de volledige gameplay, of je nu verbonden bent met het netwerk of offline speelt.' },
-        { title: 'Dagelijkse Missies', desc: 'Voltooi elke dag uitdagende missies om extra credits te verdienen.' },
-        { title: 'Aangepaste Inzetten', desc: 'Bepaal je eigen risico. Zet elk gewenst aantal credits in om je strategie te testen.' },
-        { title: 'Indrukwekkende Ruimte-visuals', desc: 'Voorzien van prachtige, handgemaakte kosmische achtergronden en vloeiende animaties.' }
+        { title: 'Kosmische Mechanieken', desc: 'Navigeer door tafels met wormgaten, zwarte gaten en zwaartekrachtvelden.' },
+        { title: 'Dagelijkse Missies', desc: 'Voltooi dagelijkse pinballdoelen om gratis Stellar Credits te claimen.' },
+        { title: 'Neon Heilige Geometrie', desc: 'Prachtige bewegende achtergronden, roterende geometrische rasters en nebula-effecten.' }
       ],
       specsTitle: 'Applicatie Informatie',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
-        ageRating: 'PEGI 18 (Gesimuleerd gokken)',
+        ageRating: 'PEGI 3',
         license: 'Gratis (Bevat advertenties & in-app aankopen)'
       },
       linksTitle: 'Wettelijk & Documentatie',
@@ -113,38 +109,38 @@ const BlackholeBlackjack = () => {
       backToCasino: 'Terug naar Casino Collectie'
     },
     de: {
-      title: 'Blackhole Blackjack',
-      subtitle: 'Trotzen Sie der kosmischen Leere in dieser aufregenden Variante des klassischen Blackjack.',
+      title: 'Galactic Pinball',
+      subtitle: 'Schießen Sie die Kugel durch kosmische Portale und aktivieren Sie die Flipper der Fülle.',
       playOnline: 'Web-Version spielen',
       androidApp: 'Android App öffnen',
-      downloadApk: 'Google Play-Eintrag anzeigen',
+      downloadApk: 'Google Play Store',
       videoTitle: 'Gameplay-Trailer',
-      videoDesc: 'Sehen Sie sich die Gameplay-Übersicht an und erleben Sie die kosmische Ausrichtung in Aktion.',
+      videoDesc: 'Sehen Sie sich die Gameplay-Übersicht an und erleben Sie die kosmische Pinball-Physik in Aktion.',
       purposeTitle: 'Zweck der Anwendung & Details',
-      purposeDesc: 'Blackhole Blackjack ist ein kosmisches mobiles Kartenspiel für Einzelspieler. Es bringt das zeitlose Gameplay von Blackjack in eine Sci-Fi-Weltraumumgebung. Unser Ziel ist es, Spielern, die Kartenstrategie und kosmische Kunst lieben, ein erstklassiges Spielerlebnis zu bieten.',
+      purposeDesc: 'Galactic Pinball ist ein kosmisches Flipper-Spiel für Einzelspieler. Es kombiniert realistische Flipper-Physik mit kosmischen Spielmechaniken, Gravitationsanomalien und heiliger Geometrie. Spieler schießen ihre Kugel in die Himmelsarena, treffen Bumper, Trigger und navigieren durch Wurmlöcher, um Highscores und Stellar Credits zu sammeln.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
-      googleAuthDesc: 'Um ein reibungsloses Spielerlebnis zu gewährleisten, verwendet Blackhole Blackjack Google Sign-In und die Google Play Spieledienste. Diese Integration dient ausschließlich dazu:',
+      googleAuthDesc: 'Um ein reibungsloses Spielerlebnis zu gewährleisten, verwendet Galactic Pinball Google Sign-In und Google Play Spieledienste. Diese Integration dient dazu:',
       authPoints: [
-        'Ihr Profil sicher zu authentifizieren, ohne dass manuelle Passwörter erforderlich sind.',
-        'Ihren Spielstand, Ihr Spielerlevel und Ihre Statistiken sicher in der Cloud zu speichern.',
-        'Ihren täglichen Missionsfortschritt, Ihr Spielerlevel und Ihre Spielstatistiken zu speichern.',
-        'Ihre Highscores in den globalen Bestenlisten zu veröffentlichen, um sich mit anderen zu messen.'
+        'Ihr Spielerprofil sicher zu authentifizieren, ohne dass eine manuelle Registrierung erforderlich ist.',
+        'Ihre Highscores, Erfolge und Spielstände sicher in der Cloud zu speichern.',
+        'Ihre täglichen Missionserfolge, Ihr Spielerlevel und Ihr Guthaben zu speichern.',
+        'Ihre Highscores in die weltweiten Bestenlisten einzutragen, um sich mit anderen Spielern zu messen.'
       ],
       gdprTitle: 'Datenschutz, Datensicherheit & Sicherheit',
-      gdprDesc: 'Wir schätzen Ihre Privatsphäre. Wir verkaufen oder teilen Ihre persönlichen Daten nicht. Das Google Sign-In-Profil wird nur zur Verwaltung Ihres persönlichen Spielstands verwendet. Dieses Spiel bietet kein Echtgeld-Glücksspiel. Es kann kein echtes Geld gesetzt oder gewonnen werden. Alle im Spiel verwendeten Währungen (Stellar Credits) sind rein virtuell.',
+      gdprDesc: 'Ihre Privatsphäre ist uns wichtig. Wir verkaufen oder teilen keine Spielerdaten. Ihre Google-Anmeldedaten werden ausschließlich zur Speicherung Ihres Spielstands verwendet. Galactic Pinball unterstützt kein Echtgeld-Glücksspiel. Es kann kein echtes Geld gesetzt oder gewonnen werden. Alle Credits sind rein virtuell.',
       featuresTitle: 'Wichtigste Spielfunktionen',
       features: [
         { title: 'Offline- & Online-Modus', desc: 'Genießen Sie das volle Gameplay, egal ob Sie online oder offline spielen.' },
-        { title: 'Tägliche Missionen', desc: 'Schließen Sie täglich kosmetische Herausforderungen ab, um Ihr Guthaben aufzubessern.' },
-        { title: 'Individuelle Einsätze', desc: 'Wählen Sie Ihr eigenes Risiko. Platzieren Sie benutzerdefinierte Wettgrößen, um Ihre Blackjack-Strategie zu testen.' },
-        { title: 'Faszinierende Weltraumgrafik', desc: 'Mit wunderschönen handgefertigten kosmischen Hintergründen, Sci-Fi-Karten und flüssigen Animationen.' }
+        { title: 'Kosmische Flipper-Physik', desc: 'Erleben Sie realistische Physik mit Gravitationsanomalien und Portalen.' },
+        { title: 'Tägliche Missionen', desc: 'Erreichen Sie tägliche Meilensteine, um kostenlose Stellar Credits zu erhalten.' },
+        { title: 'Neon Heilige Geometrie', desc: 'Genießen Sie faszinierende visuelle Effekte mit geometrischen Rastern und Nebeln.' }
       ],
       specsTitle: 'Anwendungsinformationen',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
         supportEmail: 'dennis@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
-        ageRating: 'PEGI 18 (Simuliertes Glücksspiel)',
+        ageRating: 'PEGI 3',
         license: 'Kostenlos (Enthält Werbung & In-App-Käufe)'
       },
       linksTitle: 'Rechtliches & Dokumentation',
@@ -180,33 +176,33 @@ const BlackholeBlackjack = () => {
             <div className="flex flex-col md:flex-row items-center gap-8 relative z-10">
               <div className="w-32 h-32 md:w-40 md:h-40 bg-black/40 rounded-3xl p-4 flex items-center justify-center border border-purple-500/20 shadow-mystical">
                 <img 
-                  src="/images/blackhole-blackjack.png" 
-                  alt="Blackhole Blackjack Logo" 
+                  src="/images/pinball-app-icon.png" 
+                  alt="Galactic Pinball Logo" 
                   className="w-full h-full object-contain rounded-2xl drop-shadow-2xl"
                 />
               </div>
               <div className="flex-grow text-center md:text-left">
                 <h1 className="font-cosmic text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-                  <span className="text-mystical-gradient">Blackhole</span> <span className="text-cosmic-gradient">Blackjack</span>
+                  <span className="text-mystical-gradient">Galactic</span> <span className="text-cosmic-gradient">Pinball</span>
                 </h1>
                 <p className="font-mystical text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl">
                   {t.subtitle}
                 </p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-4">
                   <Button asChild className="cosmic-hover bg-cosmic-gradient border-none text-white px-6 py-5">
-                    <a href="https://blackjack.cosmic-casino.one/play" target="_blank" rel="noopener noreferrer">
+                    <a href="https://pinball.cosmic-casino.one/play" target="_blank" rel="noopener noreferrer">
                       <Gamepad2 className="w-4 h-4 mr-2 animate-bounce" />
                       {t.playOnline}
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="border-purple-500/30 text-white hover:bg-purple-950/20 px-6 py-5">
-                    <a href="https://timeline-alchemy.com/blackhole-blackjack" target="_blank" rel="noopener noreferrer">
+                    <a href="https://timeline-alchemy.com/galactic-pinball" target="_blank" rel="noopener noreferrer">
                       <Smartphone className="w-4 h-4 mr-2 animate-pulse" />
                       {t.androidApp}
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="border-purple-500/30 text-white hover:bg-purple-950/20 px-6 py-5">
-                    <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.blackhole_blackjack" target="_blank" rel="noopener noreferrer">
+                    <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.galactic_pinball" target="_blank" rel="noopener noreferrer">
                       <Download className="w-4 h-4 mr-2" />
                       {t.downloadApk}
                     </a>
@@ -218,7 +214,7 @@ const BlackholeBlackjack = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            {/* Left & Center: App Description and Auth verification info */}
+            {/* Left & Center: App Description and Details */}
             <div className="lg:col-span-2 space-y-8">
               
               {/* App Screenshot Showcase */}
@@ -230,8 +226,8 @@ const BlackholeBlackjack = () => {
                 <div className="relative rounded-xl overflow-hidden border border-border/40 shadow-mystical bg-black/40 flex items-center justify-center h-[500px] group">
                   <img 
                     src={screenshots[activeImg]} 
-                    alt={`Blackhole Blackjack Gameplay Screenshot ${activeImg + 1}`} 
-                    className="max-h-full max-w-full object-contain transition-all duration-300"
+                    alt={`Galactic Pinball Gameplay Screenshot ${activeImg + 1}`} 
+                    className="max-h-full max-w-full object-contain transition-all duration-300 rounded-lg"
                   />
                   
                   {screenshots.length > 1 && (
@@ -256,48 +252,21 @@ const BlackholeBlackjack = () => {
                     </>
                   )}
                 </div>
-                
-                {screenshots.length > 1 && (
-                  <div className="flex gap-3 mt-4 justify-center overflow-x-auto py-2">
-                    {screenshots.map((src, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setActiveImg(index)}
-                        className={`relative w-20 h-28 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${
-                          activeImg === index 
-                            ? 'border-purple-500 ring-2 ring-purple-500/30' 
-                            : 'border-border/40 opacity-70 hover:opacity-100'
-                        }`}
-                      >
-                        <img 
-                          src={src} 
-                          alt={`Thumbnail ${index + 1}`} 
-                          className="w-full h-full object-cover"
-                        />
-                      </button>
-                    ))}
-                  </div>
-                )}
               </div>
 
               {/* Gameplay Video Showcase */}
               <div className="bg-card/30 border border-border/30 rounded-2xl p-6 md:p-8 backdrop-blur-md">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                  <div>
-                    <h2 className="font-cosmic text-2xl font-bold text-cosmic-gradient flex items-center gap-2">
-                      <Youtube className="w-6 h-6 text-red-500" />
-                      {t.videoTitle}
-                    </h2>
-                    <p className="font-mystical text-muted-foreground text-sm mt-1">
-                      {t.videoDesc}
-                    </p>
-                  </div>
-                </div>
-
+                <h2 className="font-cosmic text-2xl font-bold text-cosmic-gradient flex items-center gap-2 mb-4">
+                  <Youtube className="w-6 h-6 text-red-500" />
+                  {t.videoTitle}
+                </h2>
+                <p className="font-mystical text-muted-foreground text-sm mb-6">
+                  {t.videoDesc}
+                </p>
                 <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
                   <iframe
-                    src={`https://www.youtube.com/embed/${language === 'nl' ? 'VnHmVdeENFw' : '5-FB4YGOm1s'}`}
-                    title="Blackhole Blackjack Trailer"
+                    src="https://www.youtube.com/embed/GLPv07_bSUw"
+                    title="Galactic Pinball Trailer"
                     className="absolute inset-0 w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -427,4 +396,4 @@ const BlackholeBlackjack = () => {
   );
 };
 
-export default BlackholeBlackjack;
+export default GalacticPinball;
