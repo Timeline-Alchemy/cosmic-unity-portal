@@ -196,7 +196,7 @@ const GalacticPinball = () => {
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="border-purple-500/30 text-white hover:bg-purple-950/20 px-6 py-5">
-                    <a href="https://timeline-alchemy.com/casino/galactic-pinball" target="_blank" rel="noopener noreferrer">
+                    <a href="https://timeline-alchemy.com/casino/galactic-pinball/play" target="_blank" rel="noopener noreferrer">
                       <Smartphone className="w-4 h-4 mr-2 animate-pulse" />
                       {t.androidApp}
                     </a>
