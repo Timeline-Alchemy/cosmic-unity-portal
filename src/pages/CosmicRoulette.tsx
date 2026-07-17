@@ -22,6 +22,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 const CosmicRoulette = () => {
   const { language } = useLanguage();
   const [activeImg, setActiveImg] = useState(0);
+  const [videoFormat, setVideoFormat] = React.useState<'landscape' | 'vertical'>('landscape');
   
   const screenshots = [
     '/images/roulette-01.jpeg',
@@ -42,6 +43,8 @@ const CosmicRoulette = () => {
       downloadApk: 'View Google Play Listing',
       videoTitle: 'Gameplay Trailer',
       videoDesc: 'Watch the gameplay overview and explore the cosmic alignment features in action.',
+      videoVertical: 'Vertical Version (Mobile)',
+      videoLandscape: 'Landscape Version (Desktop)',
       purposeTitle: 'Application Purpose & Details',
       purposeDesc: 'Cosmic Roulette is a single-player, cosmic-themed mobile and web casino game. It brings the thrilling gameplay of European Roulette into a beautiful space-themed setting. Spin the wheel, place your bets, and align your energy with the intergalactic flow of abundance.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
@@ -82,6 +85,8 @@ const CosmicRoulette = () => {
       downloadApk: 'Bekijk Google Play-vermelding',
       videoTitle: 'Gameplay Trailer',
       videoDesc: 'Bekijk de gameplay-impressie en zie de kosmische uitlijning in actie.',
+      videoVertical: 'Verticale versie (Mobiel)',
+      videoLandscape: 'Horizontale versie (Landscape)',
       purposeTitle: 'Doel van de Applicatie & Details',
       purposeDesc: 'Cosmic Roulette is een single-player mobiel en web-casinospel met een kosmisch thema. Het brengt de spannende gameplay van Europees Roulette naar een prachtige ruimtevaartomgeving. Draai aan het wiel, plaats je inzetten en lijn je energie uit met de intergalactische stroom van overvloed.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
@@ -122,6 +127,8 @@ const CosmicRoulette = () => {
       downloadApk: 'Google Play-Eintrag anzeigen',
       videoTitle: 'Gameplay-Trailer',
       videoDesc: 'Sehen Sie sich die Gameplay-Übersicht an und erleben Sie die kosmische Ausrichtung in Aktion.',
+      videoVertical: 'Vertikale Version (Mobil)',
+      videoLandscape: 'Querformat-Version (Desktop)',
       purposeTitle: 'Zweck der Anwendung & Details',
       purposeDesc: 'Cosmic Roulette ist ein kosmisches Einzelspieler-Handy- und Web-Casinospiel. Es bringt das aufregende Gameplay des europäischen Roulettes in eine wunderschöne Weltraumumgebung. Drehen Sie das Rad, platzieren Sie Ihre Einsätze und richten Sie Ihre Energie auf den intergalaktischen Fluss des Überflusses aus.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
@@ -294,17 +301,66 @@ const CosmicRoulette = () => {
                       {t.videoDesc}
                     </p>
                   </div>
+                  
+                  {language === 'nl' && (
+                    <div className="flex bg-background/50 p-1 rounded-xl border border-border/40 self-start sm:self-center">
+                      <button
+                        onClick={() => setVideoFormat('landscape')}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-cosmic transition-all duration-300 ${
+                          videoFormat === 'landscape'
+                            ? 'bg-purple-600 text-white shadow-mystical'
+                            : 'text-muted-foreground hover:text-white'
+                        }`}
+                      >
+                        {t.videoLandscape}
+                      </button>
+                      <button
+                        onClick={() => setVideoFormat('vertical')}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-cosmic transition-all duration-300 ${
+                          videoFormat === 'vertical'
+                            ? 'bg-purple-600 text-white shadow-mystical'
+                            : 'text-muted-foreground hover:text-white'
+                        }`}
+                      >
+                        {t.videoVertical}
+                      </button>
+                    </div>
+                  )}
                 </div>
 
-                <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${language === 'nl' ? 'G3JFTqvabqw' : 'R3c9Jjo88Q8'}`}
-                    title="Cosmic Roulette Trailer"
-                    className="absolute inset-0 w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
+                {language === 'nl' ? (
+                  videoFormat === 'vertical' ? (
+                    <div className="relative w-full max-w-[280px] aspect-[9/16] mx-auto rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                      <iframe
+                        src="https://www.youtube.com/embed/vrA0LjfEhpE"
+                        title="Cosmic Roulette Trailer (Vertical)"
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  ) : (
+                    <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                      <iframe
+                        src="https://www.youtube.com/embed/G3JFTqvabqw"
+                        title="Cosmic Roulette Trailer (Landscape)"
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  )
+                ) : (
+                  <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                    <iframe
+                      src="https://www.youtube.com/embed/R3c9Jjo88Q8"
+                      title="Cosmic Roulette Trailer"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                )}
               </div>
 
               {/* Purpose Section */}

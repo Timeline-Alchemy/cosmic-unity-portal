@@ -24,6 +24,7 @@ import { useLanguage } from '@/hooks/useLanguage';
 const BlackholeBlackjack = () => {
   const { language } = useLanguage();
   const [activeImg, setActiveImg] = React.useState(0);
+  const [videoFormat, setVideoFormat] = React.useState<'landscape' | 'vertical'>('landscape');
   const screenshots = [
     '/images/02-blackjack.jpg',
     '/images/03-blackjack.jpg',
@@ -40,6 +41,8 @@ const BlackholeBlackjack = () => {
       downloadApk: 'View Google Play Listing',
       videoTitle: 'Gameplay Trailer',
       videoDesc: 'Watch the gameplay overview and explore the cosmic alignment features in action.',
+      videoVertical: 'Vertical Version (Mobile)',
+      videoLandscape: 'Landscape Version (Desktop)',
       purposeTitle: 'Application Purpose & Details',
       purposeDesc: 'Blackhole Blackjack is a single-player, cosmic-themed mobile card game. It brings the timeless gameplay of Blackjack into a sci-fi, space-themed setting. Our goal is to provide a premium, engaging gaming experience for players who enjoy card strategy and cosmic art.',
       googleAuthTitle: 'Google Sign-In & Play Games Services Integration',
@@ -80,6 +83,8 @@ const BlackholeBlackjack = () => {
       downloadApk: 'Bekijk Google Play-vermelding',
       videoTitle: 'Gameplay Trailer',
       videoDesc: 'Bekijk de gameplay-impressie en zie de kosmische uitlijning in actie.',
+      videoVertical: 'Verticale versie (Mobiel)',
+      videoLandscape: 'Horizontale versie (Landscape)',
       purposeTitle: 'Doel van de Applicatie & Details',
       purposeDesc: 'Blackhole Blackjack is een single-player, mobiel kaartspel met een kosmisch thema. Het brengt de tijdloze gameplay van Blackjack naar een sci-fi, ruimtevaartomgeving. Ons doel is om een premium en boeiende game-ervaring te bieden aan spelers die houden van kaartstrategie en kosmische kunst.',
       googleAuthTitle: 'Integratie met Google Sign-In & Play Games-services',
@@ -120,6 +125,8 @@ const BlackholeBlackjack = () => {
       downloadApk: 'Google Play-Eintrag anzeigen',
       videoTitle: 'Gameplay-Trailer',
       videoDesc: 'Sehen Sie sich die Gameplay-Übersicht an und erleben Sie die kosmische Ausrichtung in Aktion.',
+      videoVertical: 'Vertikale Version (Mobil)',
+      videoLandscape: 'Querformat-Version (Desktop)',
       purposeTitle: 'Zweck der Anwendung & Details',
       purposeDesc: 'Blackhole Blackjack ist ein kosmisches mobiles Kartenspiel für Einzelspieler. Es bringt das zeitlose Gameplay von Blackjack in eine Sci-Fi-Weltraumumgebung. Unser Ziel ist es, Spielern, die Kartenstrategie und kosmische Kunst lieben, ein erstklassiges Spielerlebnis zu bieten.',
       googleAuthTitle: 'Integration von Google Sign-In & Play Games Services',
@@ -292,17 +299,66 @@ const BlackholeBlackjack = () => {
                       {t.videoDesc}
                     </p>
                   </div>
+                  
+                  {language === 'nl' && (
+                    <div className="flex bg-background/50 p-1 rounded-xl border border-border/40 self-start sm:self-center">
+                      <button
+                        onClick={() => setVideoFormat('landscape')}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-cosmic transition-all duration-300 ${
+                          videoFormat === 'landscape'
+                            ? 'bg-purple-600 text-white shadow-mystical'
+                            : 'text-muted-foreground hover:text-white'
+                        }`}
+                      >
+                        {t.videoLandscape}
+                      </button>
+                      <button
+                        onClick={() => setVideoFormat('vertical')}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-cosmic transition-all duration-300 ${
+                          videoFormat === 'vertical'
+                            ? 'bg-purple-600 text-white shadow-mystical'
+                            : 'text-muted-foreground hover:text-white'
+                        }`}
+                      >
+                        {t.videoVertical}
+                      </button>
+                    </div>
+                  )}
                 </div>
 
-                <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${language === 'nl' ? 'VnHmVdeENFw' : '5-FB4YGOm1s'}`}
-                    title="Blackhole Blackjack Trailer"
-                    className="absolute inset-0 w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
+                {language === 'nl' ? (
+                  videoFormat === 'vertical' ? (
+                    <div className="relative w-full max-w-[280px] aspect-[9/16] mx-auto rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                      <iframe
+                        src="https://www.youtube.com/embed/kJ6hUPdfY0U"
+                        title="Blackhole Blackjack Trailer (Vertical)"
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  ) : (
+                    <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                      <iframe
+                        src="https://www.youtube.com/embed/VnHmVdeENFw"
+                        title="Blackhole Blackjack Trailer (Landscape)"
+                        className="absolute inset-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  )
+                ) : (
+                  <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                    <iframe
+                      src="https://www.youtube.com/embed/5-FB4YGOm1s"
+                      title="Blackhole Blackjack Trailer"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                )}
               </div>
 
               {/* Purpose Section */}
