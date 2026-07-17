@@ -91,10 +91,10 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center justify-end space-x-2 text-sm">
                   <a
-                    href="mailto:dennis@timeline-alchemy.com"
-                    className="font-mystical text-muted-foreground hover:text-cosmic cosmic-hover"
+                    href="mailto:n.smith@timeline-alchemy.com"
+                    className="font-mystical text-muted-foreground hover:text-cosmic cosmic-hover underline decoration-dotted underline-offset-4"
                   >
-                    dennis@timeline-alchemy.com
+                    {t('contact.info.emailLinkText')}
                   </a>
                   <Mail className="w-4 h-4 text-cosmic" />
                 </div>

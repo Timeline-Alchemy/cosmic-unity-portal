@@ -58,7 +58,7 @@ const GalacticPinball = () => {
       specsTitle: 'Application Information',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'dennis@timeline-alchemy.com',
+        supportEmail: 'n.smith@timeline-alchemy.com',
         platform: 'Android 8.0+ / Web Browser',
         ageRating: 'PEGI 3',
         license: 'Free (Contains Ads & In-App Purchases)'
@@ -98,7 +98,7 @@ const GalacticPinball = () => {
       specsTitle: 'Applicatie Informatie',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'dennis@timeline-alchemy.com',
+        supportEmail: 'n.smith@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
         ageRating: 'PEGI 3',
         license: 'Gratis (Bevat advertenties & in-app aankopen)'
@@ -138,7 +138,7 @@ const GalacticPinball = () => {
       specsTitle: 'Anwendungsinformationen',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'dennis@timeline-alchemy.com',
+        supportEmail: 'n.smith@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
         ageRating: 'PEGI 3',
         license: 'Kostenlos (Enthält Werbung & In-App-Käufe)'
@@ -345,7 +345,9 @@ const GalacticPinball = () => {
                   </div>
                   <div className="flex justify-between py-2 border-b border-border/20">
                     <span className="text-muted-foreground">Support</span>
-                    <a href={`mailto:${t.specs.supportEmail}`} className="text-purple-400 hover:underline">{t.specs.supportEmail}</a>
+                    <a href={`mailto:${t.specs.supportEmail}`} className="text-purple-400 hover:underline underline decoration-dotted underline-offset-4">
+                      {language === 'nl' ? 'contact via mail' : language === 'de' ? 'Kontakt per E-Mail' : 'contact via mail'}
+                    </a>
                   </div>
                   <div className="flex justify-between py-2 border-b border-border/20">
                     <span className="text-muted-foreground">Platform</span>

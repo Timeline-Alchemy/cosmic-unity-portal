@@ -583,6 +583,7 @@ const translations = {
       info: {
         title: 'Contactinformatie',
         email: 'E-mail',
+        emailLinkText: 'contact via mail',
         phone: 'Telefoon',
         location: 'Locatie',
       },
@@ -1242,6 +1243,7 @@ const translations = {
       info: {
         title: 'Contact Information',
         email: 'Email',
+        emailLinkText: 'contact via mail',
         phone: 'Phone',
         location: 'Location',
       },
@@ -1902,6 +1904,7 @@ const translations = {
       info: {
         title: 'Kontaktinformationen',
         email: 'E-Mail',
+        emailLinkText: 'Kontakt per E-Mail',
         phone: 'Telefon',
         location: 'Standort',
       },

@@ -79,7 +79,7 @@ const PrivacyPolicy = () => {
 
               <h2 className="text-2xl font-semibold text-white mt-8 mb-4">6. Contact Us</h2>
               <p className="mb-4">
-                If you have questions or comments about this Privacy Policy, please contact us at: dennis@timeline-alchemy.com.
+                If you have questions or comments about this Privacy Policy, please <a href="mailto:n.smith@timeline-alchemy.com" className="text-purple-400 hover:text-purple-300 underline">contact via mail</a>.
               </p>
             </div>
           </div>
