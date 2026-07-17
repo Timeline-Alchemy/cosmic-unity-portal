@@ -30,13 +30,13 @@ const Index = () => {
       link: '/e-books'
     },
     {
-      title: currentLang === 'nl' ? 'Timeless Awareness' : 'Timeless Awareness',
+      title: 'Timeless Awareness',
       description: currentLang === 'nl'
         ? 'Ontdek tijdloze wijsheid en verruim je kosmische perspectief.'
         : 'Discover timeless wisdom and expand your cosmic perspective.',
       icon: Star,
-      link: 'https://www.timeless-awareness.nl',
-      external: true
+      link: '/timeless-awareness',
+      external: false
     }
   ];
 

@@ -60,12 +60,12 @@ const HeroSection = () => {
               <span className="text-cosmic-gradient font-semibold">{t('nav.casinoCollection')}</span>
             </Button>
           </Link>
-          <a href="https://www.timeless-awareness.nl" target="_blank" rel="noopener noreferrer">
+          <Link to="/timeless-awareness">
             <Button variant="energy" size="lg" className="group">
               <Zap className="mr-2 h-5 w-5" />
               Timeless Awareness
             </Button>
-          </a>
+          </Link>
         </div>
 
         {/* Sacred Statistics */}

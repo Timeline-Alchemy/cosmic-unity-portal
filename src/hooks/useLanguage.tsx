@@ -648,6 +648,15 @@ const translations = {
       errorLoading: 'Fout bij laden',
       errorLoadingMessage: 'Er ging iets mis bij het laden van de berichten',
     },
+    timelessAwareness: {
+      underConstruction: {
+        title: 'Timeless Awareness is in de maak',
+        subtitle: 'Overwin de menselijke conditie en veranker je in je goddelijke natuur.',
+        description: 'Een platform waar je leert om jezelf te rooten in je ware, goddelijke wezen. Deel je ervaringen, vind diepe verbinding en stijg boven de menselijke beperkingen uit. Binnenkort beschikbaar als mobiele app.',
+        backToPortal: 'Terug naar het Portaal',
+        stayTuned: 'De poort naar tijdloos bewustzijn opent binnenkort.',
+      },
+    },
     timelineAlchemy: {
       underConstruction: {
         title: 'Timeline Alchemy is in de maak',
@@ -1297,6 +1306,15 @@ const translations = {
       errorDeleteMessage: 'Something went wrong while deleting your post',
       errorLoading: 'Error loading',
       errorLoadingMessage: 'Something went wrong while loading the posts',
+    },
+    timelessAwareness: {
+      underConstruction: {
+        title: 'Timeless Awareness is in the Making',
+        subtitle: 'Overcome the human condition and anchor yourself in your divine nature.',
+        description: 'A platform designed to help you root yourself in your true, divine essence. Share your journey, find deep connection, and rise above human limitations. Coming soon as a mobile app.',
+        backToPortal: 'Back to the Portal',
+        stayTuned: 'The portal to timeless awareness opens soon.',
+      },
     },
     timelineAlchemy: {
       underConstruction: {
@@ -1948,6 +1966,15 @@ const translations = {
       errorDeleteMessage: 'Etwas ging beim Löschen deines Beitrags schief',
       errorLoading: 'Fehler beim Laden',
       errorLoadingMessage: 'Etwas ging beim Laden der Beiträge schief',
+    },
+    timelessAwareness: {
+      underConstruction: {
+        title: 'Timeless Awareness ist in Arbeit',
+        subtitle: 'Überwinde das menschliche Dasein und verankere dich in deiner göttlichen Natur.',
+        description: 'Eine Plattform, die dir hilft, dich in deinem wahren, göttlichen Wesen zu verwurzeln. Teile deine Reise, finde tiefe Verbundenheit und erhebe dich über menschliche Grenzen. Demnächst als App verfügbar.',
+        backToPortal: 'Zurück zum Portal',
+        stayTuned: 'Das Portal zum zeitlosen Bewusstsein öffnet sich bald.',
+      },
     },
     timelineAlchemy: {
       underConstruction: {

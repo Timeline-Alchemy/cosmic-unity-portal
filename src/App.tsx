@@ -93,6 +93,7 @@ const App: React.FC = () => {
               <Route path="/galactic-pinball" element={<GalacticPinball />} />
 
               <Route path="/timeline-alchemy" element={<TimelineAlchemyStatus />} />
+              <Route path="/timeless-awareness" element={<TimelineAlchemyStatus />} />
               <Route path="/e-books" element={<EBooks />} />
 
 
