@@ -23,9 +23,7 @@ const aboutText = {
     quote: "Alles is verbonden. Alles is één. Wij bouwen simpelweg de interfaces om die eenheid te ervaren.",
     closing: "Welkom bij de studio. Welkom in de convergentie.",
     
-    coCreatorTitle: "Het Co-Creatie Duo: Dennis & Antigravity",
-    coCreatorBody: "Timeline Alchemy Studio belichaamt deze visie door de actieve samenwerking tussen Dennis (menselijke visionair en spiritueel gids) en Antigravity (een geavanceerde AI-agent van Google DeepMind). Dennis brengt de creatieve richting, passie en spirituele diepgang, terwijl Antigravity de technische structuur en code-alchemie levert. Samen weven we de digitale realiteit van het Cosmic Unity Portal.",
-    
+
     cta: "Terug naar het Portaal"
   },
   en: {
@@ -44,9 +42,7 @@ const aboutText = {
     quote: "Everything is connected. Everything is one. We simply build the interfaces to experience that unity.",
     closing: "Welcome to the studio. Welcome to the convergence.",
     
-    coCreatorTitle: "The Co-Creation Duo: Dennis & Antigravity",
-    coCreatorBody: "Timeline Alchemy Studio embodies this vision through the active collaboration between Dennis (human visionary and spiritual guide) and Antigravity (an advanced AI agent by Google DeepMind). Dennis brings the creative direction, passion, and spiritual depth, while Antigravity delivers the technical structure and code alchemy. Together we weave the digital reality of the Cosmic Unity Portal.",
-    
+
     cta: "Back to the Portal"
   },
   de: {
@@ -65,9 +61,7 @@ const aboutText = {
     quote: "Alles ist verbunden. Alles ist eins. Wir bauen lediglich die Schnittstellen, um diese Einheit zu erfahren.",
     closing: "Willkommen im Studio. Willkommen in der Konvergenz.",
     
-    coCreatorTitle: "Das Co-Kreations-Duo: Dennis & Antigravity",
-    coCreatorBody: "Timeline Alchemy Studio verkörpert diese Vision durch die aktive Zusammenarbeit zwischen Dennis (menschlicher Visionär und spiritueller Führer) und Antigravity (ein fortschrittlicher AI-Agent von Google DeepMind). Dennis steuert die kreative Richtung, Leidenschaft und spirituelle Tiefe bei, während Antigravity die technische Struktur und Code-Alchemie liefert. Gemeinsam weben wir die digitale Realität des Cosmic Unity Portals.",
-    
+
     cta: "Zurück zum Portal"
   }
 };
@@ -159,22 +153,7 @@ const About = () => {
 
           </div>
 
-          {/* Section 4: Dennis & Antigravity */}
-          <div className="bg-gradient-to-r from-card/30 via-primary/5 to-card/30 backdrop-blur-md border border-border/40 rounded-2xl p-8 md:p-12 mb-16 hover:border-primary/20 transition-all duration-300 shadow-mystical group">
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="p-4 bg-primary/10 rounded-full text-primary group-hover:bg-primary/25 transition-all duration-300">
-                <Cpu className="w-10 h-10 animate-spin-slow" />
-              </div>
-              <div>
-                <h2 className="font-cosmic text-2xl md:text-3xl font-bold text-cosmic-gradient mb-4">
-                  {t.coCreatorTitle}
-                </h2>
-                <p className="font-mystical text-lg text-muted-foreground leading-relaxed">
-                  {t.coCreatorBody}
-                </p>
-              </div>
-            </div>
-          </div>
+
 
           {/* Section 5: Quote Banner */}
           <div className="relative bg-card/10 backdrop-blur-lg border border-border/30 rounded-3xl p-10 md:p-16 mb-20 text-center shadow-divine overflow-hidden">

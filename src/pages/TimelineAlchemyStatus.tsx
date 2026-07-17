@@ -84,10 +84,10 @@ const TimelineAlchemyStatus = () => {
           </h1>
           <p className="font-mystical text-lg text-muted-foreground max-w-2xl mx-auto">
             {language === 'nl' 
-              ? 'Volg de creatie van onze nieuwste multidimensionale applicaties. Dennis & Antigravity zijn hard aan het werk.'
+              ? 'Volg de creatie van onze nieuwste multidimensionale applicaties. Onze ontwikkelaars zijn hard aan het werk.'
               : language === 'de'
-              ? 'Verfolgen Sie die Entstehung unserer neuesten multidimensionalen Anwendungen. Dennis & Antigravity arbeiten hart daran.'
-              : 'Follow the creation of our latest multidimensional applications. Dennis & Antigravity are hard at work.'}
+              ? 'Verfolgen Sie die Entstehung unserer neuesten multidimensionalen Anwendungen. Unsere Entwickler arbeiten hart daran.'
+              : 'Follow the creation of our latest multidimensional applications. Our developers are hard at work.'}
           </p>
         </div>
 

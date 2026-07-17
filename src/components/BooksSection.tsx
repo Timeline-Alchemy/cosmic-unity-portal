@@ -170,10 +170,7 @@ const BooksSection = () => {
           <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-cosmic/10 rounded-full border border-cosmic/30">
             <Star className="w-4 h-4 text-cosmic" />
             <span className="font-mystical text-sm text-cosmic">
-              {currentLang === 'nl'
-                ? 'Door Dennis Erens • Timeline Alchemy'
-                : 'By Dennis Erens • Timeline Alchemy'
-              }
+              Timeline Alchemy
             </span>
           </div>
         </div>
