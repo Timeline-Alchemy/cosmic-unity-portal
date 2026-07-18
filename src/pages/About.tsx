@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Star, Zap, Infinity, Sparkles, Cpu, Quote } from 'lucide-react';
+import { Star, Zap, Infinity as InfinityIcon, Sparkles, Cpu, Quote } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Link } from 'react-router-dom';
 
@@ -125,7 +125,7 @@ const About = () => {
             <div className="bg-card/30 backdrop-blur-md border border-border/40 rounded-2xl p-8 hover:border-primary/20 transition-all duration-300 shadow-mystical flex flex-col justify-between group">
               <div className="flex flex-col gap-6">
                 <div className="w-fit p-4 bg-purple-600/10 rounded-xl text-purple-400 group-hover:bg-purple-600/20 transition-colors">
-                  <Infinity className="w-8 h-8" />
+                  <InfinityIcon className="w-8 h-8" />
                 </div>
                 <h2 className="font-cosmic text-2xl font-bold text-foreground">
                   {t.sec2Title}

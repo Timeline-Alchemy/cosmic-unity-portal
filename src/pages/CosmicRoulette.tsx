@@ -302,7 +302,6 @@ const CosmicRoulette = () => {
                     </p>
                   </div>
                   
-                  {language === 'nl' && (
                     <div className="flex bg-background/50 p-1 rounded-xl border border-border/40 self-start sm:self-center">
                       <button
                         onClick={() => setVideoFormat('landscape')}
@@ -325,36 +324,24 @@ const CosmicRoulette = () => {
                         {t.videoVertical}
                       </button>
                     </div>
-                  )}
+                  
                 </div>
 
-                {language === 'nl' ? (
-                  videoFormat === 'vertical' ? (
-                    <div className="relative w-full max-w-[280px] aspect-[9/16] mx-auto rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
-                      <iframe
-                        src="https://www.youtube.com/embed/vrA0LjfEhpE"
-                        title="Cosmic Roulette Trailer (Vertical)"
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  ) : (
-                    <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
-                      <iframe
-                        src="https://www.youtube.com/embed/G3JFTqvabqw"
-                        title="Cosmic Roulette Trailer (Landscape)"
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  )
+                {videoFormat === 'vertical' ? (
+                  <div className="relative w-full max-w-[280px] aspect-[9/16] mx-auto rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                    <iframe
+                      src={language === 'nl' ? "https://www.youtube.com/embed/vrA0LjfEhpE" : "https://www.youtube.com/embed/-fX_a5fXULw"}
+                      title="Cosmic Roulette Trailer (Vertical)"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
                 ) : (
                   <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
                     <iframe
-                      src="https://www.youtube.com/embed/R3c9Jjo88Q8"
-                      title="Cosmic Roulette Trailer"
+                      src={language === 'nl' ? "https://www.youtube.com/embed/G3JFTqvabqw" : "https://www.youtube.com/embed/R3c9Jjo88Q8"}
+                      title="Cosmic Roulette Trailer (Landscape)"
                       className="absolute inset-0 w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen

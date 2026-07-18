@@ -300,7 +300,6 @@ const BlackholeBlackjack = () => {
                     </p>
                   </div>
                   
-                  {language === 'nl' && (
                     <div className="flex bg-background/50 p-1 rounded-xl border border-border/40 self-start sm:self-center">
                       <button
                         onClick={() => setVideoFormat('landscape')}
@@ -323,36 +322,24 @@ const BlackholeBlackjack = () => {
                         {t.videoVertical}
                       </button>
                     </div>
-                  )}
+                  
                 </div>
 
-                {language === 'nl' ? (
-                  videoFormat === 'vertical' ? (
-                    <div className="relative w-full max-w-[280px] aspect-[9/16] mx-auto rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
-                      <iframe
-                        src="https://www.youtube.com/embed/kJ6hUPdfY0U"
-                        title="Blackhole Blackjack Trailer (Vertical)"
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  ) : (
-                    <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
-                      <iframe
-                        src="https://www.youtube.com/embed/VnHmVdeENFw"
-                        title="Blackhole Blackjack Trailer (Landscape)"
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  )
+                {videoFormat === 'vertical' ? (
+                  <div className="relative w-full max-w-[280px] aspect-[9/16] mx-auto rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
+                    <iframe
+                      src={language === 'nl' ? "https://www.youtube.com/embed/kJ6hUPdfY0U" : "https://www.youtube.com/embed/Nt8F4Gc9pg0"}
+                      title="Blackhole Blackjack Trailer (Vertical)"
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
                 ) : (
                   <div className="relative w-full aspect-video rounded-xl border border-border/40 shadow-mystical bg-black/40 overflow-hidden">
                     <iframe
-                      src="https://www.youtube.com/embed/5-FB4YGOm1s"
-                      title="Blackhole Blackjack Trailer"
+                      src={language === 'nl' ? "https://www.youtube.com/embed/VnHmVdeENFw" : "https://www.youtube.com/embed/5-FB4YGOm1s"}
+                      title="Blackhole Blackjack Trailer (Landscape)"
                       className="absolute inset-0 w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
