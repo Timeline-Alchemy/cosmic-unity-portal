@@ -187,6 +187,7 @@ const translations = {
       casinoCollection: 'Cosmic Casino Collectie',
       lumina: 'Lumina',
       timelessAwareness: 'Timeless Awareness',
+      projects: 'Projecten',
     },
     casino: {
       title: 'Cosmic Casino Collectie',
@@ -850,6 +851,7 @@ const translations = {
       casinoCollection: 'Cosmic Casino Collection',
       lumina: 'Lumina',
       timelessAwareness: 'Timeless Awareness',
+      projects: 'Projects',
     },
     casino: {
       title: 'Cosmic Casino Collection',
@@ -1512,6 +1514,7 @@ const translations = {
       casinoCollection: 'Cosmic Casino Kollektion',
       lumina: 'Lumina',
       timelessAwareness: 'Timeless Awareness',
+      projects: 'Projekte',
     },
     casino: {
       title: 'Cosmic Casino Kollektion',
