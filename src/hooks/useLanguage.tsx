@@ -185,6 +185,7 @@ const translations = {
       logout: 'Uitloggen',
       cart: 'Winkelwagen',
       casinoCollection: 'Cosmic Casino Collectie',
+      lumina: 'Lumina',
     },
     casino: {
       title: 'Cosmic Casino Collectie',
@@ -846,6 +847,7 @@ const translations = {
       logout: 'Logout',
       cart: 'Cart',
       casinoCollection: 'Cosmic Casino Collection',
+      lumina: 'Lumina',
     },
     casino: {
       title: 'Cosmic Casino Collection',
@@ -1506,6 +1508,7 @@ const translations = {
       logout: 'Abmelden',
       cart: 'Warenkorb',
       casinoCollection: 'Cosmic Casino Kollektion',
+      lumina: 'Lumina',
     },
     casino: {
       title: 'Cosmic Casino Kollektion',

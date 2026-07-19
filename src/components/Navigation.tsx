@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Star, Home, BookOpen, Mail, Users, Gamepad2 } from 'lucide-react';
+import { Menu, X, Star, Home, BookOpen, Mail, Users, Gamepad2, Sparkles } from 'lucide-react';
 import LanguageSelector from '@/components/LanguageSelector';
 import FrequencySelector from '@/components/FrequencySelector';
 
@@ -20,7 +20,7 @@ const Navigation = () => {
     { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, icon: Star, external: false },
     { name: 'E-Books', href: '/e-books', icon: BookOpen, external: false },
     { name: t('nav.casinoCollection'), href: '/casino-collection', icon: Gamepad2, external: false },
-
+    { name: t('nav.lumina'), href: '/lumina', icon: Sparkles, external: false },
     { name: t('nav.about'), href: '/about', icon: Star },
     { name: t('nav.contact'), href: '/contact', icon: Mail },
   ];

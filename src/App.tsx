@@ -34,6 +34,7 @@ import BlackholeBlackjack from "./pages/BlackholeBlackjack";
 import GalacticPoker from "./pages/GalacticPoker";
 import CosmicRoulette from "./pages/CosmicRoulette";
 import GalacticPinball from "./pages/GalacticPinball";
+import Lumina from "./pages/Lumina";
 
 
 
@@ -95,6 +96,7 @@ const App: React.FC = () => {
               <Route path="/timeline-alchemy" element={<TimelineAlchemyStatus />} />
               <Route path="/timeless-awareness" element={<TimelineAlchemyStatus />} />
               <Route path="/e-books" element={<EBooks />} />
+              <Route path="/lumina" element={<Lumina />} />
 
 
 
