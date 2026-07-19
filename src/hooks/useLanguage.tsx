@@ -186,6 +186,7 @@ const translations = {
       cart: 'Winkelwagen',
       casinoCollection: 'Cosmic Casino Collectie',
       lumina: 'Lumina',
+      timelessAwareness: 'Timeless Awareness',
     },
     casino: {
       title: 'Cosmic Casino Collectie',
@@ -848,6 +849,7 @@ const translations = {
       cart: 'Cart',
       casinoCollection: 'Cosmic Casino Collection',
       lumina: 'Lumina',
+      timelessAwareness: 'Timeless Awareness',
     },
     casino: {
       title: 'Cosmic Casino Collection',
@@ -1509,6 +1511,7 @@ const translations = {
       cart: 'Warenkorb',
       casinoCollection: 'Cosmic Casino Kollektion',
       lumina: 'Lumina',
+      timelessAwareness: 'Timeless Awareness',
     },
     casino: {
       title: 'Cosmic Casino Kollektion',
