@@ -63,5 +63,18 @@
         "94:75:7B:A3:3D:99:A7:31:CE:B9:44:59:4F:BF:E5:10:34:91:FD:51:12:6E:FB:51:51:76:8D:AC:F6:BA:64:C6"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.timeline_alchemy.lumina_enlightenment",
+      "sha256_cert_fingerprints": [
+        "e1:87:a0:f4:81:66:1c:26:15:fe:cd:ad:77:15:49:46:c0:84:e6:c8:42:eb:73:48:bc:84:34:61:f4:dc:23:b8"
+      ]
+    }
   }
 ]
