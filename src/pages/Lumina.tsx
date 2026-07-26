@@ -396,7 +396,7 @@ const Lumina = () => {
               <div className="absolute -inset-1.5 bg-gradient-to-r from-amber-500 to-purple-600 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
               <div className="relative bg-card/60 backdrop-blur-md p-6 rounded-3xl border border-border/60 shadow-divine">
                 <img 
-                  src="/images/lumina/lumina-logo.png" 
+                  src="/images/lumina/lumina-logo.png?v=20260726" 
                   alt="Lumina Enlightenment App Icon" 
                   className="w-48 h-48 md:w-64 md:h-64 object-contain rounded-2xl drop-shadow-2xl animate-cosmic-pulse"
                 />
@@ -602,42 +602,39 @@ const Lumina = () => {
             </div>
           </div>
 
-          {/* Thumbnails Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          {/* Thumbnails Row (Compact game-style selection) */}
+          <div className="flex flex-wrap sm:flex-nowrap gap-3 justify-center overflow-x-auto py-2 px-1">
             {currentScreens.map((screen, index) => {
               const itemKey = screen.key as keyof typeof t.screens;
               const screenText = t.screens[itemKey] || { title: `Screen ${index+1}`, desc: "" };
               const isSelected = activeImg === index;
               
               return (
-                <Card 
+                <button 
                   key={index} 
                   onClick={() => setActiveImg(index)}
-                  className={`bg-card/40 backdrop-blur-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl ${
+                  className={`relative overflow-hidden cursor-pointer rounded-xl transition-all duration-300 flex-shrink-0 bg-black/60 border ${
+                    activeTab === 'desktop' ? 'w-28 md:w-36 h-18 md:h-22' : 'w-20 md:w-24 h-32 md:h-36'
+                  } ${
                     isSelected 
-                      ? 'border-2 border-amber-500 ring-2 ring-amber-500/30 scale-[1.02]' 
-                      : 'border border-border/40 hover:border-amber-500/30 opacity-80 hover:opacity-100'
+                      ? 'border-2 border-amber-500 ring-2 ring-amber-500/40 scale-105 opacity-100 shadow-lg' 
+                      : 'border-border/40 hover:border-amber-500/30 opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <CardContent className="p-0">
-                    <div className={`${activeTab === 'desktop' ? 'aspect-[16/10]' : 'aspect-[9/16]'} overflow-hidden relative bg-black/50 flex items-center justify-center p-1.5`}>
-                      <img 
-                        src={screen.url} 
-                        alt={screenText.title}
-                        className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = '/placeholder.svg';
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
-                        <h4 className="font-cosmic text-xs font-bold text-amber-400 flex items-center gap-1">
-                          <Eye className="w-3 h-3" />
-                          {screenText.title}
-                        </h4>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                  <img 
+                    src={screen.url} 
+                    alt={screenText.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = '/placeholder.svg';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-1.5 text-left">
+                    <span className="font-cosmic text-[10px] text-amber-300 font-semibold truncate leading-tight">
+                      {screenText.title}
+                    </span>
+                  </div>
+                </button>
               );
             })}
           </div>
