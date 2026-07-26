@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -10,48 +10,62 @@ import {
   Sparkles, 
   Compass, 
   Calendar, 
-  BookOpen, 
   ArrowLeft, 
-  Heart, 
-  Volume2, 
-  VolumeX, 
-  Play, 
-  Pause, 
   Download, 
   Eye, 
-  Moon, 
-  Activity, 
   Award,
-  BookMarked
+  BookMarked,
+  Info,
+  Users,
+  CheckCircle,
+  ShieldCheck,
+  FileText,
+  Smartphone
 } from 'lucide-react';
 
 const localTranslations = {
   nl: {
-    title: "Lumina Secretion Calendar",
+    title: "Lumina Enlightenment",
     subtitle: "Synchroniseer met je innerlijke kosmos. Volg je heilige secretiecyclus (Christus-olie) en verhoog je bewustzijn.",
     heroBadge: "Multidimensionale Gids",
     desktopView: "Desktop Dashboard",
     mobileView: "Mobiele Sanctuary",
     backToHome: "Terug naar het Portaal",
     screenshotTitle: "Interface Visualisatie",
-    screenshotDesc: "Verken de interfaces en visualisaties van de Lumina applicatie.",
-    solfeggioTitle: "Solfeggio Ademhalingsgids",
-    solfeggioDesc: "Stem je trilling af en activeer de alchemistische ascentie met ons ademhalingshulpmiddel.",
-    breatheState: {
-      in: "Adem In",
-      hold: "Houd Vast",
-      out: "Adem Uit",
-      idle: "Klik om te Starten"
+    screenshotDesc: "Verken de interfaces en visualisaties van de Lumina Enlightenment applicatie.",
+    downloadApp: "Bekijk op Google Play",
+    openApp: "Open Web Sanctum",
+    purposeTitle: "Doel van de Applicatie & Details",
+    purposeDesc: "Lumina Enlightenment is een gepersonaliseerde spirituele en fysiologische gids die de heilige secretiecyclus (het Christus-olie proces) volgt. De applicatie combineert astronomie, zodiaktransits en biologische ritmes om de exacte perioden te berekenen waarin spirituele en fysiologische energie piekt in het menselijk lichaam.",
+    googleAuthTitle: "Integratie met Google Sign-In & Cloud Sync",
+    googleAuthDesc: "Om een soepele, veilige en persoonlijke ervaring te garanderen, maakt Lumina Enlightenment gebruik van Google Sign-In en Cloud Synchronization. Dit wordt gebruikt om:",
+    authPoints: [
+      "Je biologische en zodiakprofiel veilig te verifiëren zonder dat handmatige registratie nodig is.",
+      "Je gepersonaliseerde 6-maandelijkse secretiecyclus en kalenderinstellingen veilig op te slaan in de cloud.",
+      "Meldingen en pushherinneringen te synchroniseren over je mobiele en desktop-apparaten.",
+      "Je persoonlijke voortgang en spirituele notities te bewaren bij apparaatwissels."
+    ],
+    gdprTitle: "Privacy, Gegevensbescherming & Veiligheid",
+    gdprDesc: "Je privacy staat voorop. We verkopen of delen geen persoonlijke of spirituele gegevens van gebruikers. Je Google-accountgegevens worden uitsluitend gebruikt om je unieke kalender- en notificatievoorkeuren te beveiligen. Lumina Enlightenment bevat geen verborgen tracering of verkoop van persoonsgegevens.",
+    featuresTitle: "Belangrijkste App-Functies",
+    featuresList: [
+      { title: "Celestial Astrolabe", desc: "Volg maanstanden en de doorgang van de maan door alle 12 zodiaktekens." },
+      { title: "6-Maanden Kalender", desc: "Berekent de exacte perioden waarin je spirituele energie biologisch piekt." },
+      { title: "ICS Kalender Export", desc: "Exporteer je cyclus eenvoudig naar Google Calendar, Apple iCal of Outlook." },
+      { title: "Heilige Wetenschap & Etymologie", desc: "Verklaring van esoterische teksten en fysiologie (pijnappelklier, cerebrum, claustrum)." }
+    ],
+    specsTitle: "Applicatie Informatie",
+    specs: {
+      developer: "Timeline Alchemy Studio LLC",
+      supportEmail: "n.smith@timeline-alchemy.com",
+      platform: "Android 8.0+ / Webbrowser",
+      ageRating: "PEGI 3 / Alle Leeftijden",
+      license: "Gratis (Inclusief Cloud Sync & Notificaties)"
     },
-    frequencies: {
-      f396: "396 Hz - Bevrijding van Angst & Schuld",
-      f528: "528 Hz - Transformatie & DNA Herstel",
-      f963: "963 Hz - Goddelijk Bewustzijn (Kruinchakra)"
-    },
-    activateFrequency: "Activeer Frequentie",
-    deactivateFrequency: "Deactiveer Frequentie",
-    frequencyPlaying: "Frequentiesignaal Actief",
-    pillarsTitle: "De Vier Pijlers van Lumina",
+    linksTitle: "Wettelijk & Documentatie",
+    privacyBtn: "Bekijk Privacybeleid",
+    termsBtn: "Bekijk Algemene Voorwaarden",
+    pillarsTitle: "De Vier Pijlers van Lumina Enlightenment",
     pillars: [
       {
         title: "Celestial Astrolabe",
@@ -80,8 +94,8 @@ const localTranslations = {
         desc: "Interactief zodiakwiel gekoppeld aan de twaalf hersenzenuwen en lichaamsdelen."
       },
       solfeggioAudio: {
-        title: "Solfeggio Trillingen",
-        desc: "Ingebouwde binaural beats en solfeggio-frequenties voor diepe meditatie."
+        title: "6-Maanden Cyclus",
+        desc: "Berekening van jouw unieke secretiemomenten en astronomische transits."
       },
       icsExport: {
         title: "Kalender Integratie",
@@ -90,38 +104,54 @@ const localTranslations = {
     },
     screens: {
       screen1: { title: "Het Hemellichaam", desc: "Interactieve Zodiak & Anatomie wiel dat de maanovergangen toont." },
-      screen2: { title: "Alchemistische Sanctuary", desc: "Countdown naar de volgende secretie-uitlijning en ademhalingsvisualizer." },
+      screen2: { title: "Alchemistische Sanctuary", desc: "Countdown naar de volgende secretie-uitlijning en bewustzijns-tracker." },
       screen3: { title: "Heilige Tijdlijn", desc: "De 6-maandelijkse secretiekalender en notificatie-instellingen." },
       screen4: { title: "Heilige Wetenschap", desc: "De anatomische structuren en esoterische schriftteksten verklaard." },
       screen5: { title: "Kosmisch Overzicht", desc: "Het hoofddashboard dat alle kosmische en biologische cycli integreert." }
     }
   },
   en: {
-    title: "Lumina Secretion Calendar",
+    title: "Lumina Enlightenment",
     subtitle: "Synchronize with your inner cosmos. Track your sacred secretion cycle (Christ-Oil) and elevate your consciousness.",
     heroBadge: "Multidimensional Guide",
     desktopView: "Desktop Dashboard",
     mobileView: "Mobile Sanctuary",
     backToHome: "Back to Portal",
     screenshotTitle: "Interface Visualization",
-    screenshotDesc: "Explore the interfaces and visualizations of the Lumina application.",
-    solfeggioTitle: "Solfeggio Breathing Guide",
-    solfeggioDesc: "Tune your vibration and activate alchemical ascension with our guided breathing tool.",
-    breatheState: {
-      in: "Breathe In",
-      hold: "Hold",
-      out: "Breathe Out",
-      idle: "Click to Begin"
+    screenshotDesc: "Explore the interfaces and visualizations of the Lumina Enlightenment application.",
+    downloadApp: "View on Google Play",
+    openApp: "Open Web Sanctum",
+    purposeTitle: "Application Purpose & Details",
+    purposeDesc: "Lumina Enlightenment is a personalized spiritual and physiological guide that tracks the sacred secretion cycle (Christ-Oil process). The app combines astronomy, zodiac transits, and biological rhythms to calculate peak energy periods within the human body.",
+    googleAuthTitle: "Google Sign-In & Cloud Sync Integration",
+    googleAuthDesc: "To ensure a smooth, secure, and personalized experience, Lumina Enlightenment utilizes Google Sign-In and Cloud Synchronization. This integration serves to:",
+    authPoints: [
+      "Securely authenticate your profile without manual registration hassles.",
+      "Safely back up your 6-month sacred secretion cycle calendar and settings in the cloud.",
+      "Synchronize notifications and push reminders across mobile and desktop devices.",
+      "Preserve your personalized notes and progress during device upgrades."
+    ],
+    gdprTitle: "Privacy, Data Protection & Safety",
+    gdprDesc: "Your privacy is paramount. We do not sell or share user personal or spiritual data. Your Google account details are strictly used to secure your unique calendar and notification preferences. Lumina Enlightenment operates with full user transparency.",
+    featuresTitle: "Key Application Features",
+    featuresList: [
+      { title: "Celestial Astrolabe", desc: "Track lunar phases and moon transits across all 12 zodiac signs." },
+      { title: "6-Month Secretion Calendar", desc: "Calculate exact biological peak periods for spiritual elevation." },
+      { title: "ICS Calendar Export", desc: "Export your cycles directly to Google Calendar, Apple iCal, or Outlook." },
+      { title: "Sacred Science & Etymology", desc: "Explore esoteric scriptures correlated with physiological anatomy." }
+    ],
+    specsTitle: "Application Information",
+    specs: {
+      developer: "Timeline Alchemy Studio LLC",
+      supportEmail: "n.smith@timeline-alchemy.com",
+      platform: "Android 8.0+ / Web Browser",
+      ageRating: "PEGI 3 / Everyone",
+      license: "Free (Includes Cloud Sync & Notifications)"
     },
-    frequencies: {
-      f396: "396 Hz - Liberating Fear & Guilt",
-      f528: "528 Hz - Transformation & DNA Repair",
-      f963: "963 Hz - Divine Consciousness (Crown Chakra)"
-    },
-    activateFrequency: "Activate Frequency",
-    deactivateFrequency: "Deactivate Frequency",
-    frequencyPlaying: "Frequency Wave Active",
-    pillarsTitle: "The Four Pillars of Lumina",
+    linksTitle: "Legal & Documentation",
+    privacyBtn: "View Privacy Policy",
+    termsBtn: "View Terms of Service",
+    pillarsTitle: "The Four Pillars of Lumina Enlightenment",
     pillars: [
       {
         title: "Celestial Astrolabe",
@@ -150,8 +180,8 @@ const localTranslations = {
         desc: "Interactive zodiac wheel mapped to the twelve cranial nerves and body areas."
       },
       solfeggioAudio: {
-        title: "Solfeggio Vibration",
-        desc: "Built-in binaural beats and solfeggio frequencies for deep meditation."
+        title: "6-Month Cycle",
+        desc: "Calculation of your unique secretion moments and astronomical transits."
       },
       icsExport: {
         title: "Calendar Integration",
@@ -160,38 +190,54 @@ const localTranslations = {
     },
     screens: {
       screen1: { title: "The Celestial Astrolabe", desc: "Interactive Zodiac & Anatomy wheel showing the moon transits." },
-      screen2: { title: "Alchemical Sanctuary", desc: "Countdown to the next secretion alignment and breathing pace tracker." },
+      screen2: { title: "Alchemical Sanctuary", desc: "Countdown to the next secretion alignment and consciousness tracker." },
       screen3: { title: "Sacred Timeline", desc: "The 6-month secretion calendar and custom notification panel." },
       screen4: { title: "Sacred Science", desc: "The anatomical structures and esoteric scriptures decoded." },
       screen5: { title: "Cosmic Overview", desc: "The main dashboard integrating all cosmic and biological cycles." }
     }
   },
   de: {
-    title: "Lumina Secretion Calendar",
+    title: "Lumina Enlightenment",
     subtitle: "Synchronisieren Sie sich mit Ihrem inneren Kosmos. Verfolgen Sie Ihren heiligen Sekretionszyklus (Christus-Öl) und erhöhen Sie Ihr Bewusstsein.",
     heroBadge: "Multidimensionaler Leitfaden",
     desktopView: "Desktop-Dashboard",
     mobileView: "Mobiles Heiligtum",
     backToHome: "Zurück zum Portal",
     screenshotTitle: "Visualisierung der Benutzeroberfläche",
-    screenshotDesc: "Erkunden Sie die Schnittstellen und Visualisierungen der Lumina-Anwendung.",
-    solfeggioTitle: "Solfeggio-Atmungsleitfaden",
-    solfeggioDesc: "Stimmen Sie Ihre Schwingung ab und aktivieren Sie die alchemistische Aszension mit unserem Atmungswerkzeug.",
-    breatheState: {
-      in: "Einatmen",
-      hold: "Anhalten",
-      out: "Ausatmen",
-      idle: "Klicken zum Starten"
+    screenshotDesc: "Erkunden Sie die Schnittstellen und Visualisierungen der Lumina Enlightenment-Anwendung.",
+    downloadApp: "Auf Google Play anzeigen",
+    openApp: "Web Sanctum öffnen",
+    purposeTitle: "Zweck der Anwendung & Details",
+    purposeDesc: "Lumina Enlightenment ist ein personalisierter spiritueller und physiologischer Leitfaden, der den heiligen Sekretionszyklus (Christus-Öl-Prozess) verfolgt. Die Anwendung kombiniert Astronomie, Zodiak-Transite und biologische Rhythmen.",
+    googleAuthTitle: "Integration von Google Sign-In & Cloud Sync",
+    googleAuthDesc: "Um ein sicheres und nahtloses Erlebnis zu gewährleisten, nutzt Lumina Enlightenment Google Sign-In und Cloud-Synchronisation. Dies dient dazu:",
+    authPoints: [
+      "Ihr biologisches Profil sicher ohne manuelle Registrierung zu authentifizieren.",
+      "Ihren 6-Monats-Kalender und Einstellungen sicher in der Cloud zu sichern.",
+      "Benachrichtigungen und Push-Erinnerungen auf allen Geräten zu synchronisieren.",
+      "Ihre Fortschritte und Notizen beim Gerätewechsel zu bewahren."
+    ],
+    gdprTitle: "Datenschutz, Datensicherheit & Sicherheit",
+    gdprDesc: "Ihre Privatsphäre ist uns wichtig. Wir verkaufen oder teilen keine Nutzerdaten. Ihre Google-Anmeldedaten werden ausschließlich zur Sicherung Ihrer Kalendereinstellungen verwendet.",
+    featuresTitle: "Hauptfunktionen der Anwendung",
+    featuresList: [
+      { title: "Himmlisches Astrolabium", desc: "Mondphasen und Sternzeichen-Transite verfolgen." },
+      { title: "6-Monats-Sekretionskalender", desc: "Berechnung biologischer Spitzenzeiten für spirituelle Energie." },
+      { title: "ICS-Kalenderexport", desc: "Export in Google Calendar, Apple iCal oder Outlook." },
+      { title: "Heilige Wissenschaft", desc: "Erforschung esoterischer Schriften im Zusammenhang mit der Anatomie." }
+    ],
+    specsTitle: "Anwendungsinformationen",
+    specs: {
+      developer: "Timeline Alchemy Studio LLC",
+      supportEmail: "n.smith@timeline-alchemy.com",
+      platform: "Android 8.0+ / Webbrowser",
+      ageRating: "PEGI 3 / Für alle Altersgruppen",
+      license: "Kostenlos (Inklusive Cloud-Sync & Benachrichtigungen)"
     },
-    frequencies: {
-      f396: "396 Hz - Befreiung von Angst und Schuld",
-      f528: "528 Hz - Transformation und DNA-Reparatur",
-      f963: "963 Hz - Göttliches Bewusstsein (Kronenchakra)"
-    },
-    activateFrequency: "Frequenz Aktivieren",
-    deactivateFrequency: "Frequenz Deaktivieren",
-    frequencyPlaying: "Frequenzwelle Aktiv",
-    pillarsTitle: "Die Vier Säulen von Lumina",
+    linksTitle: "Rechtliches & Dokumentation",
+    privacyBtn: "Datenschutzerklärung anzeigen",
+    termsBtn: "Nutzungsbedingungen anzeigen",
+    pillarsTitle: "Die Vier Säulen von Lumina Enlightenment",
     pillars: [
       {
         title: "Himmlisches Astrolabium",
@@ -220,8 +266,8 @@ const localTranslations = {
         desc: "Interaktives Zodiak-Rad, das den zwölf Hirnnerven und Körperbereichen zugeordnet ist."
       },
       solfeggioAudio: {
-        title: "Solfeggio-Schwingung",
-        desc: "Integrierte binaurale Beats und Solfeggio-Frequenzen für tiefe Meditation."
+        title: "6-Monats-Zyklus",
+        desc: "Integrierte Berechnung Ihrer Sekretionsmomente."
       },
       icsExport: {
         title: "Kalenderintegration",
@@ -230,7 +276,7 @@ const localTranslations = {
     },
     screens: {
       screen1: { title: "Das Himmlische Astrolabium", desc: "Interaktives Zodiak- & Anatomie-Rad, das die Monddurchgänge anzeigt." },
-      screen2: { title: "Alchemistisches Heiligtum", desc: "Countdown zur nächsten Sekretionsausrichtung und Atemfrequenz-Tracker." },
+      screen2: { title: "Alchemistisches Heiligtum", desc: "Countdown zur nächsten Sekretionsausrichtung und Bewusstseins-Tracker." },
       screen3: { title: "Heilige Zeitlinie", desc: "Der 6-Monats-Sekretionskalender und das benutzerdefinierte Benachrichtigungsfeld." },
       screen4: { title: "Heilige Wissenschaft", desc: "Die anatomischen Strukturen und esoterischen Schriften entschlüsselt." },
       screen5: { title: "Kosmische Übersicht", desc: "Das Haupt-Dashboard, das alle kosmischen und biologischen Zyklen integriert." }
@@ -240,83 +286,9 @@ const localTranslations = {
 
 const Lumina = () => {
   const { language } = useLanguage();
-  const t = localTranslations[language] || localTranslations.en;
+  const t = localTranslations[language as keyof typeof localTranslations] || localTranslations.en;
 
   const [activeTab, setActiveTab] = useState<'desktop' | 'mobile'>('desktop');
-  const [selectedFreq, setSelectedFreq] = useState<'f396' | 'f528' | 'f963'>('f528');
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [breathPhase, setBreathPhase] = useState<'idle' | 'in' | 'hold1' | 'out' | 'hold2'>('idle');
-  const [breathProgress, setBreathProgress] = useState<number>(0);
-  const [breathSecondsLeft, setBreathSecondsLeft] = useState<number>(4);
-
-  // Guided breathing configuration (4-4-4-4 Box Breathing)
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (isPlaying) {
-      if (breathPhase === 'idle') {
-        setBreathPhase('in');
-        setBreathSecondsLeft(4);
-        setBreathProgress(0);
-      }
-
-      interval = setInterval(() => {
-        setBreathSecondsLeft((prev) => {
-          if (prev <= 1) {
-            // Transition phase
-            setBreathPhase((curr) => {
-              switch (curr) {
-                case 'in': return 'hold1';
-                case 'hold1': return 'out';
-                case 'out': return 'hold2';
-                case 'hold2': return 'in';
-                default: return 'in';
-              }
-            });
-            return 4;
-          }
-          return prev - 1;
-        });
-      }, 1000);
-    } else {
-      setBreathPhase('idle');
-      setBreathSecondsLeft(4);
-      setBreathProgress(0);
-    }
-
-    return () => clearInterval(interval);
-  }, [isPlaying, breathPhase]);
-
-  // Smooth breath progress effect (purely visual)
-  useEffect(() => {
-    let animFrame: number;
-    if (isPlaying && breathPhase !== 'idle') {
-      const startTime = Date.now();
-      const duration = 4000; // 4 seconds per phase
-
-      const updateProgress = () => {
-        const elapsed = (Date.now() - startTime) % duration;
-        const ratio = elapsed / duration;
-
-        if (breathPhase === 'in') {
-          setBreathProgress(ratio * 100);
-        } else if (breathPhase === 'hold1') {
-          setBreathProgress(100);
-        } else if (breathPhase === 'out') {
-          setBreathProgress((1 - ratio) * 100);
-        } else if (breathPhase === 'hold2') {
-          setBreathProgress(0);
-        }
-
-        animFrame = requestAnimationFrame(updateProgress);
-      };
-
-      animFrame = requestAnimationFrame(updateProgress);
-    } else {
-      setBreathProgress(0);
-    }
-
-    return () => cancelAnimationFrame(animFrame);
-  }, [isPlaying, breathPhase]);
 
   const desktopScreens = [
     { url: '/images/lumina/lumina_1.png', key: 'screen1' },
@@ -336,24 +308,6 @@ const Lumina = () => {
 
   const currentScreens = activeTab === 'desktop' ? desktopScreens : mobileScreens;
 
-  const getBreathPhaseText = () => {
-    switch (breathPhase) {
-      case 'in': return t.breatheState.in;
-      case 'hold1':
-      case 'hold2': return t.breatheState.hold;
-      case 'out': return t.breatheState.out;
-      default: return t.breatheState.idle;
-    }
-  };
-
-  const getFreqDetail = () => {
-    switch (selectedFreq) {
-      case 'f396': return '396Hz: Helps clear negative subconscious beliefs, shame, and survival fears. Aligns with the Root chakra.';
-      case 'f963': return '963Hz: The frequency of divine connection, crown chakra awakening, and cosmic unity consciousness.';
-      default: return '528Hz: The frequency of DNA transformation, repair, clarity of mind, and physical wellness.';
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       <Navigation />
@@ -372,7 +326,7 @@ const Lumina = () => {
         </div>
 
         {/* Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
           <div className="lg:col-span-7 space-y-6 text-left">
             <Badge variant="outline" className="px-4 py-1.5 border-amber-500/50 text-amber-500 bg-amber-500/5 font-semibold text-sm">
               <Sparkles className="w-3.5 h-3.5 mr-2 animate-spin-slow" />
@@ -381,10 +335,10 @@ const Lumina = () => {
 
             <h1 className="font-cosmic text-4xl md:text-6xl font-bold tracking-tight mb-4">
               <span className="bg-gradient-to-r from-amber-400 via-amber-200 to-purple-400 bg-clip-text text-transparent drop-shadow-sm">
-                LUMINA
+                Lumina Enlightenment
               </span>
               <br />
-              <span className="text-2xl md:text-4xl text-foreground font-mystical tracking-normal">
+              <span className="text-2xl md:text-3xl text-muted-foreground font-mystical tracking-normal">
                 Sacred Secretion Calendar
               </span>
             </h1>
@@ -392,6 +346,21 @@ const Lumina = () => {
             <p className="font-mystical text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
               {t.subtitle}
             </p>
+
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Button asChild className="cosmic-hover bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-semibold px-6 py-5">
+                <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.lumina" target="_blank" rel="noopener noreferrer">
+                  <Download className="w-4 h-4 mr-2" />
+                  {t.downloadApp}
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="border-amber-500/30 text-white hover:bg-amber-950/20 px-6 py-5">
+                <a href="https://lumina.timeline-alchemy.com" target="_blank" rel="noopener noreferrer">
+                  <Smartphone className="w-4 h-4 mr-2 animate-pulse text-amber-400" />
+                  {t.openApp}
+                </a>
+              </Button>
+            </div>
 
             {/* Quick Features Row */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
@@ -401,7 +370,7 @@ const Lumina = () => {
                 <span className="font-mystical text-xs text-muted-foreground">{t.features.zodiacWheel.desc}</span>
               </div>
               <div className="bg-card/40 backdrop-blur-sm border border-border/40 hover:border-amber-500/20 transition-all rounded-xl p-4 flex flex-col gap-2">
-                <Volume2 className="w-6 h-6 text-purple-400" />
+                <Calendar className="w-6 h-6 text-purple-400" />
                 <span className="font-cosmic font-bold text-sm">{t.features.solfeggioAudio.title}</span>
                 <span className="font-mystical text-xs text-muted-foreground">{t.features.solfeggioAudio.desc}</span>
               </div>
@@ -420,7 +389,7 @@ const Lumina = () => {
               <div className="relative bg-card/60 backdrop-blur-md p-6 rounded-3xl border border-border/60 shadow-divine">
                 <img 
                   src="/images/lumina/lumina-logo.png" 
-                  alt="Lumina App Icon" 
+                  alt="Lumina Enlightenment App Icon" 
                   className="w-48 h-48 md:w-64 md:h-64 object-contain rounded-2xl drop-shadow-2xl animate-cosmic-pulse"
                 />
               </div>
@@ -428,125 +397,127 @@ const Lumina = () => {
           </div>
         </div>
 
-        {/* Guided breathing & frequencies simulation section */}
-        <section className="mb-24 bg-card/30 backdrop-blur-md border border-border/60 rounded-3xl p-8 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-6 space-y-6 text-left">
-              <div className="flex items-center gap-2 text-amber-400">
-                <Activity className="w-5 h-5 animate-pulse" />
-                <h2 className="font-cosmic text-xl font-bold tracking-wide uppercase">{t.solfeggioTitle}</h2>
-              </div>
-              <p className="font-mystical text-muted-foreground text-base">
-                {t.solfeggioDesc}
-              </p>
-
-              {/* Freq selection selector */}
-              <div className="space-y-3">
-                <div className="flex flex-wrap gap-2">
-                  <button 
-                    onClick={() => { setSelectedFreq('f396'); if(isPlaying) setIsPlaying(false); }}
-                    className={`px-4 py-2 rounded-lg font-cosmic text-xs transition-all border ${selectedFreq === 'f396' ? 'bg-amber-500/10 border-amber-500 text-amber-400 glow-accent' : 'bg-muted/40 border-border text-muted-foreground hover:text-foreground'}`}
-                  >
-                    396 Hz
-                  </button>
-                  <button 
-                    onClick={() => { setSelectedFreq('f528'); if(isPlaying) setIsPlaying(false); }}
-                    className={`px-4 py-2 rounded-lg font-cosmic text-xs transition-all border ${selectedFreq === 'f528' ? 'bg-amber-500/10 border-amber-500 text-amber-400 glow-accent' : 'bg-muted/40 border-border text-muted-foreground hover:text-foreground'}`}
-                  >
-                    528 Hz
-                  </button>
-                  <button 
-                    onClick={() => { setSelectedFreq('f963'); if(isPlaying) setIsPlaying(false); }}
-                    className={`px-4 py-2 rounded-lg font-cosmic text-xs transition-all border ${selectedFreq === 'f963' ? 'bg-amber-500/10 border-amber-500 text-amber-400 glow-accent' : 'bg-muted/40 border-border text-muted-foreground hover:text-foreground'}`}
-                  >
-                    963 Hz
-                  </button>
+        {/* App Info & Specifications Section (2 Columns, matching Cosmic Slots pattern) */}
+        <section className="mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            {/* Left Column: Purpose, Google Auth & Data Protection */}
+            <div className="lg:col-span-2 space-y-8">
+              
+              {/* Purpose Section */}
+              <div className="bg-card/30 border border-border/30 rounded-2xl p-6 md:p-8 backdrop-blur-md">
+                <h2 className="font-cosmic text-2xl font-bold text-amber-400 mb-4 flex items-center gap-2">
+                  <Info className="w-6 h-6 text-amber-400" />
+                  {t.purposeTitle}
+                </h2>
+                <p className="font-mystical text-muted-foreground leading-relaxed mb-6">
+                  {t.purposeDesc}
+                </p>
+                <div className="border-t border-border/30 pt-6">
+                  <h3 className="font-cosmic text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                    <Users className="w-5 h-5 text-amber-400" />
+                    {t.googleAuthTitle}
+                  </h3>
+                  <p className="font-mystical text-muted-foreground text-sm leading-relaxed mb-4">
+                    {t.googleAuthDesc}
+                  </p>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm font-mystical text-muted-foreground">
+                    {t.authPoints.map((point, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="font-mystical text-sm text-primary/80 italic min-h-[40px]">
-                  {getFreqDetail()}
+              </div>
+
+              {/* GDPR and Safety Disclaimer */}
+              <div className="bg-card/30 border border-border/30 rounded-2xl p-6 md:p-8 backdrop-blur-md">
+                <h2 className="font-cosmic text-2xl font-bold text-amber-400 mb-4 flex items-center gap-2">
+                  <ShieldCheck className="w-6 h-6 text-amber-400" />
+                  {t.gdprTitle}
+                </h2>
+                <p className="font-mystical text-muted-foreground leading-relaxed">
+                  {t.gdprDesc}
                 </p>
               </div>
 
-              {/* Play Toggle Button */}
-              <div className="pt-2">
-                <Button 
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  className={`px-6 py-5 rounded-xl font-cosmic text-sm font-semibold flex items-center gap-2.5 transition-all duration-300 ${isPlaying ? 'bg-red-500 hover:bg-red-600 text-white' : 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black shadow-lg shadow-amber-500/25'}`}
-                >
-                  {isPlaying ? (
-                    <>
-                      <Pause className="w-4 h-4" />
-                      {t.deactivateFrequency}
-                    </>
-                  ) : (
-                    <>
-                      <Play className="w-4 h-4 fill-black" />
-                      {t.activateFrequency}
-                    </>
-                  )}
-                </Button>
-              </div>
-            </div>
-
-            {/* Breathing Animation Canvas */}
-            <div className="lg:col-span-6 flex flex-col items-center justify-center py-6">
-              <div className="relative flex items-center justify-center w-64 h-64">
-                {/* Outermost pulsing ring */}
-                <div 
-                  className={`absolute rounded-full border border-amber-500/20 transition-all duration-500 ${isPlaying ? 'scale-125 opacity-100' : 'scale-100 opacity-0'}`}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    transform: `scale(${1 + (breathProgress / 300)})`,
-                    animation: isPlaying ? 'cosmic-pulse 4s ease-in-out infinite' : 'none'
-                  }}
-                />
-
-                {/* Second pulsing ring */}
-                <div 
-                  className="absolute rounded-full bg-gradient-to-r from-amber-500/5 to-purple-500/5 border border-amber-500/10 transition-all"
-                  style={{
-                    width: '80%',
-                    height: '80%',
-                    transform: `scale(${1 + (breathProgress / 200)})`
-                  }}
-                />
-
-                {/* Inner breathing circle */}
-                <div 
-                  className="absolute rounded-full bg-amber-500/10 border-2 border-amber-400 flex flex-col items-center justify-center transition-all shadow-mystical duration-300"
-                  style={{
-                    width: `${60 + (breathProgress * 0.4)}%`,
-                    height: `${60 + (breathProgress * 0.4)}%`
-                  }}
-                >
-                  <span className="font-cosmic text-sm font-black text-amber-300 drop-shadow-md">
-                    {getBreathPhaseText()}
-                  </span>
-                  {isPlaying && (
-                    <span className="font-cosmic text-2xl font-bold text-white mt-1">
-                      {breathSecondsLeft}s
-                    </span>
-                  )}
+              {/* Features grid */}
+              <div className="bg-card/30 border border-border/30 rounded-2xl p-6 md:p-8 backdrop-blur-md">
+                <h2 className="font-cosmic text-2xl font-bold text-white mb-6">
+                  {t.featuresTitle}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {t.featuresList.map((feat, idx) => (
+                    <div key={idx} className="bg-background/40 border border-border/40 p-5 rounded-xl">
+                      <h4 className="font-cosmic font-semibold text-amber-300 mb-2">{feat.title}</h4>
+                      <p className="font-mystical text-sm text-muted-foreground">{feat.desc}</p>
+                    </div>
+                  ))}
                 </div>
-
-                {/* Wave indicator for Solfeggio sound */}
-                {isPlaying && (
-                  <div className="absolute -bottom-4 flex items-center justify-center gap-1.5 h-6">
-                    <span className="text-xs font-cosmic text-amber-500 tracking-wider mr-1 animate-pulse">
-                      {t.frequencyPlaying}
-                    </span>
-                    <div className="w-1 bg-amber-500 h-2 animate-pulse rounded-full" style={{ animationDelay: '0.1s', height: '14px' }}></div>
-                    <div className="w-1 bg-amber-400 h-4 animate-pulse rounded-full" style={{ animationDelay: '0.3s', height: '20px' }}></div>
-                    <div className="w-1 bg-amber-300 h-3 animate-pulse rounded-full" style={{ animationDelay: '0.5s', height: '16px' }}></div>
-                    <div className="w-1 bg-amber-400 h-5 animate-pulse rounded-full" style={{ animationDelay: '0.2s', height: '22px' }}></div>
-                    <div className="w-1 bg-amber-500 h-2 animate-pulse rounded-full" style={{ animationDelay: '0.4s', height: '12px' }}></div>
-                  </div>
-                )}
               </div>
+
             </div>
+
+            {/* Right Column: Technical Specifications & Legal Document Quicklinks */}
+            <div className="space-y-8">
+              
+              {/* App Specifications Card */}
+              <div className="bg-card/40 border border-border/40 rounded-2xl p-6 backdrop-blur-md">
+                <h3 className="font-cosmic text-xl font-bold text-white mb-4">
+                  {t.specsTitle}
+                </h3>
+                <div className="space-y-4 text-sm font-mystical">
+                  <div className="flex justify-between py-2 border-b border-border/20">
+                    <span className="text-muted-foreground">Developer</span>
+                    <span className="text-white font-medium">{t.specs.developer}</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-border/20">
+                    <span className="text-muted-foreground">Support</span>
+                    <a href={`mailto:${t.specs.supportEmail}`} className="text-amber-400 hover:underline underline decoration-dotted underline-offset-4">
+                      {language === 'nl' ? 'contact via mail' : language === 'de' ? 'Kontakt per E-Mail' : 'contact via mail'}
+                    </a>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-border/20">
+                    <span className="text-muted-foreground">Platform</span>
+                    <span className="text-white font-medium">{t.specs.platform}</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-border/20">
+                    <span className="text-muted-foreground">Age Rating</span>
+                    <span className="text-white font-medium">{t.specs.ageRating}</span>
+                  </div>
+                  <div className="flex justify-between py-2">
+                    <span className="text-muted-foreground">Pricing & Cloud</span>
+                    <span className="text-white font-medium text-right max-w-[200px]">{t.specs.license}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Document Quicklinks Card (Google Play store requirement) */}
+              <div className="bg-card/40 border border-border/40 rounded-2xl p-6 backdrop-blur-md">
+                <h3 className="font-cosmic text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-amber-400" />
+                  {t.linksTitle}
+                </h3>
+                <div className="space-y-3">
+                  <Button asChild variant="outline" className="w-full justify-start border-amber-500/20 text-muted-foreground hover:text-white hover:bg-amber-950/10">
+                    <Link to="/privacy-policy">
+                      <ShieldCheck className="w-4 h-4 mr-2 text-amber-400" />
+                      {t.privacyBtn}
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" className="w-full justify-start border-amber-500/20 text-muted-foreground hover:text-white hover:bg-amber-950/10">
+                    <Link to="/terms-of-service">
+                      <FileText className="w-4 h-4 mr-2 text-amber-400" />
+                      {t.termsBtn}
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </section>
 

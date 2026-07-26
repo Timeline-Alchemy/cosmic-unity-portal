@@ -11,6 +11,7 @@ const Footer = () => {
 
   const footerLinks = [
     { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, external: false },
+    { name: 'Timeless Awareness', href: '/timeless-awareness', external: false },
     { name: 'E-Books', href: '/e-books', external: false },
     { name: t('nav.casinoCollection'), href: '/casino-collection', external: false },
     { name: t('nav.lumina'), href: '/lumina', external: false },

@@ -32,7 +32,7 @@ const Navigation = () => {
       items: [
         { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, icon: Star },
         { name: 'Timeless Awareness', href: '/timeless-awareness', icon: Star },
-        { name: 'Lumina', href: '/lumina', icon: Sparkles },
+        { name: t('nav.lumina'), href: '/lumina', icon: Sparkles },
         { name: t('nav.casinoCollection'), href: '/casino-collection', icon: Gamepad2 }
       ]
     },
