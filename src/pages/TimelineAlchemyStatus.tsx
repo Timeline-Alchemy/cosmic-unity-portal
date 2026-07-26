@@ -235,11 +235,11 @@ const TimelineAlchemyStatus = () => {
           {activeScreenshots.map((screen, index) => (
             <Card key={index} className="bg-card/50 backdrop-blur-sm border border-border/40 overflow-hidden group hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
               <CardContent className="p-0">
-                <div className="aspect-[16/10] overflow-hidden relative">
+                <div className={`${activeTab === 'alchemy' ? 'aspect-[16/10]' : 'aspect-[9/16]'} overflow-hidden relative bg-black/40 flex items-center justify-center p-2`}>
                   <img 
                     src={screen.url} 
                     alt={screen.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-105"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = '/placeholder.svg';
                     }}

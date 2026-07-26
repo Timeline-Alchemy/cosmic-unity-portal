@@ -20,7 +20,9 @@ import {
   CheckCircle,
   ShieldCheck,
   FileText,
-  Smartphone
+  Smartphone,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 const localTranslations = {
@@ -289,6 +291,7 @@ const Lumina = () => {
   const t = localTranslations[language as keyof typeof localTranslations] || localTranslations.en;
 
   const [activeTab, setActiveTab] = useState<'desktop' | 'mobile'>('desktop');
+  const [activeImg, setActiveImg] = useState(0);
 
   const desktopScreens = [
     { url: '/images/lumina/lumina_1.png', key: 'screen1' },
@@ -299,14 +302,19 @@ const Lumina = () => {
   ];
 
   const mobileScreens = [
-    { url: '/images/lumina/lumina_mobile_1.png', key: 'screen1' },
-    { url: '/images/lumina/lumina_mobile_2.png', key: 'screen2' },
-    { url: '/images/lumina/lumina_mobile_3.png', key: 'screen3' },
-    { url: '/images/lumina/lumina_mobile_4.png', key: 'screen4' },
-    { url: '/images/lumina/lumina_mobile_5.png', key: 'screen5' }
+    { url: '/images/lumina/lumina_mobile_1.jpg', key: 'screen1' },
+    { url: '/images/lumina/lumina_mobile_2.jpg', key: 'screen2' },
+    { url: '/images/lumina/lumina_mobile_3.jpg', key: 'screen3' },
+    { url: '/images/lumina/lumina_mobile_4.jpg', key: 'screen4' },
+    { url: '/images/lumina/lumina_mobile_5.jpg', key: 'screen5' }
   ];
 
   const currentScreens = activeTab === 'desktop' ? desktopScreens : mobileScreens;
+
+  const handleTabChange = (tab: 'desktop' | 'mobile') => {
+    setActiveTab(tab);
+    setActiveImg(0);
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
@@ -349,7 +357,7 @@ const Lumina = () => {
 
             <div className="flex flex-wrap gap-4 pt-2">
               <Button asChild className="cosmic-hover bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-semibold px-6 py-5">
-                <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.lumina" target="_blank" rel="noopener noreferrer">
+                <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.lumina_enlightenment" target="_blank" rel="noopener noreferrer">
                   <Download className="w-4 h-4 mr-2" />
                   {t.downloadApp}
                 </a>
@@ -535,7 +543,7 @@ const Lumina = () => {
             <div className="flex justify-center mt-6">
               <div className="bg-card/50 backdrop-blur-md p-1 border border-border/60 rounded-full flex gap-1 shadow-mystical">
                 <button
-                  onClick={() => setActiveTab('desktop')}
+                  onClick={() => handleTabChange('desktop')}
                   className={`px-5 py-2.5 rounded-full font-cosmic text-xs font-semibold transition-all duration-300 ${
                     activeTab === 'desktop'
                       ? 'bg-amber-500 text-black shadow-md scale-105'
@@ -545,7 +553,7 @@ const Lumina = () => {
                   {t.desktopView}
                 </button>
                 <button
-                  onClick={() => setActiveTab('mobile')}
+                  onClick={() => handleTabChange('mobile')}
                   className={`px-5 py-2.5 rounded-full font-cosmic text-xs font-semibold transition-all duration-300 ${
                     activeTab === 'mobile'
                       ? 'bg-amber-500 text-black shadow-md scale-105'
@@ -558,30 +566,74 @@ const Lumina = () => {
             </div>
           </div>
 
-          {/* Screenshots grid */}
-          <div className={`grid grid-cols-1 sm:grid-cols-2 ${activeTab === 'desktop' ? 'md:grid-cols-3 lg:grid-cols-5' : 'md:grid-cols-3 lg:grid-cols-5'} gap-6`}>
+          {/* Main Active Screenshot Showcase (Full View, game style) */}
+          <div className="bg-card/30 border border-border/30 rounded-2xl p-4 md:p-6 mb-8 backdrop-blur-md">
+            <div className="relative rounded-xl overflow-hidden border border-border/40 shadow-mystical bg-black/60 flex items-center justify-center h-[360px] md:h-[520px] group">
+              <img 
+                src={currentScreens[activeImg]?.url} 
+                alt={t.screens[currentScreens[activeImg]?.key as keyof typeof t.screens]?.title || 'Screenshot'} 
+                className="max-h-full max-w-full object-contain transition-all duration-300 drop-shadow-lg"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/placeholder.svg';
+                }}
+              />
+              
+              {currentScreens.length > 1 && (
+                <>
+                  <button 
+                    onClick={() => setActiveImg((prev) => (prev === 0 ? currentScreens.length - 1 : prev - 1))}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2.5 rounded-full border border-border/40 transition-colors shadow-lg"
+                    aria-label="Previous screenshot"
+                  >
+                    <ChevronLeft className="w-6 h-6 text-amber-400" />
+                  </button>
+                  <button 
+                    onClick={() => setActiveImg((prev) => (prev === currentScreens.length - 1 ? 0 : prev + 1))}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2.5 rounded-full border border-border/40 transition-colors shadow-lg"
+                    aria-label="Next screenshot"
+                  >
+                    <ChevronRight className="w-6 h-6 text-amber-400" />
+                  </button>
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 px-4 py-1.5 rounded-full text-xs text-amber-300 border border-border/40 font-cosmic">
+                    {t.screens[currentScreens[activeImg]?.key as keyof typeof t.screens]?.title} ({activeImg + 1} / {currentScreens.length})
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Thumbnails Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {currentScreens.map((screen, index) => {
               const itemKey = screen.key as keyof typeof t.screens;
               const screenText = t.screens[itemKey] || { title: `Screen ${index+1}`, desc: "" };
+              const isSelected = activeImg === index;
               
               return (
-                <Card key={index} className="bg-card/40 backdrop-blur-sm border border-border/40 overflow-hidden group hover:border-amber-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/5">
+                <Card 
+                  key={index} 
+                  onClick={() => setActiveImg(index)}
+                  className={`bg-card/40 backdrop-blur-sm overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl ${
+                    isSelected 
+                      ? 'border-2 border-amber-500 ring-2 ring-amber-500/30 scale-[1.02]' 
+                      : 'border border-border/40 hover:border-amber-500/30 opacity-80 hover:opacity-100'
+                  }`}
+                >
                   <CardContent className="p-0">
-                    <div className="aspect-[9/16] overflow-hidden relative bg-black/40">
+                    <div className={`${activeTab === 'desktop' ? 'aspect-[16/10]' : 'aspect-[9/16]'} overflow-hidden relative bg-black/50 flex items-center justify-center p-1.5`}>
                       <img 
                         src={screen.url} 
                         alt={screenText.title}
-                        className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105`}
+                        className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                         onError={(e) => {
                           (e.target as HTMLImageElement).src = '/placeholder.svg';
                         }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4">
-                        <h4 className="font-cosmic text-sm font-bold text-amber-400 mb-1 flex items-center gap-1">
-                          <Eye className="w-3.5 h-3.5" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3">
+                        <h4 className="font-cosmic text-xs font-bold text-amber-400 flex items-center gap-1">
+                          <Eye className="w-3 h-3" />
                           {screenText.title}
                         </h4>
-                        <p className="font-mystical text-[11px] leading-snug text-white/90">{screenText.desc}</p>
                       </div>
                     </div>
                   </CardContent>
