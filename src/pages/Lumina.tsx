@@ -4,7 +4,6 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/hooks/useLanguage';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
   Sparkles, 
@@ -12,7 +11,6 @@ import {
   Calendar, 
   ArrowLeft, 
   Download, 
-  Eye, 
   Award,
   BookMarked,
   Info,
@@ -22,7 +20,8 @@ import {
   FileText,
   Smartphone,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Video
 } from 'lucide-react';
 
 const localTranslations = {
@@ -33,6 +32,8 @@ const localTranslations = {
     desktopView: "Desktop Dashboard",
     mobileView: "Mobiele Sanctuary",
     backToHome: "Terug naar het Portaal",
+    promoTitle: "Promotie Video's",
+    promoDesc: "Bekijk de officiële demonstratie en introductievideo's van de Lumina Enlightenment applicatie.",
     screenshotTitle: "Interface Visualisatie",
     screenshotDesc: "Verken de interfaces en visualisaties van de Lumina Enlightenment applicatie.",
     downloadApp: "Bekijk op Google Play",
@@ -119,6 +120,8 @@ const localTranslations = {
     desktopView: "Desktop Dashboard",
     mobileView: "Mobile Sanctuary",
     backToHome: "Back to Portal",
+    promoTitle: "Promotional Videos",
+    promoDesc: "Watch the official demonstration and intro videos of the Lumina Enlightenment application.",
     screenshotTitle: "Interface Visualization",
     screenshotDesc: "Explore the interfaces and visualizations of the Lumina Enlightenment application.",
     downloadApp: "View on Google Play",
@@ -205,6 +208,8 @@ const localTranslations = {
     desktopView: "Desktop-Dashboard",
     mobileView: "Mobiles Heiligtum",
     backToHome: "Zurück zum Portal",
+    promoTitle: "Werbevideos",
+    promoDesc: "Sehen Sie sich die offiziellen Demonstrations- und Einführungsvideos der Lumina Enlightenment-Anwendung an.",
     screenshotTitle: "Visualisierung der Benutzeroberfläche",
     screenshotDesc: "Erkunden Sie die Schnittstellen und Visualisierungen der Lumina Enlightenment-Anwendung.",
     downloadApp: "Auf Google Play anzeigen",
@@ -322,8 +327,8 @@ const Lumina = () => {
 
       <main className="pt-32 pb-24 px-4 max-w-7xl mx-auto relative overflow-hidden">
         {/* Ambient background glows */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-r from-amber-500/10 to-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/15 via-cosmic/15 to-secondary/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
 
         {/* Back Link */}
         <div className="mb-8">
@@ -336,13 +341,13 @@ const Lumina = () => {
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
           <div className="lg:col-span-7 space-y-6 text-left">
-            <Badge variant="outline" className="px-4 py-1.5 border-amber-500/50 text-amber-500 bg-amber-500/5 font-semibold text-sm">
-              <Sparkles className="w-3.5 h-3.5 mr-2 animate-spin-slow" />
+            <Badge variant="outline" className="px-4 py-1.5 border-primary/40 text-primary bg-primary/10 font-semibold text-sm">
+              <Sparkles className="w-3.5 h-3.5 mr-2 animate-spin-slow text-cosmic" />
               {t.heroBadge}
             </Badge>
 
             <h1 className="font-cosmic text-4xl md:text-6xl font-bold tracking-tight mb-4">
-              <span className="bg-gradient-to-r from-amber-400 via-amber-200 to-purple-400 bg-clip-text text-transparent drop-shadow-sm">
+              <span className="text-cosmic-gradient drop-shadow-sm">
                 Lumina Enlightenment
               </span>
               <br />
@@ -356,15 +361,15 @@ const Lumina = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
-              <Button asChild className="cosmic-hover bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-semibold px-6 py-5">
+              <Button asChild className="cosmic-hover bg-cosmic-gradient hover:opacity-90 text-primary-foreground font-semibold px-6 py-5 shadow-cosmic">
                 <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.lumina_enlightenment" target="_blank" rel="noopener noreferrer">
                   <Download className="w-4 h-4 mr-2" />
                   {t.downloadApp}
                 </a>
               </Button>
-              <Button asChild variant="outline" className="border-amber-500/30 text-white hover:bg-amber-950/20 px-6 py-5">
+              <Button asChild variant="outline" className="border-primary/30 text-foreground hover:bg-primary/10 px-6 py-5">
                 <a href="https://lumina.timeline-alchemy.com" target="_blank" rel="noopener noreferrer">
-                  <Smartphone className="w-4 h-4 mr-2 animate-pulse text-amber-400" />
+                  <Smartphone className="w-4 h-4 mr-2 animate-pulse text-cosmic" />
                   {t.openApp}
                 </a>
               </Button>
@@ -372,19 +377,19 @@ const Lumina = () => {
 
             {/* Quick Features Row */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-              <div className="bg-card/40 backdrop-blur-sm border border-border/40 hover:border-amber-500/20 transition-all rounded-xl p-4 flex flex-col gap-2">
-                <Compass className="w-6 h-6 text-amber-400" />
-                <span className="font-cosmic font-bold text-sm">{t.features.zodiacWheel.title}</span>
+              <div className="bg-card/40 backdrop-blur-sm border border-border/40 hover:border-primary/40 transition-all rounded-xl p-4 flex flex-col gap-2">
+                <Compass className="w-6 h-6 text-primary" />
+                <span className="font-cosmic font-bold text-sm text-foreground">{t.features.zodiacWheel.title}</span>
                 <span className="font-mystical text-xs text-muted-foreground">{t.features.zodiacWheel.desc}</span>
               </div>
-              <div className="bg-card/40 backdrop-blur-sm border border-border/40 hover:border-amber-500/20 transition-all rounded-xl p-4 flex flex-col gap-2">
-                <Calendar className="w-6 h-6 text-purple-400" />
-                <span className="font-cosmic font-bold text-sm">{t.features.solfeggioAudio.title}</span>
+              <div className="bg-card/40 backdrop-blur-sm border border-border/40 hover:border-primary/40 transition-all rounded-xl p-4 flex flex-col gap-2">
+                <Calendar className="w-6 h-6 text-secondary" />
+                <span className="font-cosmic font-bold text-sm text-foreground">{t.features.solfeggioAudio.title}</span>
                 <span className="font-mystical text-xs text-muted-foreground">{t.features.solfeggioAudio.desc}</span>
               </div>
-              <div className="bg-card/40 backdrop-blur-sm border border-border/40 hover:border-amber-500/20 transition-all rounded-xl p-4 flex flex-col gap-2">
+              <div className="bg-card/40 backdrop-blur-sm border border-border/40 hover:border-primary/40 transition-all rounded-xl p-4 flex flex-col gap-2">
                 <Calendar className="w-6 h-6 text-cosmic" />
-                <span className="font-cosmic font-bold text-sm">{t.features.icsExport.title}</span>
+                <span className="font-cosmic font-bold text-sm text-foreground">{t.features.icsExport.title}</span>
                 <span className="font-mystical text-xs text-muted-foreground">{t.features.icsExport.desc}</span>
               </div>
             </div>
@@ -393,8 +398,8 @@ const Lumina = () => {
           {/* Logo Frame */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative group">
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-amber-500 to-purple-600 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
-              <div className="relative bg-card/60 backdrop-blur-md p-6 rounded-3xl border border-border/60 shadow-divine">
+              <div className="absolute -inset-1.5 bg-cosmic-gradient rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+              <div className="relative bg-card/70 backdrop-blur-md p-6 rounded-3xl border border-border/60 shadow-divine">
                 <img 
                   src="/images/lumina/lumina-logo.png?v=20260726" 
                   alt="Lumina Enlightenment App Icon" 
@@ -405,6 +410,50 @@ const Lumina = () => {
           </div>
         </div>
 
+        {/* Promo Videos Section */}
+        <section className="mb-24">
+          <div className="text-center mb-10">
+            <Badge variant="outline" className="px-4 py-1.5 border-primary/40 text-primary bg-primary/10 font-semibold text-sm mb-4">
+              <Video className="w-3.5 h-3.5 mr-2 animate-pulse text-cosmic" />
+              {t.promoTitle}
+            </Badge>
+            <h2 className="font-cosmic text-2xl md:text-4xl font-bold mb-3">
+              <span className="text-cosmic-gradient">{t.promoTitle}</span>
+            </h2>
+            <p className="font-mystical text-muted-foreground max-w-2xl mx-auto">
+              {t.promoDesc}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Video 1: Standard YouTube Landscape (16:9) */}
+            <div className="lg:col-span-7 bg-card/40 border border-border/40 rounded-2xl p-4 md:p-6 backdrop-blur-md shadow-mystical hover:border-primary/40 transition-all">
+              <div className="relative aspect-video rounded-xl overflow-hidden border border-border/40 shadow-lg bg-black/60">
+                <iframe
+                  src="https://www.youtube.com/embed/e_glQt41sWM"
+                  title="Lumina Enlightenment Promo Video"
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+
+            {/* Video 2: YouTube Short Vertical (9:16) */}
+            <div className="lg:col-span-5 bg-card/40 border border-border/40 rounded-2xl p-4 md:p-6 backdrop-blur-md shadow-mystical hover:border-primary/40 transition-all flex flex-col items-center">
+              <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-2xl overflow-hidden border border-border/40 shadow-lg bg-black/60">
+                <iframe
+                  src="https://www.youtube.com/embed/UyC2xHp4fW8"
+                  title="Lumina Enlightenment Short Promo"
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* App Info & Specifications Section (2 Columns, matching Cosmic Slots pattern) */}
         <section className="mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -413,17 +462,17 @@ const Lumina = () => {
             <div className="lg:col-span-2 space-y-8">
               
               {/* Purpose Section */}
-              <div className="bg-card/30 border border-border/30 rounded-2xl p-6 md:p-8 backdrop-blur-md">
-                <h2 className="font-cosmic text-2xl font-bold text-amber-400 mb-4 flex items-center gap-2">
-                  <Info className="w-6 h-6 text-amber-400" />
+              <div className="bg-card/40 border border-border/40 rounded-2xl p-6 md:p-8 backdrop-blur-md">
+                <h2 className="font-cosmic text-2xl font-bold text-primary mb-4 flex items-center gap-2">
+                  <Info className="w-6 h-6 text-primary" />
                   {t.purposeTitle}
                 </h2>
                 <p className="font-mystical text-muted-foreground leading-relaxed mb-6">
                   {t.purposeDesc}
                 </p>
                 <div className="border-t border-border/30 pt-6">
-                  <h3 className="font-cosmic text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                    <Users className="w-5 h-5 text-amber-400" />
+                  <h3 className="font-cosmic text-lg font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <Users className="w-5 h-5 text-cosmic" />
                     {t.googleAuthTitle}
                   </h3>
                   <p className="font-mystical text-muted-foreground text-sm leading-relaxed mb-4">
@@ -441,9 +490,9 @@ const Lumina = () => {
               </div>
 
               {/* GDPR and Safety Disclaimer */}
-              <div className="bg-card/30 border border-border/30 rounded-2xl p-6 md:p-8 backdrop-blur-md">
-                <h2 className="font-cosmic text-2xl font-bold text-amber-400 mb-4 flex items-center gap-2">
-                  <ShieldCheck className="w-6 h-6 text-amber-400" />
+              <div className="bg-card/40 border border-border/40 rounded-2xl p-6 md:p-8 backdrop-blur-md">
+                <h2 className="font-cosmic text-2xl font-bold text-primary mb-4 flex items-center gap-2">
+                  <ShieldCheck className="w-6 h-6 text-primary" />
                   {t.gdprTitle}
                 </h2>
                 <p className="font-mystical text-muted-foreground leading-relaxed">
@@ -452,14 +501,14 @@ const Lumina = () => {
               </div>
 
               {/* Features grid */}
-              <div className="bg-card/30 border border-border/30 rounded-2xl p-6 md:p-8 backdrop-blur-md">
-                <h2 className="font-cosmic text-2xl font-bold text-white mb-6">
+              <div className="bg-card/40 border border-border/40 rounded-2xl p-6 md:p-8 backdrop-blur-md">
+                <h2 className="font-cosmic text-2xl font-bold text-foreground mb-6">
                   {t.featuresTitle}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {t.featuresList.map((feat, idx) => (
                     <div key={idx} className="bg-background/40 border border-border/40 p-5 rounded-xl">
-                      <h4 className="font-cosmic font-semibold text-amber-300 mb-2">{feat.title}</h4>
+                      <h4 className="font-cosmic font-semibold text-cosmic mb-2">{feat.title}</h4>
                       <p className="font-mystical text-sm text-muted-foreground">{feat.desc}</p>
                     </div>
                   ))}
@@ -473,51 +522,51 @@ const Lumina = () => {
               
               {/* App Specifications Card */}
               <div className="bg-card/40 border border-border/40 rounded-2xl p-6 backdrop-blur-md">
-                <h3 className="font-cosmic text-xl font-bold text-white mb-4">
+                <h3 className="font-cosmic text-xl font-bold text-foreground mb-4">
                   {t.specsTitle}
                 </h3>
                 <div className="space-y-4 text-sm font-mystical">
                   <div className="flex justify-between py-2 border-b border-border/20">
                     <span className="text-muted-foreground">Developer</span>
-                    <span className="text-white font-medium">{t.specs.developer}</span>
+                    <span className="text-foreground font-medium">{t.specs.developer}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-border/20">
                     <span className="text-muted-foreground">Support</span>
-                    <a href={`mailto:${t.specs.supportEmail}`} className="text-amber-400 hover:underline underline decoration-dotted underline-offset-4">
+                    <a href={`mailto:${t.specs.supportEmail}`} className="text-primary hover:underline underline decoration-dotted underline-offset-4">
                       {language === 'nl' ? 'contact via mail' : language === 'de' ? 'Kontakt per E-Mail' : 'contact via mail'}
                     </a>
                   </div>
                   <div className="flex justify-between py-2 border-b border-border/20">
                     <span className="text-muted-foreground">Platform</span>
-                    <span className="text-white font-medium">{t.specs.platform}</span>
+                    <span className="text-foreground font-medium">{t.specs.platform}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-border/20">
                     <span className="text-muted-foreground">Age Rating</span>
-                    <span className="text-white font-medium">{t.specs.ageRating}</span>
+                    <span className="text-foreground font-medium">{t.specs.ageRating}</span>
                   </div>
                   <div className="flex justify-between py-2">
                     <span className="text-muted-foreground">Pricing & Cloud</span>
-                    <span className="text-white font-medium text-right max-w-[200px]">{t.specs.license}</span>
+                    <span className="text-foreground font-medium text-right max-w-[200px]">{t.specs.license}</span>
                   </div>
                 </div>
               </div>
 
               {/* Document Quicklinks Card (Google Play store requirement) */}
               <div className="bg-card/40 border border-border/40 rounded-2xl p-6 backdrop-blur-md">
-                <h3 className="font-cosmic text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-amber-400" />
+                <h3 className="font-cosmic text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-primary" />
                   {t.linksTitle}
                 </h3>
                 <div className="space-y-3">
-                  <Button asChild variant="outline" className="w-full justify-start border-amber-500/20 text-muted-foreground hover:text-white hover:bg-amber-950/10">
+                  <Button asChild variant="outline" className="w-full justify-start border-primary/20 text-muted-foreground hover:text-foreground hover:bg-primary/10">
                     <Link to="/privacy-policy">
-                      <ShieldCheck className="w-4 h-4 mr-2 text-amber-400" />
+                      <ShieldCheck className="w-4 h-4 mr-2 text-cosmic" />
                       {t.privacyBtn}
                     </Link>
                   </Button>
-                  <Button asChild variant="outline" className="w-full justify-start border-amber-500/20 text-muted-foreground hover:text-white hover:bg-amber-950/10">
+                  <Button asChild variant="outline" className="w-full justify-start border-primary/20 text-muted-foreground hover:text-foreground hover:bg-primary/10">
                     <Link to="/terms-of-service">
-                      <FileText className="w-4 h-4 mr-2 text-amber-400" />
+                      <FileText className="w-4 h-4 mr-2 text-cosmic" />
                       {t.termsBtn}
                     </Link>
                   </Button>
@@ -532,7 +581,7 @@ const Lumina = () => {
         {/* Screenshots Showcase Selector */}
         <section className="mb-24">
           <div className="text-center mb-12">
-            <h2 className="font-cosmic text-2xl md:text-4xl font-bold mb-2">
+            <h2 className="font-cosmic text-2xl md:text-4xl font-bold mb-2 text-foreground">
               {t.screenshotTitle}
             </h2>
             <p className="font-mystical text-muted-foreground">
@@ -546,7 +595,7 @@ const Lumina = () => {
                   onClick={() => handleTabChange('desktop')}
                   className={`px-5 py-2.5 rounded-full font-cosmic text-xs font-semibold transition-all duration-300 ${
                     activeTab === 'desktop'
-                      ? 'bg-amber-500 text-black shadow-md scale-105'
+                      ? 'bg-primary text-primary-foreground shadow-md scale-105'
                       : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
@@ -556,7 +605,7 @@ const Lumina = () => {
                   onClick={() => handleTabChange('mobile')}
                   className={`px-5 py-2.5 rounded-full font-cosmic text-xs font-semibold transition-all duration-300 ${
                     activeTab === 'mobile'
-                      ? 'bg-amber-500 text-black shadow-md scale-105'
+                      ? 'bg-primary text-primary-foreground shadow-md scale-105'
                       : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
@@ -567,7 +616,7 @@ const Lumina = () => {
           </div>
 
           {/* Main Active Screenshot Showcase (Full View, game style) */}
-          <div className="bg-card/30 border border-border/30 rounded-2xl p-4 md:p-6 mb-8 backdrop-blur-md">
+          <div className="bg-card/40 border border-border/40 rounded-2xl p-4 md:p-6 mb-8 backdrop-blur-md">
             <div className="relative rounded-xl overflow-hidden border border-border/40 shadow-mystical bg-black/60 flex items-center justify-center h-[360px] md:h-[520px] group">
               <img 
                 src={currentScreens[activeImg]?.url} 
@@ -585,16 +634,16 @@ const Lumina = () => {
                     className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2.5 rounded-full border border-border/40 transition-colors shadow-lg"
                     aria-label="Previous screenshot"
                   >
-                    <ChevronLeft className="w-6 h-6 text-amber-400" />
+                    <ChevronLeft className="w-6 h-6 text-primary" />
                   </button>
                   <button 
                     onClick={() => setActiveImg((prev) => (prev === currentScreens.length - 1 ? 0 : prev + 1))}
                     className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2.5 rounded-full border border-border/40 transition-colors shadow-lg"
                     aria-label="Next screenshot"
                   >
-                    <ChevronRight className="w-6 h-6 text-amber-400" />
+                    <ChevronRight className="w-6 h-6 text-primary" />
                   </button>
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 px-4 py-1.5 rounded-full text-xs text-amber-300 border border-border/40 font-cosmic">
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/80 px-4 py-1.5 rounded-full text-xs text-primary border border-border/40 font-cosmic">
                     {t.screens[currentScreens[activeImg]?.key as keyof typeof t.screens]?.title} ({activeImg + 1} / {currentScreens.length})
                   </div>
                 </>
@@ -617,8 +666,8 @@ const Lumina = () => {
                     activeTab === 'desktop' ? 'w-28 md:w-36 h-18 md:h-22' : 'w-20 md:w-24 h-32 md:h-36'
                   } ${
                     isSelected 
-                      ? 'border-2 border-amber-500 ring-2 ring-amber-500/40 scale-105 opacity-100 shadow-lg' 
-                      : 'border-border/40 hover:border-amber-500/30 opacity-60 hover:opacity-100'
+                      ? 'border-2 border-primary ring-2 ring-primary/40 scale-105 opacity-100 shadow-lg' 
+                      : 'border-border/40 hover:border-primary/40 opacity-60 hover:opacity-100'
                   }`}
                 >
                   <img 
@@ -630,7 +679,7 @@ const Lumina = () => {
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-1.5 text-left">
-                    <span className="font-cosmic text-[10px] text-amber-300 font-semibold truncate leading-tight">
+                    <span className="font-cosmic text-[10px] text-primary font-semibold truncate leading-tight">
                       {screenText.title}
                     </span>
                   </div>
@@ -649,28 +698,28 @@ const Lumina = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {t.pillars.map((pillar, index) => {
               const icons = [
-                <Compass className="w-6 h-6 text-amber-400" />,
-                <Award className="w-6 h-6 text-purple-400" />,
+                <Compass className="w-6 h-6 text-primary" />,
+                <Award className="w-6 h-6 text-secondary" />,
                 <Calendar className="w-6 h-6 text-cosmic" />,
-                <BookMarked className="w-6 h-6 text-emerald-400" />
+                <BookMarked className="w-6 h-6 text-accent" />
               ];
               
               return (
                 <div 
                   key={index}
-                  className="bg-card/40 backdrop-blur-sm border border-border/40 rounded-2xl p-6 hover:border-amber-500/20 transition-all text-left space-y-4 shadow-mystical"
+                  className="bg-card/40 backdrop-blur-sm border border-border/40 rounded-2xl p-6 hover:border-primary/40 transition-all text-left space-y-4 shadow-mystical"
                 >
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-card border border-border/60 flex items-center justify-center">
                       {icons[index]}
                     </div>
-                    <h3 className="font-cosmic text-lg font-bold text-amber-300">{pillar.title}</h3>
+                    <h3 className="font-cosmic text-lg font-bold text-foreground">{pillar.title}</h3>
                   </div>
                   <p className="font-mystical text-muted-foreground text-sm leading-relaxed">
                     {pillar.desc}
                   </p>
                   <div className="border-t border-border/40 pt-3">
-                    <p className="font-mystical text-xs text-primary/80 leading-relaxed italic">
+                    <p className="font-mystical text-xs text-primary/90 leading-relaxed italic">
                       {pillar.detail}
                     </p>
                   </div>

@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Star, Mail, Phone, MapPin, Instagram, Facebook, Youtube, Twitter } from 'lucide-react';
+import { Star, Mail, Phone, MapPin, Instagram, Facebook, Youtube, Twitter, ChevronDown, Sparkles, Gamepad2 } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const timelineAlchemyEntryHref = '/timeline-alchemy';
+  const [projectsOpen, setProjectsOpen] = useState(false);
 
+  const projectItems = [
+    { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, icon: Star },
+    { name: 'Timeless Awareness', href: '/timeless-awareness', icon: Star },
+    { name: t('nav.lumina'), href: '/lumina', icon: Sparkles },
+    { name: t('nav.casinoCollection'), href: '/casino-collection', icon: Gamepad2 }
+  ];
 
-  const footerLinks = [
-    { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, external: false },
-    { name: 'Timeless Awareness', href: '/timeless-awareness', external: false },
-    { name: t('nav.lumina'), href: '/lumina', external: false },
-    { name: t('nav.casinoCollection'), href: '/casino-collection', external: false },
-    { name: 'E-Books', href: '/e-books', external: false },
-    { name: t('footer.about'), href: '/about', external: false },
-    { name: t('footer.contact'), href: '/contact', external: false },
+  const mainLinks = [
+    { name: 'E-Books', href: '/e-books' },
+    { name: t('footer.about'), href: '/about' },
+    { name: t('footer.contact'), href: '/contact' },
   ];
 
   return (
@@ -27,30 +30,54 @@ const Footer = () => {
           {/* Footer Row: Community (left), Social Links (center), Contact (right) */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             {/* Navigation Links - Left */}
-            <div className="w-full md:w-auto">
+            <div className="w-full md:w-auto text-left">
               <h3 className="font-cosmic text-lg font-semibold text-cosmic-gradient mb-4">
                 Links
               </h3>
-              <ul className="space-y-2">
-                {footerLinks.map((link) => (
-                  <li key={link.name}>
-                    {link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-mystical text-muted-foreground hover:text-cosmic cosmic-hover text-sm"
-                      >
-                        {link.name}
-                      </a>
-                    ) : (
+              <ul className="space-y-2.5">
+                <li>
+                  <Link
+                    to="/"
+                    className="font-mystical text-muted-foreground hover:text-cosmic cosmic-hover text-sm"
+                  >
+                    {t('nav.home')}
+                  </Link>
+                </li>
+
+                {/* Projects Dropdown Menu */}
+                <li className="relative group">
+                  <button
+                    type="button"
+                    onClick={() => setProjectsOpen(!projectsOpen)}
+                    className="font-mystical text-muted-foreground hover:text-cosmic cosmic-hover text-sm flex items-center gap-1 w-full text-left py-0.5"
+                  >
+                    <span>{t('nav.projects')}</span>
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${projectsOpen ? 'rotate-180 text-cosmic' : 'group-hover:rotate-180'}`} />
+                  </button>
+
+                  {/* Dropdown Items */}
+                  <div className={`mt-1.5 pl-3 border-l-2 border-primary/30 space-y-2 transition-all duration-300 ${projectsOpen ? 'block' : 'hidden group-hover:block'}`}>
+                    {projectItems.map((project) => (
                       <Link
-                        to={link.href}
-                        className="font-mystical text-muted-foreground hover:text-cosmic cosmic-hover text-sm"
+                        key={project.name}
+                        to={project.href}
+                        className="font-mystical text-muted-foreground hover:text-foreground text-xs flex items-center gap-2 py-1 transition-colors group/item"
                       >
-                        {link.name}
+                        <project.icon className="w-3.5 h-3.5 text-primary/80 group-hover/item:text-cosmic transition-colors" />
+                        <span>{project.name}</span>
                       </Link>
-                    )}
+                    ))}
+                  </div>
+                </li>
+
+                {mainLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.href}
+                      className="font-mystical text-muted-foreground hover:text-cosmic cosmic-hover text-sm"
+                    >
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
