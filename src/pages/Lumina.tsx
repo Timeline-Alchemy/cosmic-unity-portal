@@ -37,6 +37,7 @@ const localTranslations = {
     screenshotTitle: "Interface Visualisatie",
     screenshotDesc: "Verken de interfaces en visualisaties van de Lumina Enlightenment applicatie.",
     downloadApp: "Bekijk op Google Play",
+    androidApp: "Open Android App",
     openApp: "Open Web Sanctum",
     purposeTitle: "Doel van de Applicatie & Details",
     purposeDesc: "Lumina Enlightenment is een gepersonaliseerde spirituele en fysiologische gids die de heilige secretiecyclus (het Christus-olie proces) volgt. De applicatie combineert astronomie, zodiaktransits en biologische ritmes om de exacte perioden te berekenen waarin spirituele en fysiologische energie piekt in het menselijk lichaam.",
@@ -125,6 +126,7 @@ const localTranslations = {
     screenshotTitle: "Interface Visualization",
     screenshotDesc: "Explore the interfaces and visualizations of the Lumina Enlightenment application.",
     downloadApp: "View on Google Play",
+    androidApp: "Open Android App",
     openApp: "Open Web Sanctum",
     purposeTitle: "Application Purpose & Details",
     purposeDesc: "Lumina Enlightenment is a personalized spiritual and physiological guide that tracks the sacred secretion cycle (Christ-Oil process). The app combines astronomy, zodiac transits, and biological rhythms to calculate peak energy periods within the human body.",
@@ -213,6 +215,7 @@ const localTranslations = {
     screenshotTitle: "Visualisierung der Benutzeroberfläche",
     screenshotDesc: "Erkunden Sie die Schnittstellen und Visualisierungen der Lumina Enlightenment-Anwendung.",
     downloadApp: "Auf Google Play anzeigen",
+    androidApp: "Android App öffnen",
     openApp: "Web Sanctum öffnen",
     purposeTitle: "Zweck der Anwendung & Details",
     purposeDesc: "Lumina Enlightenment ist ein personalisierter spiritueller und physiologischer Leitfaden, der den heiligen Sekretionszyklus (Christus-Öl-Prozess) verfolgt. Die Anwendung kombiniert Astronomie, Zodiak-Transite und biologische Rhythmen.",
@@ -361,16 +364,22 @@ const Lumina = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
-              <Button asChild className="cosmic-hover bg-cosmic-gradient hover:opacity-90 text-primary-foreground font-semibold px-6 py-5 shadow-cosmic">
-                <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.lumina_enlightenment" target="_blank" rel="noopener noreferrer">
-                  <Download className="w-4 h-4 mr-2" />
-                  {t.downloadApp}
+              <Button asChild variant="outline" className="border-primary/30 text-foreground hover:bg-primary/10 px-6 py-5">
+                <a href="https://www.timeline-alchemy.com/lumina/play" target="_blank" rel="noopener noreferrer">
+                  <Smartphone className="w-4 h-4 mr-2 animate-pulse text-cosmic" />
+                  {t.androidApp}
                 </a>
               </Button>
               <Button asChild variant="outline" className="border-primary/30 text-foreground hover:bg-primary/10 px-6 py-5">
                 <a href="https://lumina.timeline-alchemy.com" target="_blank" rel="noopener noreferrer">
-                  <Smartphone className="w-4 h-4 mr-2 animate-pulse text-cosmic" />
+                  <Smartphone className="w-4 h-4 mr-2 text-cosmic" />
                   {t.openApp}
+                </a>
+              </Button>
+              <Button asChild className="cosmic-hover bg-cosmic-gradient hover:opacity-90 text-primary-foreground font-semibold px-6 py-5 shadow-cosmic">
+                <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.lumina_enlightenment" target="_blank" rel="noopener noreferrer">
+                  <Download className="w-4 h-4 mr-2" />
+                  {t.downloadApp}
                 </a>
               </Button>
             </div>
