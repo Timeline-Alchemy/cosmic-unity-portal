@@ -77,5 +77,33 @@
         "BE:EA:04:CA:1A:9B:69:D9:70:29:A3:D9:5A:DE:1E:EE:02:ED:A3:56:E6:95:00:A7:68:13:B3:F6:17:06:72:5A"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.timeline_alchemy.timeless_awareness",
+      "sha256_cert_fingerprints": [
+        "F0:DB:B1:7B:C0:F3:E2:2D:0E:34:84:7D:1F:F8:7C:97:65:0F:0D:BF:36:E9:9F:90:DF:7C:4A:CC:DA:48:E9:02"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.timeline_alchemy.re_member",
+      "sha256_cert_fingerprints": [
+        "67:37:B8:17:E6:B4:13:26:A9:44:0A:A8:6C:94:3B:34:57:BA:9E:A9:E2:5D:9F:D0:69:27:96:73:88:27:5E:65",
+        "18:60:59:78:70:76:7D:7C:02:86:D5:9C:C3:0F:DA:C7:EA:3B:7F:EA:22:FA:F4:5E:07:C6:B8:7A:24:4C:73:75",
+        "A4:64:42:2D:63:15:84:2D:31:65:05:A4:3E:8B:17:B6:30:D5:82:05:F4:9F:E9:AD:1F:53:58:6E:AB:38:10:54"
+      ]
+    }
   }
 ]
