@@ -73,7 +73,8 @@
       "namespace": "android_app",
       "package_name": "com.timeline_alchemy.lumina_enlightenment",
       "sha256_cert_fingerprints": [
-        "e1:87:a0:f4:81:66:1c:26:15:fe:cd:ad:77:15:49:46:c0:84:e6:c8:42:eb:73:48:bc:84:34:61:f4:dc:23:b8"
+        "e1:87:a0:f4:81:66:1c:26:15:fe:cd:ad:77:15:49:46:c0:84:e6:c8:42:eb:73:48:bc:84:34:61:f4:dc:23:b8",
+        "BE:EA:04:CA:1A:9B:69:D9:70:29:A3:D9:5A:DE:1E:EE:02:ED:A3:56:E6:95:00:A7:68:13:B3:F6:17:06:72:5A"
       ]
     }
   }
