@@ -262,8 +262,8 @@ const ReMember = () => {
               <div className="absolute -inset-1.5 bg-cosmic-gradient rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
               <div className="relative bg-card/70 backdrop-blur-md p-6 rounded-3xl border border-border/60 shadow-divine flex items-center justify-center">
                 <img 
-                  src="/images/merkaba-app-icon.png" 
-                  alt="Re-Member App Icon" 
+                  src="/images/logo-512x512-trans.png" 
+                  alt="Re-Member App Logo" 
                   className="w-48 h-48 md:w-64 md:h-64 object-contain rounded-2xl drop-shadow-2xl animate-cosmic-pulse"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = '/images/timeline-alchemy.png';

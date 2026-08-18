@@ -398,7 +398,7 @@ const Lumina = () => {
               <div className="absolute -inset-1.5 bg-cosmic-gradient rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
               <div className="relative bg-card/70 backdrop-blur-md p-6 rounded-3xl border border-border/60 shadow-divine">
                 <img 
-                  src="/images/lumina/lumina-logo.png?v=20260726" 
+                  src="/images/lumina/Gemini_Generated_Image_7d30e87d30e87d30.jpg" 
                   alt="Lumina Enlightenment App Icon" 
                   className="w-48 h-48 md:w-64 md:h-64 object-contain rounded-2xl drop-shadow-2xl animate-cosmic-pulse"
                 />

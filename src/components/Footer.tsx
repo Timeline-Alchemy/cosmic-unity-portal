@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Star, Mail, Phone, MapPin, Instagram, Facebook, Youtube, Twitter, ChevronDown, Sparkles, Gamepad2 } from 'lucide-react';
+import { Star, Mail, Phone, MapPin, Instagram, Facebook, Youtube, Twitter, ChevronDown, Sparkles, Gamepad2, BookOpen, Smartphone } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const Footer = () => {
@@ -8,26 +8,44 @@ const Footer = () => {
   const { t } = useLanguage();
   const timelineAlchemyEntryHref = '/timeline-alchemy';
   const [projectsOpen, setProjectsOpen] = useState(false);
-  const [casinoOpen, setCasinoOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  const projectItems = [
-    { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, icon: Star },
-    { name: 'Timeless Awareness', href: '/timeless-awareness', icon: Star },
-    { name: 'Re-Member', href: '/re-member', icon: Sparkles },
-    { name: t('nav.lumina'), href: '/lumina', icon: Sparkles },
-  ];
-
-  const casinoItems = [
-    { name: 'Casino Overview', href: '/casino-collection', icon: Gamepad2 },
-    { name: 'Cosmic Slots', href: '/casino/cosmic-slots', icon: Gamepad2 },
-    { name: 'BlackHole Blackjack', href: '/casino/blackhole-blackjack', icon: Gamepad2 },
-    { name: 'Galactic Poker', href: '/casino/galactic-poker', icon: Gamepad2 },
-    { name: 'Cosmic Roulette', href: '/casino/cosmic-roulette', icon: Gamepad2 },
-    { name: 'Galactic Pinball', href: '/casino/galactic-pinball', icon: Gamepad2 }
+  const projectCategories = [
+    {
+      id: 'applications',
+      name: 'Applications',
+      icon: Smartphone,
+      items: [
+        { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, icon: Star },
+        { name: 'Timeless Awareness', href: '/timeless-awareness', icon: Star },
+        { name: 'Re-Member', href: '/re-member', icon: Sparkles },
+        { name: t('nav.lumina'), href: '/lumina', icon: Sparkles },
+      ]
+    },
+    {
+      id: 'games',
+      name: 'Games',
+      icon: Gamepad2,
+      items: [
+        { name: 'Casino Overview', href: '/casino-collection', icon: Gamepad2 },
+        { name: 'Cosmic Slots', href: '/casino/cosmic-slots', icon: Gamepad2 },
+        { name: 'BlackHole Blackjack', href: '/casino/blackhole-blackjack', icon: Gamepad2 },
+        { name: 'Galactic Poker', href: '/casino/galactic-poker', icon: Gamepad2 },
+        { name: 'Cosmic Roulette', href: '/casino/cosmic-roulette', icon: Gamepad2 },
+        { name: 'Galactic Pinball', href: '/casino/galactic-pinball', icon: Gamepad2 }
+      ]
+    },
+    {
+      id: 'ebooks',
+      name: 'E-Books',
+      icon: BookOpen,
+      items: [
+        { name: 'E-Books Collection', href: '/e-books', icon: BookOpen }
+      ]
+    }
   ];
 
   const mainLinks = [
-    { name: 'E-Books', href: '/e-books' },
     { name: t('footer.about'), href: '/about' },
     { name: t('footer.contact'), href: '/contact' },
   ];
@@ -54,7 +72,7 @@ const Footer = () => {
                   </Link>
                 </li>
 
-                {/* Projects Dropdown Menu */}
+                {/* Projects Multi-Level Dropdown Menu */}
                 <li className="relative group">
                   <button
                     type="button"
@@ -65,43 +83,36 @@ const Footer = () => {
                     <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${projectsOpen ? 'rotate-180 text-cosmic' : 'group-hover:rotate-180'}`} />
                   </button>
 
-                  {/* Dropdown Items */}
+                  {/* 1st Level: Applications, Games, E-Books */}
                   <div className={`mt-1.5 pl-3 border-l-2 border-primary/30 space-y-2 transition-all duration-300 ${projectsOpen ? 'block' : 'hidden group-hover:block'}`}>
-                    {projectItems.map((project) => (
-                      <Link
-                        key={project.name}
-                        to={project.href}
-                        className="font-mystical text-muted-foreground hover:text-foreground text-xs flex items-center gap-2 py-1 transition-colors group/item"
-                      >
-                        <project.icon className="w-3.5 h-3.5 text-primary/80 group-hover/item:text-cosmic transition-colors" />
-                        <span>{project.name}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </li>
+                    {projectCategories.map((cat) => (
+                      <div key={cat.id} className="space-y-1">
+                        <button
+                          type="button"
+                          onClick={() => setActiveCategory(activeCategory === cat.id ? null : cat.id)}
+                          className="font-mystical text-muted-foreground hover:text-foreground text-xs flex items-center justify-between gap-2 py-0.5 w-full text-left group/sub"
+                        >
+                          <span className="flex items-center gap-1.5">
+                            <cat.icon className="w-3.5 h-3.5 text-amber-500/80 group-hover/sub:text-cosmic transition-colors" />
+                            <span>{cat.name}</span>
+                          </span>
+                          <ChevronDown className={`w-3 h-3 text-muted-foreground/60 transition-transform duration-300 ${activeCategory === cat.id ? 'rotate-180' : ''}`} />
+                        </button>
 
-                {/* Cosmic Casino Dropdown Menu */}
-                <li className="relative group">
-                  <button
-                    type="button"
-                    onClick={() => setCasinoOpen(!casinoOpen)}
-                    className="font-mystical text-muted-foreground hover:text-cosmic cosmic-hover text-sm flex items-center gap-1 w-full text-left py-0.5"
-                  >
-                    <span>{t('nav.casinoCollection')}</span>
-                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${casinoOpen ? 'rotate-180 text-cosmic' : 'group-hover:rotate-180'}`} />
-                  </button>
-
-                  {/* Dropdown Items */}
-                  <div className={`mt-1.5 pl-3 border-l-2 border-primary/30 space-y-2 transition-all duration-300 ${casinoOpen ? 'block' : 'hidden group-hover:block'}`}>
-                    {casinoItems.map((game) => (
-                      <Link
-                        key={game.name}
-                        to={game.href}
-                        className="font-mystical text-muted-foreground hover:text-foreground text-xs flex items-center gap-2 py-1 transition-colors group/item"
-                      >
-                        <game.icon className="w-3.5 h-3.5 text-amber-500/80 group-hover/item:text-cosmic transition-colors" />
-                        <span>{game.name}</span>
-                      </Link>
+                        {/* 2nd Level Items */}
+                        <div className={`pl-3 border-l border-border/40 space-y-1 ${activeCategory === cat.id ? 'block' : 'hidden group-hover:block'}`}>
+                          {cat.items.map((item) => (
+                            <Link
+                              key={item.name}
+                              to={item.href}
+                              className="font-mystical text-muted-foreground hover:text-cosmic text-[11px] flex items-center gap-1.5 py-0.5 transition-colors"
+                            >
+                              <item.icon className="w-3 h-3 text-primary/70" />
+                              <span>{item.name}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </li>
