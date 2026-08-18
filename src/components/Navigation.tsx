@@ -19,6 +19,7 @@ import FrequencySelector from '@/components/FrequencySelector';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
+  const [mobileCasinoOpen, setMobileCasinoOpen] = useState(false);
   const location = useLocation();
   const { t } = useLanguage();
   const timelineAlchemyEntryHref = '/timeline-alchemy';
@@ -29,11 +30,26 @@ const Navigation = () => {
       name: t('nav.projects'),
       icon: Star,
       isDropdown: true,
+      id: 'projects',
       items: [
         { name: 'Timeline Alchemy', href: timelineAlchemyEntryHref, icon: Star },
         { name: 'Timeless Awareness', href: '/timeless-awareness', icon: Star },
-        { name: t('nav.lumina'), href: '/lumina', icon: Sparkles },
-        { name: t('nav.casinoCollection'), href: '/casino-collection', icon: Gamepad2 }
+        { name: 'Re-Member', href: '/re-member', icon: Sparkles },
+        { name: t('nav.lumina'), href: '/lumina', icon: Sparkles }
+      ]
+    },
+    {
+      name: t('nav.casinoCollection'),
+      icon: Gamepad2,
+      isDropdown: true,
+      id: 'casino',
+      items: [
+        { name: 'Casino Overview', href: '/casino-collection', icon: Gamepad2 },
+        { name: 'Cosmic Slots', href: '/casino/cosmic-slots', icon: Gamepad2 },
+        { name: 'BlackHole Blackjack', href: '/casino/blackhole-blackjack', icon: Gamepad2 },
+        { name: 'Galactic Poker', href: '/casino/galactic-poker', icon: Gamepad2 },
+        { name: 'Cosmic Roulette', href: '/casino/cosmic-roulette', icon: Gamepad2 },
+        { name: 'Galactic Pinball', href: '/casino/galactic-pinball', icon: Gamepad2 }
       ]
     },
     { name: 'E-Books', href: '/e-books', icon: BookOpen, isDropdown: false },
@@ -136,19 +152,28 @@ const Navigation = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navigation.map((item) => {
               if (item.isDropdown) {
+                const isSubOpen = item.id === 'casino' ? mobileCasinoOpen : mobileProjectsOpen;
+                const toggleSub = () => {
+                  if (item.id === 'casino') {
+                    setMobileCasinoOpen(!mobileCasinoOpen);
+                  } else {
+                    setMobileProjectsOpen(!mobileProjectsOpen);
+                  }
+                };
+
                 return (
                   <div key={item.name} className="space-y-1">
                     <button
-                      onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
+                      onClick={toggleSub}
                       className="flex justify-between items-center w-full px-3 py-2 rounded-md text-base font-mystical text-muted-foreground hover:text-foreground hover:bg-muted/50"
                     >
                       <span className="flex items-center gap-3">
                         <item.icon className="h-5 w-5" />
                         {item.name}
                       </span>
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileProjectsOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isSubOpen ? 'rotate-180' : ''}`} />
                     </button>
-                    {mobileProjectsOpen && (
+                    {isSubOpen && (
                       <div className="pl-6 space-y-1 border-l border-border/40 ml-5 mt-1">
                         {item.items.map((subItem) => (
                           <Link
@@ -162,6 +187,7 @@ const Navigation = () => {
                             onClick={() => {
                               setIsOpen(false);
                               setMobileProjectsOpen(false);
+                              setMobileCasinoOpen(false);
                             }}
                           >
                             <subItem.icon className="mr-3 h-4 w-4 text-amber-500/85" />

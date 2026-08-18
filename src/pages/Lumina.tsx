@@ -21,7 +21,8 @@ import {
   Smartphone,
   ChevronLeft,
   ChevronRight,
-  Video
+  Video,
+  Youtube
 } from 'lucide-react';
 
 const localTranslations = {
@@ -298,16 +299,8 @@ const Lumina = () => {
   const { language } = useLanguage();
   const t = localTranslations[language as keyof typeof localTranslations] || localTranslations.en;
 
-  const [activeTab, setActiveTab] = useState<'desktop' | 'mobile'>('desktop');
+  const [videoFormat, setVideoFormat] = useState<'landscape' | 'vertical'>('landscape');
   const [activeImg, setActiveImg] = useState(0);
-
-  const desktopScreens = [
-    { url: '/images/lumina/lumina_1.png', key: 'screen1' },
-    { url: '/images/lumina/lumina_2.png', key: 'screen2' },
-    { url: '/images/lumina/lumina_3.png', key: 'screen3' },
-    { url: '/images/lumina/lumina_4.png', key: 'screen4' },
-    { url: '/images/lumina/lumina_5.png', key: 'screen5' }
-  ];
 
   const mobileScreens = [
     { url: '/images/lumina/lumina_mobile_1.jpg', key: 'screen1' },
@@ -317,12 +310,7 @@ const Lumina = () => {
     { url: '/images/lumina/lumina_mobile_5.jpg', key: 'screen5' }
   ];
 
-  const currentScreens = activeTab === 'desktop' ? desktopScreens : mobileScreens;
-
-  const handleTabChange = (tab: 'desktop' | 'mobile') => {
-    setActiveTab(tab);
-    setActiveImg(0);
-  };
+  const currentScreens = mobileScreens;
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
@@ -421,36 +409,44 @@ const Lumina = () => {
 
         {/* Promo Videos Section */}
         <section className="mb-24">
-          <div className="text-center mb-10">
-            <Badge variant="outline" className="px-4 py-1.5 border-primary/40 text-primary bg-primary/10 font-semibold text-sm mb-4">
-              <Video className="w-3.5 h-3.5 mr-2 animate-pulse text-cosmic" />
-              {t.promoTitle}
-            </Badge>
-            <h2 className="font-cosmic text-2xl md:text-4xl font-bold mb-3">
-              <span className="text-cosmic-gradient">{t.promoTitle}</span>
-            </h2>
-            <p className="font-mystical text-muted-foreground max-w-2xl mx-auto">
-              {t.promoDesc}
-            </p>
-          </div>
+          <div className="bg-card/40 border border-border/40 rounded-2xl p-6 md:p-8 backdrop-blur-md">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div>
+                <h2 className="font-cosmic text-2xl md:text-3xl font-bold text-cosmic-gradient flex items-center gap-2">
+                  <Youtube className="w-6 h-6 text-red-500" />
+                  {t.promoTitle}
+                </h2>
+                <p className="font-mystical text-muted-foreground text-sm mt-1">
+                  {t.promoDesc}
+                </p>
+              </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Video 1: Standard YouTube Landscape (16:9) */}
-            <div className="lg:col-span-7 bg-card/40 border border-border/40 rounded-2xl p-4 md:p-6 backdrop-blur-md shadow-mystical hover:border-primary/40 transition-all">
-              <div className="relative aspect-video rounded-xl overflow-hidden border border-border/40 shadow-lg bg-black/60">
-                <iframe
-                  src="https://www.youtube.com/embed/e_glQt41sWM"
-                  title="Lumina Enlightenment Promo Video"
-                  className="w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+              <div className="flex bg-background/50 p-1 rounded-xl border border-border/40 self-start sm:self-center">
+                <button
+                  onClick={() => setVideoFormat('landscape')}
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-cosmic transition-all duration-300 ${
+                    videoFormat === 'landscape'
+                      ? 'bg-primary text-primary-foreground shadow-mystical'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  Landscape (16:9)
+                </button>
+                <button
+                  onClick={() => setVideoFormat('vertical')}
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-cosmic transition-all duration-300 ${
+                    videoFormat === 'vertical'
+                      ? 'bg-primary text-primary-foreground shadow-mystical'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  Vertical (9:16 Shorts)
+                </button>
               </div>
             </div>
 
-            {/* Video 2: YouTube Short Vertical (9:16) */}
-            <div className="lg:col-span-5 bg-card/40 border border-border/40 rounded-2xl p-4 md:p-6 backdrop-blur-md shadow-mystical hover:border-primary/40 transition-all flex flex-col items-center">
-              <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-2xl overflow-hidden border border-border/40 shadow-lg bg-black/60">
+            {videoFormat === 'vertical' ? (
+              <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] mx-auto rounded-xl border border-border/40 shadow-mystical bg-black/60 overflow-hidden">
                 <iframe
                   src="https://www.youtube.com/embed/UyC2xHp4fW8"
                   title="Lumina Enlightenment Short Promo"
@@ -459,7 +455,17 @@ const Lumina = () => {
                   allowFullScreen
                 ></iframe>
               </div>
-            </div>
+            ) : (
+              <div className="relative aspect-video w-full rounded-xl border border-border/40 shadow-mystical bg-black/60 overflow-hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/e_glQt41sWM"
+                  title="Lumina Enlightenment Promo Video"
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
           </div>
         </section>
 
@@ -596,37 +602,11 @@ const Lumina = () => {
             <p className="font-mystical text-muted-foreground">
               {t.screenshotDesc}
             </p>
-
-            {/* Layout Toggle Buttons */}
-            <div className="flex justify-center mt-6">
-              <div className="bg-card/50 backdrop-blur-md p-1 border border-border/60 rounded-full flex gap-1 shadow-mystical">
-                <button
-                  onClick={() => handleTabChange('desktop')}
-                  className={`px-5 py-2.5 rounded-full font-cosmic text-xs font-semibold transition-all duration-300 ${
-                    activeTab === 'desktop'
-                      ? 'bg-primary text-primary-foreground shadow-md scale-105'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {t.desktopView}
-                </button>
-                <button
-                  onClick={() => handleTabChange('mobile')}
-                  className={`px-5 py-2.5 rounded-full font-cosmic text-xs font-semibold transition-all duration-300 ${
-                    activeTab === 'mobile'
-                      ? 'bg-primary text-primary-foreground shadow-md scale-105'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {t.mobileView}
-                </button>
-              </div>
-            </div>
           </div>
 
           {/* Main Active Screenshot Showcase (Full View, game style) */}
           <div className="bg-card/40 border border-border/40 rounded-2xl p-4 md:p-6 mb-8 backdrop-blur-md">
-            <div className="relative rounded-xl overflow-hidden border border-border/40 shadow-mystical bg-black/60 flex items-center justify-center h-[360px] md:h-[520px] group">
+            <div className="relative rounded-xl overflow-hidden border border-border/40 shadow-mystical bg-black/60 flex items-center justify-center h-[380px] md:h-[540px] group">
               <img 
                 src={currentScreens[activeImg]?.url} 
                 alt={t.screens[currentScreens[activeImg]?.key as keyof typeof t.screens]?.title || 'Screenshot'} 
@@ -671,9 +651,7 @@ const Lumina = () => {
                 <button 
                   key={index} 
                   onClick={() => setActiveImg(index)}
-                  className={`relative overflow-hidden cursor-pointer rounded-xl transition-all duration-300 flex-shrink-0 bg-black/60 border ${
-                    activeTab === 'desktop' ? 'w-28 md:w-36 h-18 md:h-22' : 'w-20 md:w-24 h-32 md:h-36'
-                  } ${
+                  className={`relative overflow-hidden cursor-pointer rounded-xl transition-all duration-300 flex-shrink-0 bg-black/60 border w-20 md:w-24 h-32 md:h-36 ${
                     isSelected 
                       ? 'border-2 border-primary ring-2 ring-primary/40 scale-105 opacity-100 shadow-lg' 
                       : 'border-border/40 hover:border-primary/40 opacity-60 hover:opacity-100'

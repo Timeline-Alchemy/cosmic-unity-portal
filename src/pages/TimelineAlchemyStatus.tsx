@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Hammer, Rocket, Sparkles, Heart, Smartphone, Laptop, Zap, Share2, Star, Eye } from 'lucide-react';
+import { Hammer, Rocket, Sparkles, Heart, Smartphone, Laptop, Zap, Share2, Star, Eye, Download, Globe, ShieldCheck, FileText } from 'lucide-react';
 
 const TimelineAlchemyStatus = () => {
   const { t, language } = useLanguage();
@@ -151,11 +151,43 @@ const TimelineAlchemyStatus = () => {
                 ? t('timelineAlchemy.underConstruction.subtitle') 
                 : t('timelessAwareness.underConstruction.subtitle')}
             </p>
-            <p className="font-mystical text-lg text-muted-foreground leading-relaxed">
-              {activeTab === 'alchemy' 
-                ? t('timelineAlchemy.underConstruction.description') 
-                : t('timelessAwareness.underConstruction.description')}
-            </p>
+            {/* Action buttons for Timeless Awareness */}
+            {activeTab === 'awareness' && (
+              <div className="space-y-4 pt-2">
+                <div className="flex flex-wrap gap-4">
+                  <Button asChild variant="outline" className="border-primary/30 text-foreground hover:bg-primary/10 px-6 py-5">
+                    <a href="https://www.timeline-alchemy.com/timeless-awareness/play" target="_blank" rel="noopener noreferrer">
+                      <Smartphone className="w-4 h-4 mr-2 animate-pulse text-cosmic" />
+                      {language === 'nl' ? 'Open Android App' : language === 'de' ? 'Android App öffnen' : 'Open Android App'}
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" className="border-primary/30 text-foreground hover:bg-primary/10 px-6 py-5">
+                    <a href="https://timeless-awareness.timeline-alchemy.com" target="_blank" rel="noopener noreferrer">
+                      <Globe className="w-4 h-4 mr-2 text-cosmic" />
+                      {language === 'nl' ? 'Open Web Versie' : language === 'de' ? 'Web-Version öffnen' : 'Open Web Version'}
+                    </a>
+                  </Button>
+                  <Button asChild className="cosmic-hover bg-cosmic-gradient hover:opacity-90 text-primary-foreground font-semibold px-6 py-5 shadow-cosmic">
+                    <a href="https://play.google.com/store/apps/details?id=com.timeline_alchemy.timeless_awareness" target="_blank" rel="noopener noreferrer">
+                      <Download className="w-4 h-4 mr-2" />
+                      {language === 'nl' ? 'Bekijk op Google Play' : language === 'de' ? 'Auf Google Play anzeigen' : 'View on Google Play'}
+                    </a>
+                  </Button>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3 pt-1">
+                  <Link to="/privacy-policy" className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-cosmic transition-colors">
+                    <ShieldCheck className="w-3.5 h-3.5 text-cosmic" />
+                    {language === 'nl' ? 'Privacybeleid' : language === 'de' ? 'Datenschutz' : 'Privacy Policy'}
+                  </Link>
+                  <span className="text-muted-foreground/40">•</span>
+                  <Link to="/terms-of-service" className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-cosmic transition-colors">
+                    <FileText className="w-3.5 h-3.5 text-cosmic" />
+                    {language === 'nl' ? 'Algemene Voorwaarden' : language === 'de' ? 'Nutzungsbedingungen' : 'Terms of Service'}
+                  </Link>
+                </div>
+              </div>
+            )}
 
             {/* Features block */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">

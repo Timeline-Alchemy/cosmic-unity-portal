@@ -17,7 +17,7 @@ const TermsOfService = () => {
 
               <h2 className="text-2xl font-semibold text-white mt-8 mb-4">1. Agreement to Terms</h2>
               <p className="mb-4">
-                These Terms of Service ("Terms") constitute a legally binding agreement made between you and Timeline Alchemy Studio LLC ("we," "us," or "our"), concerning your access to and use of our website, mobile applications (including Lumina Enlightenment, Cosmic Slots, Blackhole Blackjack, Galactic Poker, Cosmic Roulette, Galactic Pinball), and related services.
+                These Terms of Service ("Terms") constitute a legally binding agreement made between you and Timeline Alchemy Studio LLC ("we," "us," or "our"), concerning your access to and use of our website, mobile applications (including Lumina Enlightenment, Timeless Awareness, Re-Member, Cosmic Slots, Blackhole Blackjack, Galactic Poker, Cosmic Roulette, Galactic Pinball), and related services.
               </p>
 
               <h2 className="text-2xl font-semibold text-white mt-8 mb-4">2. Account Registration & Google Services</h2>

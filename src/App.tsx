@@ -35,14 +35,11 @@ import GalacticPoker from "./pages/GalacticPoker";
 import CosmicRoulette from "./pages/CosmicRoulette";
 import GalacticPinball from "./pages/GalacticPinball";
 import Lumina from "./pages/Lumina";
-
-
+import ReMember from "./pages/ReMember";
 
 // Analytics
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
-
-
 
 const queryClient = new QueryClient();
 
@@ -75,9 +72,6 @@ const App: React.FC = () => {
               <Route path="/algemene-voorwaarden" element={<TermsOfService />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/nutzungsbedingungen" element={<TermsOfService />} />
-              <Route path="/algemene-voorwaarden" element={<TermsOfService />} />
-              <Route path="/terms-of-service" element={<TermsOfService />} />
-              <Route path="/nutzungsbedingungen" element={<TermsOfService />} />
 
               <Route path="/casino-collection" element={<CasinoCollection />} />
               <Route path="/casino/cosmic-slots" element={<CosmicSlots />} />
@@ -95,8 +89,12 @@ const App: React.FC = () => {
 
               <Route path="/timeline-alchemy" element={<TimelineAlchemyStatus />} />
               <Route path="/timeless-awareness" element={<TimelineAlchemyStatus />} />
+              <Route path="/timeless-awareness/play" element={<TimelineAlchemyStatus />} />
+              <Route path="/re-member" element={<ReMember />} />
+              <Route path="/re-member/play" element={<ReMember />} />
               <Route path="/e-books" element={<EBooks />} />
               <Route path="/lumina" element={<Lumina />} />
+              <Route path="/lumina/play" element={<Lumina />} />
 
 
 

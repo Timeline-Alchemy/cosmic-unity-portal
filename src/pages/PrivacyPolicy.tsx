@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
 
               <h2 className="text-2xl font-semibold text-white mt-8 mb-4">1. Introduction</h2>
               <p className="mb-4">
-                Welcome to Timeline Alchemy Studio LLC and the Cosmic Unity Portal ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our mobile applications (including Lumina Enlightenment, Cosmic Slots, Blackhole Blackjack, Galactic Poker, Cosmic Roulette, and Galactic Pinball).
+                Welcome to Timeline Alchemy Studio LLC and the Cosmic Unity Portal ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our mobile applications (including Lumina Enlightenment, Timeless Awareness, Re-Member, Cosmic Slots, Blackhole Blackjack, Galactic Poker, Cosmic Roulette, and Galactic Pinball).
               </p>
 
               <h2 className="text-2xl font-semibold text-white mt-8 mb-4">2. Information We Collect</h2>
