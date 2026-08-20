@@ -166,7 +166,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center justify-end space-x-2 text-sm">
                   <a
-                    href="mailto:n.smith@timeline-alchemy.com"
+                    href="mailto:info@timeline-alchemy.com"
                     className="font-mystical text-muted-foreground hover:text-cosmic cosmic-hover underline decoration-dotted underline-offset-4"
                   >
                     {t('contact.info.emailLinkText')}

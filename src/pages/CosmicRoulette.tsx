@@ -67,7 +67,7 @@ const CosmicRoulette = () => {
       specsTitle: 'Application Information',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'n.smith@timeline-alchemy.com',
+        supportEmail: 'info@timeline-alchemy.com',
         platform: 'Android 8.0+ / Web Browser',
         ageRating: 'PEGI 18 (Simulated Gambling)',
         license: 'Free (Contains Ads & In-App Purchases)'
@@ -109,7 +109,7 @@ const CosmicRoulette = () => {
       specsTitle: 'Applicatie Informatie',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'n.smith@timeline-alchemy.com',
+        supportEmail: 'info@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
         ageRating: 'PEGI 18 (Gesimuleerd gokken)',
         license: 'Gratis (Bevat advertenties & in-app aankopen)'
@@ -151,7 +151,7 @@ const CosmicRoulette = () => {
       specsTitle: 'Anwendungsinformationen',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'n.smith@timeline-alchemy.com',
+        supportEmail: 'info@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
         ageRating: 'PEGI 18 (Simuliertes Glücksspiel)',
         license: 'Kostenlos (Enthält Werbung & In-App-Käufe)'

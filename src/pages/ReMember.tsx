@@ -56,7 +56,7 @@ const localTranslations = {
     specsTitle: "Applicatie Informatie",
     specs: {
       developer: "Timeline Alchemy Studio LLC",
-      supportEmail: "n.smith@timeline-alchemy.com",
+      supportEmail: "info@timeline-alchemy.com",
       platform: "Android 8.0+ / Webbrowser",
       ageRating: "PEGI 3 / Alle Leeftijden",
       license: "Gratis"
@@ -103,7 +103,7 @@ const localTranslations = {
     specsTitle: "Application Specifications",
     specs: {
       developer: "Timeline Alchemy Studio LLC",
-      supportEmail: "n.smith@timeline-alchemy.com",
+      supportEmail: "info@timeline-alchemy.com",
       platform: "Android 8.0+ / Web Browser",
       ageRating: "PEGI 3 / All Ages",
       license: "Free"
@@ -150,7 +150,7 @@ const localTranslations = {
     specsTitle: "Anwendungsspezifikationen",
     specs: {
       developer: "Timeline Alchemy Studio LLC",
-      supportEmail: "n.smith@timeline-alchemy.com",
+      supportEmail: "info@timeline-alchemy.com",
       platform: "Android 8.0+ / Webbrowser",
       ageRating: "PEGI 3 / Alle Altersklassen",
       license: "Kostenlos"
@@ -262,7 +262,7 @@ const ReMember = () => {
               <div className="absolute -inset-1.5 bg-cosmic-gradient rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
               <div className="relative bg-card/70 backdrop-blur-md p-6 rounded-3xl border border-border/60 shadow-divine flex items-center justify-center">
                 <img 
-                  src="/images/logo-512x512-trans.png" 
+                  src="/images/Re-Member.jpg" 
                   alt="Re-Member App Logo" 
                   className="w-48 h-48 md:w-64 md:h-64 object-contain rounded-2xl drop-shadow-2xl animate-cosmic-pulse"
                   onError={(e) => {

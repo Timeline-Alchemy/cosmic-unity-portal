@@ -48,7 +48,7 @@ const TermsOfService = () => {
 
               <h2 className="text-2xl font-semibold text-white mt-8 mb-4">6. Contact Us</h2>
               <p className="mb-4">
-                If you have any questions or concerns regarding these Terms of Service, please <a href="mailto:n.smith@timeline-alchemy.com" className="text-purple-400 hover:text-purple-300 underline">contact us via email</a>.
+                If you have any questions or concerns regarding these Terms of Service, please <a href="mailto:info@timeline-alchemy.com" className="text-purple-400 hover:text-purple-300 underline">contact us via email</a>.
               </p>
             </div>
           </div>

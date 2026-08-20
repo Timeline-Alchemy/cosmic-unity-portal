@@ -58,7 +58,7 @@ const GalacticPinball = () => {
       specsTitle: 'Application Information',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'n.smith@timeline-alchemy.com',
+        supportEmail: 'info@timeline-alchemy.com',
         platform: 'Android 8.0+ / Web Browser',
         ageRating: 'PEGI 3',
         license: 'Free (Contains Ads & In-App Purchases)'
@@ -98,7 +98,7 @@ const GalacticPinball = () => {
       specsTitle: 'Applicatie Informatie',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'n.smith@timeline-alchemy.com',
+        supportEmail: 'info@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
         ageRating: 'PEGI 3',
         license: 'Gratis (Bevat advertenties & in-app aankopen)'
@@ -138,7 +138,7 @@ const GalacticPinball = () => {
       specsTitle: 'Anwendungsinformationen',
       specs: {
         developer: 'Timeline Alchemy Studio LLC',
-        supportEmail: 'n.smith@timeline-alchemy.com',
+        supportEmail: 'info@timeline-alchemy.com',
         platform: 'Android 8.0+ / Webbrowser',
         ageRating: 'PEGI 3',
         license: 'Kostenlos (Enthält Werbung & In-App-Käufe)'
