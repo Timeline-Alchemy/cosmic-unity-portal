@@ -119,7 +119,7 @@ const Contact = () => {
                     <div>
                       <p className="font-mystical font-semibold text-foreground">{t('contact.info.email')}</p>
                       <a
-                        href="mailto:info@timeline-alchemy.com"
+                        href="mailto:info@timeline-alchemy.net"
                         className="font-mystical text-muted-foreground hover:text-cosmic transition-colors underline decoration-dotted underline-offset-4"
                       >
                         {t('contact.info.emailLinkText')}

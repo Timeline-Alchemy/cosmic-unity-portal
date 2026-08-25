@@ -56,7 +56,7 @@ const localTranslations = {
     specsTitle: "Applicatie Informatie",
     specs: {
       developer: "Timeline Alchemy Studio LLC",
-      supportEmail: "info@timeline-alchemy.com",
+      supportEmail: "info@timeline-alchemy.net",
       platform: "Android 8.0+ / Webbrowser",
       ageRating: "PEGI 3 / Alle Leeftijden",
       license: "Gratis"
@@ -103,7 +103,7 @@ const localTranslations = {
     specsTitle: "Application Specifications",
     specs: {
       developer: "Timeline Alchemy Studio LLC",
-      supportEmail: "info@timeline-alchemy.com",
+      supportEmail: "info@timeline-alchemy.net",
       platform: "Android 8.0+ / Web Browser",
       ageRating: "PEGI 3 / All Ages",
       license: "Free"
@@ -150,7 +150,7 @@ const localTranslations = {
     specsTitle: "Anwendungsspezifikationen",
     specs: {
       developer: "Timeline Alchemy Studio LLC",
-      supportEmail: "info@timeline-alchemy.com",
+      supportEmail: "info@timeline-alchemy.net",
       platform: "Android 8.0+ / Webbrowser",
       ageRating: "PEGI 3 / Alle Altersklassen",
       license: "Kostenlos"
