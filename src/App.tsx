@@ -62,16 +62,22 @@ const App: React.FC = () => {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
 
-              {/* Policies (NL/EN/DE) */}
+              {/* Policies (NL/EN/DE) with Game-Specific URL Support */}
               <Route path="/privacybeleid" element={<PrivacyPolicy />} />
+              <Route path="/privacybeleid/:appSlug" element={<PrivacyPolicy />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/privacy-policy/:appSlug" element={<PrivacyPolicy />} />
               <Route path="/datenschutz" element={<PrivacyPolicy />} />
+              <Route path="/datenschutz/:appSlug" element={<PrivacyPolicy />} />
               <Route path="/retourbeleid" element={<RefundPolicy />} />
               <Route path="/refund-policy" element={<RefundPolicy />} />
               <Route path="/rückgaberecht" element={<RefundPolicy />} />
               <Route path="/algemene-voorwaarden" element={<TermsOfService />} />
+              <Route path="/algemene-voorwaarden/:appSlug" element={<TermsOfService />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/terms-of-service/:appSlug" element={<TermsOfService />} />
               <Route path="/nutzungsbedingungen" element={<TermsOfService />} />
+              <Route path="/nutzungsbedingungen/:appSlug" element={<TermsOfService />} />
 
               <Route path="/casino-collection" element={<CasinoCollection />} />
               <Route path="/casino/cosmic-slots" element={<CosmicSlots />} />

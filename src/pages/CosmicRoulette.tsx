@@ -448,13 +448,13 @@ const CosmicRoulette = () => {
                 </h3>
                 <div className="space-y-3">
                   <Button asChild variant="outline" className="w-full justify-start border-purple-500/20 text-muted-foreground hover:text-white hover:bg-purple-950/10">
-                    <Link to="/privacy-policy">
+                    <Link to="/privacy-policy/cosmic-roulette">
                       <ShieldCheck className="w-4 h-4 mr-2 text-purple-400" />
                       {t.privacyBtn}
                     </Link>
                   </Button>
                   <Button asChild variant="outline" className="w-full justify-start border-purple-500/20 text-muted-foreground hover:text-white hover:bg-purple-950/10">
-                    <Link to="/terms-of-service">
+                    <Link to="/terms-of-service/cosmic-roulette">
                       <FileText className="w-4 h-4 mr-2 text-purple-400" />
                       {t.termsBtn}
                     </Link>

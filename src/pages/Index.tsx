@@ -4,39 +4,139 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/hooks/useLanguage';
-import { useFrequency } from '@/hooks/useFrequency';
-import { Gamepad2, BookOpen, Star, Sparkles } from 'lucide-react';
+import { 
+  Gamepad2, 
+  BookOpen, 
+  Star, 
+  Sparkles, 
+  ShieldCheck, 
+  Info, 
+  Lock, 
+  Smartphone, 
+  ExternalLink,
+  ChevronRight,
+  Zap,
+  Layers,
+  CheckCircle2
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-const Index = () => {
+const Index: React.FC = () => {
   const { language } = useLanguage();
   const currentLang = (language === 'en' || language === 'de') ? 'en' : 'nl';
-  const { mode } = useFrequency();
 
-  const services = [
+  const appsList = [
     {
-      title: currentLang === 'nl' ? 'Cosmic Casino' : 'Cosmic Casino',
-      description: currentLang === 'nl'
-        ? 'Ervaar spirituele groei door van het moment te genieten via games zoals Galactic Poker en Cosmic Slots.'
-        : 'Experience spiritual growth by enjoying the moment through games like Galactic Poker and Cosmic Slots.',
+      id: 'cosmic-slots',
+      name: 'Cosmic Slots',
+      badge: 'Featured Game',
+      category: 'Simulated Slot Machine',
+      image: '/images/02-cosmic.jpg',
       icon: Gamepad2,
-      link: '/casino-collection'
+      purpose: currentLang === 'nl'
+        ? 'Een ruimtethema mobiele gokkast voor ontspanning en visueel plezier. Geen echt geld — uitsluitend virtuele Stellar Credits.'
+        : 'A space-themed mobile slot machine game for casual entertainment. Features celestial symbols, daily missions, and virtual non-monetary credits.',
+      gameUrl: '/casino/cosmic-slots',
+      privacyUrl: '/privacy-policy/cosmic-slots',
+      termsUrl: '/terms-of-service/cosmic-slots'
     },
     {
-      title: currentLang === 'nl' ? 'E-Books' : 'E-Books',
-      description: currentLang === 'nl'
-        ? 'Verdiep je bewustzijn met onze collectie aan e-books en literatuur.'
-        : 'Deepen your consciousness with our collection of e-books and literature.',
-      icon: BookOpen,
-      link: '/e-books'
+      id: 'blackhole-blackjack',
+      name: 'Blackhole Blackjack',
+      badge: 'Casino Series',
+      category: 'Simulated Card Game',
+      image: '/images/02-cosmic.jpg',
+      icon: Gamepad2,
+      purpose: currentLang === 'nl'
+        ? 'Klassiek blackjack ontmoet zwarte gaten in een ruimtestructuur met virtuele fiches.'
+        : 'Classic blackjack meets cosmic event horizons. Play with virtual chips, test strategy, and track wins on global leaderboards.',
+      gameUrl: '/casino/blackhole-blackjack',
+      privacyUrl: '/privacy-policy/blackhole-blackjack',
+      termsUrl: '/terms-of-service/blackhole-blackjack'
     },
     {
-      title: 'Timeless Awareness',
-      description: currentLang === 'nl'
-        ? 'Ontdek tijdloze wijsheid en verruim je kosmische perspectief.'
-        : 'Discover timeless wisdom and expand your cosmic perspective.',
+      id: 'galactic-poker',
+      name: 'Galactic Poker',
+      badge: 'Casino Series',
+      category: 'Simulated Poker',
+      image: '/images/02-cosmic.jpg',
+      icon: Gamepad2,
+      purpose: currentLang === 'nl'
+        ? 'Galactisch Texas Hold\'em poker voor plezier en strategische uitdagingen.'
+        : 'Galactic Texas Hold\'em poker featuring non-monetary virtual chips, offline practice, and high-score ranking.',
+      gameUrl: '/casino/galactic-poker',
+      privacyUrl: '/privacy-policy/galactic-poker',
+      termsUrl: '/terms-of-service/galactic-poker'
+    },
+    {
+      id: 'cosmic-roulette',
+      name: 'Cosmic Roulette',
+      badge: 'Casino Series',
+      category: 'Simulated Roulette',
+      image: '/images/02-cosmic.jpg',
+      icon: Gamepad2,
+      purpose: currentLang === 'nl'
+        ? 'Draai het galactische roulette wiel met ruimtelijke visuele effecten en virtuele inzetten.'
+        : 'Spin the celestial roulette wheel with vibrant galaxy visual effects and virtual betting chips.',
+      gameUrl: '/casino/cosmic-roulette',
+      privacyUrl: '/privacy-policy/cosmic-roulette',
+      termsUrl: '/terms-of-service/cosmic-roulette'
+    },
+    {
+      id: 'galactic-pinball',
+      name: 'Galactic Pinball',
+      badge: 'Arcade Series',
+      category: 'Arcade Physics Game',
+      image: '/images/02-cosmic.jpg',
+      icon: Zap,
+      purpose: currentLang === 'nl'
+        ? 'Snelle pinball arcade actie met kosmische bumpers en highscore klassementen.'
+        : 'Fast-paced pinball arcade action with cosmic bumpers, extra ball multipliers, and global leaderboards.',
+      gameUrl: '/casino/galactic-pinball',
+      privacyUrl: '/privacy-policy/galactic-pinball',
+      termsUrl: '/terms-of-service/galactic-pinball'
+    },
+    {
+      id: 'lumina',
+      name: 'Lumina Enlightenment',
+      badge: 'Mindfulness Suite',
+      category: 'Awareness & Cycle App',
+      image: '/images/timeline-alchemy.png',
       icon: Star,
-      link: '/timeless-awareness',
-      external: false
+      purpose: currentLang === 'nl'
+        ? 'Mindfulness tool voor het berekenen van bewustzijnscycli en kosmische perspectieven.'
+        : 'Mindfulness and consciousness cycle tool designed for personal reflection, daily wisdom, and cycle timing.',
+      gameUrl: '/lumina',
+      privacyUrl: '/privacy-policy/lumina',
+      termsUrl: '/terms-of-service/lumina'
+    },
+    {
+      id: 'timeless-awareness',
+      name: 'Timeless Awareness',
+      badge: 'Mindfulness Suite',
+      category: 'Wisdom & Reading Platform',
+      image: '/images/timeline-alchemy.png',
+      icon: BookOpen,
+      purpose: currentLang === 'nl'
+        ? 'Toegang tot tijdloze literatuur, audio en filosofie voor geestelijke verdieping.'
+        : 'Access timeless wisdom literature, meditative frequency tools, and philosophy for personal growth.',
+      gameUrl: '/timeless-awareness',
+      privacyUrl: '/privacy-policy/timeless-awareness',
+      termsUrl: '/terms-of-service/timeless-awareness'
+    },
+    {
+      id: 're-member',
+      name: 'Re-Member',
+      badge: 'Mindfulness Suite',
+      category: 'Interactive Spiritual Portal',
+      image: '/images/timeline-alchemy.png',
+      icon: Sparkles,
+      purpose: currentLang === 'nl'
+        ? 'Interactief platform voor spirituele herinnering en kosmische uitlijning.'
+        : 'Interactive digital portal guiding users through spiritual alignment, sound frequencies, and self-remembering.',
+      gameUrl: '/re-member',
+      privacyUrl: '/privacy-policy/re-member',
+      termsUrl: '/terms-of-service/re-member'
     }
   ];
 
@@ -45,12 +145,169 @@ const Index = () => {
       <Navigation />
       <HeroSection />
 
-      {/* What We Do Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cosmic-gradient opacity-5"></div>
+      {/* SECTION 1: Explicit Application Purpose & OAuth Data Transparency */}
+      <section className="py-16 bg-card/40 border-y border-border/50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="bg-background/80 backdrop-blur-md border border-cosmic/30 p-8 md:p-12 rounded-3xl shadow-xl">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+              <div className="lg:w-2/3">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cosmic/10 border border-cosmic/20 text-cosmic text-xs font-semibold mb-4">
+                  <ShieldCheck className="w-4 h-4" />
+                  <span>Official Application Purpose & Verification Declaration</span>
+                </div>
+                <h2 className="font-cosmic text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Purpose of Application & Platform Overview
+                </h2>
+                <p className="font-mystical text-lg text-muted-foreground mb-4 leading-relaxed">
+                  {currentLang === 'nl'
+                    ? 'Timeline Alchemy Studio LLC is een ontwikkelingsstudio voor mobiele en webapplicaties, met inbegrip van onze vlaggenschipgame Cosmic Slots en onze suites van gesimuleerde casino- en bewustzijns-apps.'
+                    : 'Timeline Alchemy Studio LLC is a mobile and web application development studio. We create immersive entertainment games—including our flagship application Cosmic Slots—and mindfulness tools designed for positive user experiences.'}
+                </p>
+                <p className="font-mystical text-base text-muted-foreground mb-6">
+                  {currentLang === 'nl'
+                    ? 'Onze applicaties gebruiken Google Authentication uitsluitend om spelersprofielen veilig te verifiëren, spelvoortgang in de cloud te synchroniseren en scores naar wereldwijde Google Play Games-leaderboards te verzenden.'
+                    : 'Our applications integrate Google Authentication (OAuth 2.0) solely to authenticate player profiles securely without complex passwords, synchronize cloud save files across devices, and publish achievement scores to Google Play Games leaderboards.'}
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mystical">
+                  <div className="flex items-center gap-2 bg-card p-3 rounded-lg border border-border">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>No Password Storage Required</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-card p-3 rounded-lg border border-border">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Simulated Games (No Real Money)</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-card p-3 rounded-lg border border-border">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>100% Public & Free Information</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="lg:w-1/3 w-full bg-card/70 p-6 rounded-2xl border border-border text-center">
+                <Lock className="w-10 h-10 text-cosmic mx-auto mb-3" />
+                <h3 className="font-cosmic text-lg font-semibold text-foreground mb-2">
+                  Google OAuth Data Transparency
+                </h3>
+                <p className="font-mystical text-xs text-muted-foreground mb-4">
+                  We adhere strictly to the Google API Services User Data Policy. Player data is never sold or transferred to unauthorized third parties.
+                </p>
+                <div className="flex flex-col gap-2">
+                  <Link to="/privacy-policy" className="w-full">
+                    <Button variant="cosmic" size="sm" className="w-full text-xs">
+                      Master Privacy Policy & Data Rights
+                    </Button>
+                  </Link>
+                  <Link to="/terms-of-service" className="w-full">
+                    <Button variant="outline" size="sm" className="w-full text-xs border-cosmic text-cosmic">
+                      Master Terms of Service
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div className="flex flex-col md:flex-row items-center gap-12 mb-20">
+      {/* SECTION 2: Prominent "Our Featured Applications & Games Suite" Section featuring "Cosmic Slots" */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cosmic/10 border border-cosmic/20 text-cosmic text-xs font-semibold mb-3">
+              <Gamepad2 className="w-4 h-4" />
+              <span>Full Portfolio & Game Directory</span>
+            </div>
+            <h2 className="font-cosmic text-3xl md:text-5xl font-bold text-foreground mb-4">
+              Featured Applications & Cosmic Games Suite
+            </h2>
+            <p className="font-mystical text-lg text-muted-foreground">
+              Explore our mobile games and applications below. Every game features individual app documentation, dedicated privacy policy, and terms of service.
+            </p>
+          </div>
+
+          {/* Grid of Apps & Games */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {appsList.map((app) => {
+              const Icon = app.icon;
+              const isCosmicSlots = app.id === 'cosmic-slots';
+              return (
+                <div 
+                  key={app.id} 
+                  className={`bg-card/50 backdrop-blur-md rounded-2xl border transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-xl ${
+                    isCosmicSlots 
+                      ? 'border-cosmic shadow-lg shadow-cosmic/10 ring-1 ring-cosmic/40' 
+                      : 'border-border/60 hover:border-cosmic/50'
+                  }`}
+                >
+                  <div className="p-6">
+                    {/* Header Badge & Icon */}
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <span className={`text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md ${
+                        isCosmicSlots 
+                          ? 'bg-cosmic text-white shadow-sm' 
+                          : 'bg-primary/10 text-primary border border-primary/20'
+                      }`}>
+                        {app.badge}
+                      </span>
+                      <div className="w-9 h-9 rounded-full bg-cosmic/10 flex items-center justify-center text-cosmic group-hover:bg-cosmic group-hover:text-white transition-colors">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                    </div>
+
+                    {/* App Title (Matches OAuth Consent Screen Name strictly!) */}
+                    <h3 className="font-cosmic text-xl font-bold text-foreground mb-1 group-hover:text-cosmic transition-colors">
+                      {app.name}
+                    </h3>
+                    <div className="text-xs font-mystical text-cosmic font-semibold mb-3">
+                      {app.category}
+                    </div>
+
+                    {/* Purpose Description */}
+                    <p className="font-mystical text-xs text-muted-foreground mb-6 leading-relaxed">
+                      {app.purpose}
+                    </p>
+                  </div>
+
+                  {/* Card Footer Links */}
+                  <div className="p-6 pt-0 space-y-2 border-t border-border/40 mt-auto bg-card/30">
+                    <Link to={app.gameUrl} className="block w-full">
+                      <Button size="sm" variant={isCosmicSlots ? "cosmic" : "outline"} className="w-full text-xs font-mystical flex items-center justify-between">
+                        <span>View {app.name} Info</span>
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </Button>
+                    </Link>
+
+                    <div className="flex gap-2 pt-1 text-[11px] font-mystical">
+                      <Link 
+                        to={app.privacyUrl} 
+                        className="flex-1 text-center py-1.5 px-2 bg-background/80 hover:bg-cosmic/10 hover:text-cosmic rounded border border-border/60 transition-colors text-muted-foreground truncate"
+                        title={`${app.name} Privacy Policy`}
+                      >
+                        Privacy Policy
+                      </Link>
+                      <Link 
+                        to={app.termsUrl} 
+                        className="flex-1 text-center py-1.5 px-2 bg-background/80 hover:bg-cosmic/10 hover:text-cosmic rounded border border-border/60 transition-colors text-muted-foreground truncate"
+                        title={`${app.name} Terms of Service`}
+                      >
+                        Terms of Service
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* SECTION 3: Timeline Alchemy Studio Story */}
+      <section className="py-20 bg-card/30 border-t border-border/50 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2 flex justify-center">
               <div className="relative">
                 <div className="absolute inset-0 bg-cosmic blur-3xl opacity-20 rounded-full"></div>
@@ -66,46 +323,26 @@ const Index = () => {
               <h2 className="font-cosmic text-3xl md:text-5xl font-bold mb-6 text-cosmic-gradient">
                 Timeline Alchemy Studio
               </h2>
-              <p className="font-mystical text-xl text-muted-foreground mb-6 leading-relaxed">
+              <p className="font-mystical text-lg text-muted-foreground mb-6 leading-relaxed">
                 {currentLang === 'nl'
-                  ? 'Wij zijn de brug tussen eeuwenoude spirituele wijsheid en geavanceerde technologie. Als ontwikkelingsstudio creëren wij ervaringen die niet alleen vermaken, maar ook bijdragen aan de bewustzijnsverruiming van de mensheid.'
-                  : 'We are the bridge between ancient spiritual wisdom and advanced technology. As a development studio, we create experiences that not only entertain but also contribute to the consciousness expansion of humanity.'}
-              </p>
-              <p className="font-mystical text-lg text-muted-foreground mb-8">
-                {currentLang === 'nl'
-                  ? 'Geleid door visie en ondersteund door AI-innovatie, ontwikkelen wij platformen, games en literatuur die jou helpen je goddelijke potentieel te ontsluiten.'
-                  : 'Guided by vision and supported by AI innovation, we develop platforms, games, and literature that help you unlock your divine potential.'}
+                  ? 'Wij zijn de brug tussen spirituele wijsheid en geavanceerde technologie. Als ontwikkelingsstudio creëren wij mobiele games, platformen en literatuur die vermaken en bijdragen aan positieve ervaringen.'
+                  : 'We bridge ancient spiritual wisdom and modern technology. As a mobile development studio, we create games, literature, and platforms that entertain and foster expansion.'}
               </p>
 
-              <Link to="/about" className="inline-flex items-center space-x-2 text-cosmic hover:text-primary transition-colors font-mystical text-lg">
-                <Sparkles className="w-5 h-5" />
-                <span>{currentLang === 'nl' ? 'Lees ons verhaal' : 'Read our story'}</span>
-              </Link>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/about">
+                  <Button variant="cosmic" size="sm">
+                    {currentLang === 'nl' ? 'Lees ons verhaal' : 'Read Our Story'}
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button variant="outline" size="sm" className="border-cosmic text-cosmic">
+                    {currentLang === 'nl' ? 'Contact Opnemen' : 'Contact Support'}
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-card/40 backdrop-blur-sm border border-border/50 rounded-xl p-8 hover:bg-card/60 transition-all duration-300 cosmic-hover group">
-                <div className="w-14 h-14 rounded-full bg-cosmic/10 flex items-center justify-center mb-6 group-hover:bg-cosmic/20 transition-colors">
-                  <service.icon className="w-7 h-7 text-cosmic" />
-                </div>
-                <h3 className="font-cosmic text-2xl font-semibold mb-4 text-foreground">{service.title}</h3>
-                <p className="font-mystical text-muted-foreground mb-6">{service.description}</p>
-
-                {service.external ? (
-                  <a href={service.link} target="_blank" rel="noopener noreferrer" className="text-cosmic hover:text-primary transition-colors font-mystical flex items-center text-sm uppercase tracking-wider">
-                    {currentLang === 'nl' ? 'Ontdek meer' : 'Discover more'} &rarr;
-                  </a>
-                ) : (
-                  <Link to={service.link} className="text-cosmic hover:text-primary transition-colors font-mystical flex items-center text-sm uppercase tracking-wider">
-                    {currentLang === 'nl' ? 'Ontdek meer' : 'Discover more'} &rarr;
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
-
         </div>
       </section>
 

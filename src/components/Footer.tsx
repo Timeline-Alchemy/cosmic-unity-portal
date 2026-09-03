@@ -208,16 +208,32 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mystical">
           <div className="text-center md:text-left">
-            <p className="font-mystical text-sm text-muted-foreground">
-              © {currentYear} Timeline Alchemy Studio LLC
+            <p className="text-muted-foreground">
+              © {currentYear} Timeline Alchemy Studio LLC. All rights reserved.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 text-sm">
-            <p className="font-mystical text-sm text-muted-foreground">
-              {t('footer.copyright')}
-            </p>
+          <div className="flex flex-wrap justify-center md:justify-end items-center gap-4 text-muted-foreground">
+            <Link to="/privacy-policy" className="hover:text-cosmic transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-border">•</span>
+            <Link to="/privacy-policy/cosmic-slots" className="hover:text-cosmic transition-colors text-cosmic font-semibold">
+              Cosmic Slots Privacy
+            </Link>
+            <span className="text-border">•</span>
+            <Link to="/terms-of-service" className="hover:text-cosmic transition-colors">
+              Terms of Service
+            </Link>
+            <span className="text-border">•</span>
+            <Link to="/terms-of-service/cosmic-slots" className="hover:text-cosmic transition-colors text-cosmic font-semibold">
+              Cosmic Slots Terms
+            </Link>
+            <span className="text-border">•</span>
+            <Link to="/refund-policy" className="hover:text-cosmic transition-colors">
+              Refund Policy
+            </Link>
           </div>
         </div>
       </div>
