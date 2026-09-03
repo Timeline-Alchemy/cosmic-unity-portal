@@ -134,10 +134,10 @@ const Contact = () => {
                     <div>
                       <p className="font-mystical font-semibold text-foreground">{t('contact.info.phone')}</p>
                       <a
-                        href="tel:+15056488575"
+                        href="tel:+18148925969"
                         className="font-mystical text-muted-foreground hover:text-cosmic transition-colors"
                       >
-                        +1(505)6488575
+                        +1(814)8925969
                       </a>
                     </div>
                   </div>

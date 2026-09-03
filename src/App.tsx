@@ -34,6 +34,7 @@ import BlackholeBlackjack from "./pages/BlackholeBlackjack";
 import GalacticPoker from "./pages/GalacticPoker";
 import CosmicRoulette from "./pages/CosmicRoulette";
 import GalacticPinball from "./pages/GalacticPinball";
+import MerkabaMadness from "./pages/MerkabaMadness";
 import Lumina from "./pages/Lumina";
 import ReMember from "./pages/ReMember";
 
@@ -85,6 +86,7 @@ const App: React.FC = () => {
               <Route path="/casino/galactic-poker" element={<GalacticPoker />} />
               <Route path="/casino/cosmic-roulette" element={<CosmicRoulette />} />
               <Route path="/casino/galactic-pinball" element={<GalacticPinball />} />
+              <Route path="/casino/merkaba-madness" element={<MerkabaMadness />} />
               
               {/* Short URL Aliases for Android App Links / Fallbacks */}
               <Route path="/cosmic-slots" element={<CosmicSlots />} />
@@ -92,6 +94,7 @@ const App: React.FC = () => {
               <Route path="/galactic-poker" element={<GalacticPoker />} />
               <Route path="/cosmic-roulette" element={<CosmicRoulette />} />
               <Route path="/galactic-pinball" element={<GalacticPinball />} />
+              <Route path="/merkaba-madness" element={<MerkabaMadness />} />
 
               <Route path="/timeline-alchemy" element={<TimelineAlchemyStatus />} />
               <Route path="/timeless-awareness" element={<TimelineAlchemyStatus />} />

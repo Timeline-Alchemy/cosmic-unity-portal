@@ -73,6 +73,14 @@ const APPS_TERMS_META: Record<string, GameTermsMeta> = {
     icon: Gamepad2,
     description: 'Terms of Service for Galactic Pinball.'
   },
+  'merkaba-madness': {
+    id: 'merkaba-madness',
+    name: 'Merkaba Madness',
+    category: 'Game',
+    googleAppName: 'Merkaba Madness',
+    icon: Gamepad2,
+    description: 'Terms of Service for Merkaba Madness.'
+  },
   'lumina': {
     id: 'lumina',
     name: 'Lumina Enlightenment',

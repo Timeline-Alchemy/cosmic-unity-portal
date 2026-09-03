@@ -58,8 +58,8 @@ const CasinoCollection = () => {
         {
           title: t('casino.games.merkaba.title'),
           description: t('casino.games.merkaba.desc'),
-          path: '#',
-          isPlaceholder: true,
+          path: '/casino/merkaba-madness',
+          isPlaceholder: false,
           icon: <img src="/images/merkaba-app-icon.png" alt="Merkaba Madness" className="w-24 h-24 object-contain rounded-xl drop-shadow-lg" />
         }
       ]

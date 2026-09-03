@@ -32,7 +32,8 @@ const Footer = () => {
         { name: 'BlackHole Blackjack', href: '/casino/blackhole-blackjack', icon: Gamepad2 },
         { name: 'Galactic Poker', href: '/casino/galactic-poker', icon: Gamepad2 },
         { name: 'Cosmic Roulette', href: '/casino/cosmic-roulette', icon: Gamepad2 },
-        { name: 'Galactic Pinball', href: '/casino/galactic-pinball', icon: Gamepad2 }
+        { name: 'Galactic Pinball', href: '/casino/galactic-pinball', icon: Gamepad2 },
+        { name: 'Merkaba Madness', href: '/casino/merkaba-madness', icon: Gamepad2 }
       ]
     },
     {
@@ -175,10 +176,10 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center justify-end space-x-2 text-sm">
                   <a
-                    href="tel:+15056488575"
+                    href="tel:+18148925969"
                     className="font-mystical text-muted-foreground hover:text-cosmic cosmic-hover"
                   >
-                    +1(505)6488575
+                    +1(814)8925969
                   </a>
                   <Phone className="w-4 h-4 text-cosmic" />
                 </div>
@@ -219,8 +220,8 @@ const Footer = () => {
               Privacy Policy
             </Link>
             <span className="text-border">•</span>
-            <Link to="/privacy-policy/cosmic-slots" className="hover:text-cosmic transition-colors text-cosmic font-semibold">
-              Cosmic Slots Privacy
+            <Link to="/privacy-policy/merkaba-madness" className="hover:text-cosmic transition-colors text-amber-400 font-semibold">
+              Merkaba Privacy
             </Link>
             <span className="text-border">•</span>
             <Link to="/terms-of-service" className="hover:text-cosmic transition-colors">

@@ -48,7 +48,8 @@ const Navigation = () => {
         { name: 'BlackHole Blackjack', href: '/casino/blackhole-blackjack', icon: Gamepad2 },
         { name: 'Galactic Poker', href: '/casino/galactic-poker', icon: Gamepad2 },
         { name: 'Cosmic Roulette', href: '/casino/cosmic-roulette', icon: Gamepad2 },
-        { name: 'Galactic Pinball', href: '/casino/galactic-pinball', icon: Gamepad2 }
+        { name: 'Galactic Pinball', href: '/casino/galactic-pinball', icon: Gamepad2 },
+        { name: 'Merkaba Madness', href: '/casino/merkaba-madness', icon: Gamepad2 }
       ]
     },
     {

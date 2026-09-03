@@ -76,6 +76,14 @@ const APPS_META: Record<string, GamePolicyMeta> = {
     icon: Gamepad2,
     description: 'Privacy Policy details specific to Galactic Pinball.'
   },
+  'merkaba-madness': {
+    id: 'merkaba-madness',
+    name: 'Merkaba Madness',
+    category: 'Game',
+    googleAppName: 'Merkaba Madness',
+    icon: Gamepad2,
+    description: 'Privacy Policy details specific to Merkaba Madness.'
+  },
   'lumina': {
     id: 'lumina',
     name: 'Lumina Enlightenment',
@@ -486,7 +494,7 @@ const PrivacyPolicy: React.FC = () => {
               <p>Attn: Privacy & Data Protection Team</p>
               <p>1209 Mountain Road Pl Ne Ste N, Albuquerque, New Mexico 87110, United States</p>
               <p>Email: <a href="mailto:info@timeline-alchemy.net" className="text-cosmic underline">info@timeline-alchemy.net</a></p>
-              <p>Phone: +1(505)6488575</p>
+              <p>Phone: +1(814)8925969</p>
             </div>
           </section>
 
