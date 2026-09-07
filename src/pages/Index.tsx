@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -17,16 +17,13 @@ import {
   ChevronRight,
   ChevronLeft,
   Zap,
-  Clock,
-  LayoutGrid,
-  SlidersHorizontal
+  Clock
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Index: React.FC = () => {
   const { language } = useLanguage();
   const currentLang = (language === 'en' || language === 'de') ? 'en' : 'nl';
-  const [viewMode, setViewMode] = useState<'grid' | 'carousel'>('grid');
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const scrollCarousel = (direction: 'left' | 'right') => {
@@ -284,91 +281,51 @@ const Index: React.FC = () => {
       <section className="py-20 relative overflow-hidden">
         <div className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* Header & View Mode Switcher */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
-            <div className="text-center md:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cosmic/10 border border-cosmic/20 text-cosmic text-xs font-semibold mb-3">
-                <Gamepad2 className="w-4 h-4" />
-                <span>Full Portfolio & Game Directory (10 Titles)</span>
-              </div>
-              <h2 className="font-cosmic text-3xl md:text-5xl font-bold text-foreground">
-                Featured Applications & Cosmic Games Suite
-              </h2>
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cosmic/10 border border-cosmic/20 text-cosmic text-xs font-semibold mb-3">
+              <Gamepad2 className="w-4 h-4" />
+              <span>Full Portfolio & Game Directory (10 Titles)</span>
             </div>
-
-            {/* View Layout Controls (Grid 2x5 vs Carousel) */}
-            <div className="flex items-center gap-2 bg-card/60 p-1.5 rounded-xl border border-border shrink-0">
-              <button
-                type="button"
-                onClick={() => setViewMode('grid')}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-lg font-mystical text-xs font-semibold transition-all ${
-                  viewMode === 'grid'
-                    ? 'bg-cosmic text-white shadow-md'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                <LayoutGrid className="w-4 h-4" />
-                <span>2x5 Grid</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setViewMode('carousel')}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-lg font-mystical text-xs font-semibold transition-all ${
-                  viewMode === 'carousel'
-                    ? 'bg-cosmic text-white shadow-md'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                <SlidersHorizontal className="w-4 h-4" />
-                <span>Carousel</span>
-              </button>
-            </div>
+            <h2 className="font-cosmic text-3xl md:text-5xl font-bold text-foreground">
+              Featured Applications & Cosmic Games Suite
+            </h2>
           </div>
 
-          {/* VIEW MODE 1: 2x5 GRID (5 Columns x 2 Rows = 10 Cards) */}
-          {viewMode === 'grid' && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
-              {appsList.map(renderCard)}
+          {/* CAROUSEL SLIDER */}
+          <div className="relative group/carousel px-2 sm:px-4">
+            {/* Scroll Controls */}
+            <button
+              type="button"
+              onClick={() => scrollCarousel('left')}
+              className="absolute -left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-card/90 border border-border shadow-xl text-foreground flex items-center justify-center hover:bg-cosmic hover:text-white transition-all backdrop-blur-md"
+              aria-label="Previous Slide"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => scrollCarousel('right')}
+              className="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-card/90 border border-border shadow-xl text-foreground flex items-center justify-center hover:bg-cosmic hover:text-white transition-all backdrop-blur-md"
+              aria-label="Next Slide"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
+            {/* Scrollable Track */}
+            <div 
+              ref={carouselRef}
+              className="flex items-stretch gap-5 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scrollbar-none scroll-smooth"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {appsList.map((app) => (
+                <div key={app.id} className="min-w-[280px] sm:min-w-[320px] max-w-[320px] snap-start flex-shrink-0">
+                  {renderCard(app)}
+                </div>
+              ))}
             </div>
-          )}
-
-          {/* VIEW MODE 2: CAROUSEL SLIDER */}
-          {viewMode === 'carousel' && (
-            <div className="relative group/carousel">
-              {/* Scroll Controls */}
-              <button
-                type="button"
-                onClick={() => scrollCarousel('left')}
-                className="absolute -left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-card/90 border border-border shadow-xl text-foreground flex items-center justify-center hover:bg-cosmic hover:text-white transition-all backdrop-blur-md"
-                aria-label="Previous Slide"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => scrollCarousel('right')}
-                className="absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-card/90 border border-border shadow-xl text-foreground flex items-center justify-center hover:bg-cosmic hover:text-white transition-all backdrop-blur-md"
-                aria-label="Next Slide"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-
-              {/* Scrollable Track */}
-              <div 
-                ref={carouselRef}
-                className="flex items-stretch gap-5 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scrollbar-none scroll-smooth"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              >
-                {appsList.map((app) => (
-                  <div key={app.id} className="min-w-[280px] sm:min-w-[320px] max-w-[320px] snap-start flex-shrink-0">
-                    {renderCard(app)}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          </div>
 
         </div>
       </section>

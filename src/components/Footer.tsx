@@ -220,16 +220,8 @@ const Footer = () => {
               Privacy Policy
             </Link>
             <span className="text-border">•</span>
-            <Link to="/privacy-policy/merkaba-madness" className="hover:text-cosmic transition-colors text-amber-400 font-semibold">
-              Merkaba Privacy
-            </Link>
-            <span className="text-border">•</span>
             <Link to="/terms-of-service" className="hover:text-cosmic transition-colors">
               Terms of Service
-            </Link>
-            <span className="text-border">•</span>
-            <Link to="/terms-of-service/cosmic-slots" className="hover:text-cosmic transition-colors text-cosmic font-semibold">
-              Cosmic Slots Terms
             </Link>
             <span className="text-border">•</span>
             <Link to="/refund-policy" className="hover:text-cosmic transition-colors">
